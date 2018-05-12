@@ -1,0 +1,514 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{67C9C3DD-A484-4589-A584-08DC6F5CCCA6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ErpGestion</RootNamespace>
+    <AssemblyName>ErpGestion</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.Core, Version=1.7.5.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <HintPath>..\packages\GMap.NET.WindowsForms.1.7.5\lib\net40\GMap.NET.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.WindowsForms, Version=1.7.5.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <HintPath>..\packages\GMap.NET.WindowsForms.1.7.5\lib\net40\GMap.NET.WindowsForms.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.802.134-rc\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.802.134-rc\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.802.134-rc\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.802.134-rc\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.802.134-rc\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Controls.Ribbon" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Windows.Forms.Ribbon35">
+      <HintPath>..\..\..\..\Projects Zimplexness\ribbon\SourceCode\System.Windows.Forms.Ribbon\bin\Debug\System.Windows.Forms.Ribbon35.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ComprobantesFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComprobantesFrm.Designer.cs">
+      <DependentUpon>ComprobantesFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultasComprobantesFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultasComprobantesFrm.Designer.cs">
+      <DependentUpon>ConsultasComprobantesFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentacionBajaFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocumentacionBajaFrm.Designer.cs">
+      <DependentUpon>DocumentacionBajaFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmpleadosFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmpleadosFrm.Designer.cs">
+      <DependentUpon>EmpleadosFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LocalidadesFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LocalidadesFrm.Designer.cs">
+      <DependentUpon>LocalidadesFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginFrm.Designer.cs">
+      <DependentUpon>LoginFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NominaTelecentroForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NominaTelecentroForm.Designer.cs">
+      <DependentUpon>NominaTelecentroForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PagosFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PagosFrm.Designer.cs">
+      <DependentUpon>PagosFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PolizaSeguroFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PolizaSeguroFrm.Designer.cs">
+      <DependentUpon>PolizaSeguroFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductosFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductosFrm.Designer.cs">
+      <DependentUpon>ProductosFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProveedoresFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProveedoresFrm.Designer.cs">
+      <DependentUpon>ProveedoresFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProvinciaFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProvinciaFrm.Designer.cs">
+      <DependentUpon>ProvinciaFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteComprobantesFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteComprobantesFrm.Designer.cs">
+      <DependentUpon>ReporteComprobantesFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteDeudaFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteDeudaFrm.Designer.cs">
+      <DependentUpon>ReporteDeudaFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesForm.Designer.cs">
+      <DependentUpon>ReportesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="TalleresForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TalleresForm.Designer.cs">
+      <DependentUpon>TalleresForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TallerFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TallerFrm.Designer.cs">
+      <DependentUpon>TallerFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VehiculosFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VehiculosFrm.Designer.cs">
+      <DependentUpon>VehiculosFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZimplexHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZimplexHome.Designer.cs">
+      <DependentUpon>ZimplexHome.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ComprobantesFrm.resx">
+      <DependentUpon>ComprobantesFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultasComprobantesFrm.resx">
+      <DependentUpon>ConsultasComprobantesFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentacionBajaFrm.resx">
+      <DependentUpon>DocumentacionBajaFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmpleadosFrm.resx">
+      <DependentUpon>EmpleadosFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalidadesFrm.resx">
+      <DependentUpon>LocalidadesFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginFrm.resx">
+      <DependentUpon>LoginFrm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NominaTelecentroForm.resx">
+      <DependentUpon>NominaTelecentroForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PagosFrm.resx">
+      <DependentUpon>PagosFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PolizaSeguroFrm.resx">
+      <DependentUpon>PolizaSeguroFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductosFrm.resx">
+      <DependentUpon>ProductosFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informe.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InformeDeuda.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="InformeComprobantesCompra.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProveedoresFrm.resx">
+      <DependentUpon>ProveedoresFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProvinciaFrm.resx">
+      <DependentUpon>ProvinciaFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteComprobantesFrm.resx">
+      <DependentUpon>ReporteComprobantesFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteDeudaFrm.resx">
+      <DependentUpon>ReporteDeudaFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportePagosxProveedores.rdlc" />
+    <EmbeddedResource Include="ReportesForm.resx">
+      <DependentUpon>ReportesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteTelecentro.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TalleresForm.resx">
+      <DependentUpon>TalleresForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TallerFrm.resx">
+      <DependentUpon>TallerFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VehiculosFrm.resx">
+      <DependentUpon>VehiculosFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZimplexHome.resx">
+      <DependentUpon>ZimplexHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\ErpGestion.Model.ReporteNominaTelecentro_Result.datasource" />
+    <None Include="Properties\DataSources\SISTEMAFACTURACIONV1._0.DataModel.ComprobantesGastos_Compras_Result.datasource" />
+    <None Include="Properties\DataSources\SISTEMAFACTURACIONV1._0.DataModel.EncabezadoDeuda_Result.datasource" />
+    <None Include="Properties\DataSources\SISTEMAFACTURACIONV1._0.DataModel.EncabezadoOrdenPago_Result.datasource" />
+    <None Include="Properties\DataSources\SISTEMAFACTURACIONV1._0.DataModel.FacturasPendientesPago_Result.datasource" />
+    <None Include="Properties\DataSources\SISTEMAFACTURACIONV1._0.DataModel.OrdenPago_Result.datasource" />
+    <None Include="Properties\DataSources\SISTEMAFACTURACIONV1._0.DataModel.SeleccionarMediosDePagos_Result.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_LinkedIn_UI-06_2335593.png" />
+    <None Include="Resources\if_cloud-key-lock_532256.png" />
+    <None Include="Resources\if_document-print_118913.png" />
+    <None Include="Resources\if_suppliers_48732.png" />
+    <None Include="Resources\if_finished-work_48678.png" />
+    <None Include="Resources\if_payment-card_48705.png" />
+    <None Include="Resources\if_category_48654 %281%29.png" />
+    <None Include="Resources\if_statistics_48731.png" />
+    <None Include="Resources\if_print_48713.png" />
+    <None Include="Resources\if_logout_59175.png" />
+    <None Include="Resources\22029.png" />
+    <None Include="Resources\if_simpline_43_2305619.png" />
+    <None Include="Resources\if_delicious_54303.png" />
+    <None Include="Resources\if_home_173033.png" />
+    <None Include="Resources\if_network_1287518.png" />
+    <None Include="Resources\if_profle_1055000.png" />
+    <None Include="Resources\if_fullscreen_white_280264.png" />
+    <None Include="Resources\if_exit_fullscreen_white_280265.png" />
+    <None Include="Resources\fullscreen_3-512.png" />
+    <None Include="Resources\MaximizeThumbnail-250x250.png" />
+    <None Include="Resources\MAXIMIZE.png" />
+    <None Include="Resources\if_Full_orientation_expand_screen_1886921.png" />
+    <None Include="Resources\if_resize-full_173084.png" />
+    <None Include="Resources\if_download_1214648.png" />
+    <None Include="Resources\fullscreen.png" />
+    <None Include="Resources\gnome_view_fullscreen.png" />
+    <None Include="Resources\minimize_window.png" />
+    <None Include="Resources\if_Minus_2001871.png" />
+    <None Include="Resources\maximize %281%29.png" />
+    <None Include="Resources\maximize %282%29.png" />
+    <None Include="Resources\maximize %284%29.png" />
+    <None Include="Resources\if_Close_Icon_Dark_1398917.png" />
+    <None Include="Resources\if_billing_48648.png" />
+    <None Include="Resources\if_edit_48674.png" />
+    <None Include="Resources\if_config_48659.png" />
+    <None Include="Resources\if_home_59472.png" />
+    <None Include="Resources\if_world_48738.png" />
+    <None Include="Resources\if_user_48737 %281%29.png" />
+    <None Include="Resources\if_9_330409.png" />
+    <None Include="Resources\if_add_user_1902270.png" />
+    <None Include="Resources\if_user_namecard_1902266.png" />
+    <None Include="Resources\if_upload_1216553.png" />
+    <None Include="Resources\if_add_user_19022701.png" />
+    <None Include="Resources\if_add_user_1902270 %281%29.png" />
+    <None Include="Resources\if_user_namecard_1902266 %281%29.png" />
+    <None Include="Resources\if_add_user_1902270 %282%29.png" />
+    <None Include="Resources\if_arrow-up-01_186407.png" />
+    <None Include="Resources\if_box_289621.png" />
+    <None Include="Resources\if_shop_house-home_2222735.png" />
+    <None Include="Resources\if_dolly_1055070.png" />
+    <None Include="Resources\if_users_1902261.png" />
+    <None Include="Resources\if_Bag_877010.png" />
+    <None Include="Resources\if_currencysvg_1579795.png" />
+    <None Include="Resources\if_piechart_1055011.png" />
+    <None Include="Resources\if_user-group_285648.png" />
+    <None Include="Resources\if_user_285655.png" />
+    <None Include="Resources\if_user_1902268.png" />
+    <None Include="Resources\if_user_1902268 %281%29.png" />
+    <None Include="Resources\if_Payment_877018.png" />
+    <None Include="Resources\if_Coins_877016.png" />
+    <None Include="Resources\if_browser-web-content_532739.png" />
+    <None Include="Resources\if_business_economic_finance_interprise_company_browser_2570326.png" />
+    <None Include="Resources\if_file-roller_23794.png" />
+    <None Include="Resources\if_group_318580.png" />
+    <None Include="Resources\if_user_318585.png" />
+    <None Include="Resources\if_08_Web_Development_1688871.png" />
+    <None Include="Resources\if_taxi_1054959.png" />
+    <None Include="Resources\VxPyqS3A.jpg" />
+    <None Include="Resources\if_flat-style-circle-add_1312548.png" />
+    <None Include="Resources\if_handle4_62581.png" />
+    <None Include="Resources\if_fork6_62577.png" />
+    <None Include="Resources\if_Tick_Mark_Circle_1398913.png" />
+    <None Include="Resources\if_Car-Accessories_12_2178861.png" />
+    <None Include="Resources\if_Citycons_location_1342939.png" />
+    <None Include="Resources\if_Facebook_UI-07_2344289.png" />
+    <None Include="Resources\if_Facebook_UI-07_2344289 %281%29.png" />
+    <None Include="Resources\if_gps_1055047.png" />
+    <None Include="Resources\if_Certificate_877014.png" />
+    <None Include="Resources\if_Money_Bag_10999.png" />
+    <None Include="Resources\if_suppliers_487321.png" />
+    <None Include="Resources\if_Artboard_1_1790664.png" />
+    <None Include="Resources\if_info-group_46813.png" />
+    <None Include="Resources\if_car_1785208.png" />
+    <None Include="Resources\if_20_330402.png" />
+    <None Include="Resources\if_20_330402 %281%29.png" />
+    <None Include="Resources\if_17_330399.png" />
+    <None Include="Resources\if_17_330399 %281%29.png" />
+    <None Include="Resources\if_11_330397.png" />
+    <None Include="Resources\if_18_330400.png" />
+    <None Include="Resources\if_18_3304001.png" />
+    <None Include="Resources\if_Shortcuts_small_100237.png" />
+    <None Include="Resources\if_Cancel_728918.png" />
+    <None Include="Resources\if_menu_1814109.png" />
+    <None Include="Resources\if_menu_18141091.png" />
+    <None Include="Resources\if_user_48737.png" />
+    <None Include="Resources\if_calendar_48653.png" />
+    <None Include="Resources\if_phone_48709.png" />
+    <None Include="Resources\if_cono_512542.png" />
+    <None Include="Resources\if_document-new_23212.png" />
+    <None Include="Resources\if_floppy_285657.png" />
+    <None Include="Resources\if_icon-136-document-edit_314724.png" />
+    <None Include="Resources\if_minus_1645995.png" />
+    <None Include="Resources\if_icon-136-document-edit_3147241.png" />
+    <None Include="Resources\if_minus_16459951.png" />
+    <None Include="Resources\if_category_54287 %281%29.png" />
+    <None Include="Resources\if_special-offer_54362.png" />
+    <None Include="Resources\if_comment_54290.png" />
+    <None Include="Resources\if_settings_54355.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\Sales-by-Payment-Method-rep.png" />
+    <None Include="Resources\Payroll_tcm8-112685.jpg" />
+    <None Include="Resources\1498842292_Citycons_magnify.png" />
+    <None Include="Resources\1497545233_arrow-down.png" />
+    <None Include="Resources\1497286592_edit.png" />
+    <None Include="Resources\1494868815_radial_arrows.png" />
+    <None Include="Resources\1497286357_microsoft.png" />
+    <None Include="Resources\1497286033_user.png" />
+    <None Include="Resources\1494867482_application-pgp-signature.png" />
+    <None Include="Resources\1497285708_Cancel.png" />
+    <None Include="Resources\1497285414_Checkmark.png" />
+    <None Include="Resources\1497285228_Fast_Forward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLayer\BLayer.csproj">
+      <Project>{6041b55d-7cfd-4b5b-8d8c-0dfaf9f4225b}</Project>
+      <Name>BLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{c947aa29-c91e-450d-ad73-757a440984b1}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d0a7456917da4b0684b1b322232ac011" Name="Diagram1">
+        <EntityTypeShape EntityType="DbContextSitem.C__EFMigrationsHistory" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.ActividadMantenimiento" Width="1.5" PointX="3.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.AfectadoEmpresaCliente" Width="1.5" PointX="5.25" PointY="23" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.Almacenes" Width="1.5" PointX="3" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.Articulos" Width="1.5" PointX="14.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.AspNetRoleClaims" Width="1.5" PointX="21" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.AspNetRoles" Width="1.5" PointX="18.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.AspNetUserClaims" Width="1.5" PointX="23.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.AspNetUserLogins" Width="1.5" PointX="23.25" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.AspNetUsers" Width="1.5" PointX="21" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.AspNetUserTokens" Width="1.5" PointX="3.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.Bancos" Width="1.5" PointX="14.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.CategoriaEmpleado" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.Categorias" Width="1.5" PointX="12" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.CentroCostos" Width="1.5" PointX="9" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.Combustibles" Width="1.5" PointX="11.25" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.Comprobantes" Width="1.5" PointX="11.25" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.CondicionesCompra" Width="1.5" PointX="9" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.Contable" Width="1.5" PointX="9" PointY="26.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.CuentaCorriente" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.Departamentos" Width="1.5" PointX="0.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.DetalleMantenimientoRepuestos" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.DetalleMediosPagos" Width="1.5" PointX="16.5" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.DetalleProveedor_ProductorSeguro" Width="1.5" PointX="14.25" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.DetallesComprobanteArticulos" Width="1.5" PointX="16.5" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.DetallesPago" Width="1.5" PointX="16.5" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.Empleados" Width="1.5" PointX="3" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.Empresas" Width="1.5" PointX="18.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.EmpresasClientes" Width="1.5" PointX="0.75" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.Especialidades" Width="1.5" PointX="0.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.EstadoCivil" Width="1.5" PointX="0.75" PointY="24.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.Estados" Width="1.5" PointX="9" PointY="28.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.EstudiosRealizados" Width="1.5" PointX="8.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.IngresoMateriales" Width="1.5" PointX="16.5" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.Localidades" Width="1.5" PointX="0.75" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.Mantenimiento" Width="1.5" PointX="6" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.MarcasVehiculos" Width="1.5" PointX="11.25" PointY="23.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.MediosPago" Width="1.5" PointX="14.25" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.ModelosVehiculos" Width="1.5" PointX="11.25" PointY="31.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.Nacionalidades" Width="1.5" PointX="0.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.ObraSocial" Width="1.5" PointX="0.75" PointY="29.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.Pagos" Width="1.5" PointX="14.25" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.Personas" Width="1.5" PointX="6" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.PolizasSeguro" Width="1.5" PointX="11.25" PointY="27.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.ProductoresSeguro" Width="1.5" PointX="12" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.Profiles" Width="1.5" PointX="8.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.Proveedores" Width="1.5" PointX="9" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.Provincias" Width="1.5" PointX="6.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.Referencias" Width="1.5" PointX="8.25" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.RegistroConducirBool" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.RubroProveedor" Width="1.5" PointX="18.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.Sexos" Width="1.5" PointX="0.75" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.Sindicatos" Width="1.5" PointX="1.5" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.SolicitudesEmpleo" Width="1.5" PointX="8.25" PointY="22.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.TablaDivisorCalculo" Width="1.5" PointX="18.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.Talleres" Width="1.5" PointX="6" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.TiposComprobante" Width="1.5" PointX="9" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.TiposFactura" Width="1.5" PointX="9" PointY="33.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.TipoTaller" Width="1.5" PointX="3.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.Ubicacion" Width="1.5" PointX="12" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.Users" Width="1.5" PointX="11" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.Vehiculos" Width="1.5" PointX="13.5" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.Vencimientos" Width="1.5" PointX="18.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.Zonas" Width="1.5" PointX="0.75" PointY="34.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.Choferes" Width="1.5" PointX="20.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.DatosEmpleadosActivos" Width="1.5" PointX="20.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.DetallePago" Width="1.5" PointX="20.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.DetallesSolicitudesEmpleo" Width="1.5" PointX="22.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.ListaTalleresMecanicos" Width="1.5" PointX="22.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.NominaCV" Width="1.5" PointX="18.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.NominaTelecentro" Width="1.5" PointX="22.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.Solicitudesempleos" Width="1.5" PointX="20.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.View_DetalleArticulo" Width="1.5" PointX="22.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.View_DetalleArticuloComprobante" Width="1.5" PointX="24.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.View_ListaEmpleados" Width="1.5" PointX="23.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextSitem.View_Proveedores" Width="1.5" PointX="24.75" PointY="13.75" IsExpanded="true" />
+        <AssociationConnector Association="DbContextSitem.FK_Mantenimiento_ActividadMantenimiento" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_AfectadoEmpresaCliente_Empleados" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_AfectadoEmpresaCliente_EmpresasClientes" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Table_Almacen_Table_Zonas" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Table_IngresoMateriales_Table_Almacen" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Table_Articulos_Table_Categoria" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Table_Articulos_Table_Ubicacion" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Table_DetallesComprobanteArticulos_Table_Articulos" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Table_IngresoMateriales_Table_Articulos" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_AspNetRoleClaims_AspNetRoles_RoleId" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_AspNetUserClaims_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_AspNetUserLogins_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Table_DetalleMediosPago_Table_Banco" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_CategoriaEmpleado_Sindicatos" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Table_Empleado_Table_CategoriaEmpleado" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Table_Comprobante_Table_CentroCosto" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Vehiculos_Combustibles" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Table_Comprobante_Table_CondicionCompra" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Table_Comprobante_Table_Contable" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Table_Comprobante_Table_Estados" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Table_Comprobante_Table_Proveedores" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Table_Comprobante_Table_TipoComprobante" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Table_Comprobante_Table_TipoFactura" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Table_DetallePago_Table_Comprobante" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Table_DetallesComprobanteArticulos_Table_Comprobante" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Table_Empleado_Table_Departamento" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Table_DetalleMediosPago_Table_MedioPago" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Table_DetalleMediosPago_Table_Pagos" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Table_DetalleProveedor_ProductorSeguro_Table_ProductorSeguro" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Table_DetalleProveedor_ProductorSeguro_Table_Proveedores" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Table_DetallePago_Table_Pagos" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Empleados_EmpresasClientes" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Empleados_EstadoCivil" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Empleados_Localidades" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Empleados_Nacionalidades" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Empleados_ObraSocial" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Empleados_Sexos" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Empleados_Zonas" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Table_Empleado_Table_Especialidad" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Table_Empleado_Table_Sindicato" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Vehiculos_Empleados" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Personas_EstadoCivil" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Personas_Localidades" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Table_Proveedores_Table_Localidades" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Talleres_Localidades" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Mantenimiento_Mantenimiento" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Mantenimiento_Mantenimiento1" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_ModelosVehiculos_MarcasVehiculos" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Vehiculos_MarcasVehiculos" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Vehiculos_ModelosVehiculos" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Personas_Nacionalidades" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Personas_ObraSocial" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Referencias_Personas" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_SolicitudesEmpleo_Personas" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_PolizasSeguro_Proveedores" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Vehiculos_PolizasSeguro" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Users_Profiles" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Table_Proveedores_Table_Provincias" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Talleres_TipoTaller" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.FK_Vehiculos_Vehiculos" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextSitem.AspNetUserRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
