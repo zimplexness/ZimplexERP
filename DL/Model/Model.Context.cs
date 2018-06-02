@@ -7,13 +7,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Entidades
+namespace DL.Model
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     using System.Data.Entity.Core.Objects;
     using System.Linq;
+    using Entidades;
     
     public partial class Entities : DbContext
     {
@@ -65,10 +66,12 @@ namespace Entidades
         public virtual DbSet<Mantenimiento> Mantenimiento { get; set; }
         public virtual DbSet<MarcasVehiculos> MarcasVehiculos { get; set; }
         public virtual DbSet<MediosPago> MediosPago { get; set; }
+        public virtual DbSet<Menus> Menus { get; set; }
         public virtual DbSet<ModelosVehiculos> ModelosVehiculos { get; set; }
         public virtual DbSet<Nacionalidades> Nacionalidades { get; set; }
         public virtual DbSet<ObraSocial> ObraSocial { get; set; }
         public virtual DbSet<Pagos> Pagos { get; set; }
+        public virtual DbSet<PermissionMenus> PermissionMenus { get; set; }
         public virtual DbSet<Personas> Personas { get; set; }
         public virtual DbSet<PolizasSeguro> PolizasSeguro { get; set; }
         public virtual DbSet<ProductoresSeguro> ProductoresSeguro { get; set; }
@@ -81,6 +84,7 @@ namespace Entidades
         public virtual DbSet<Sexos> Sexos { get; set; }
         public virtual DbSet<Sindicatos> Sindicatos { get; set; }
         public virtual DbSet<SolicitudesEmpleo> SolicitudesEmpleo { get; set; }
+        public virtual DbSet<SubMenus> SubMenus { get; set; }
         public virtual DbSet<TablaDivisorCalculo> TablaDivisorCalculo { get; set; }
         public virtual DbSet<Talleres> Talleres { get; set; }
         public virtual DbSet<TiposComprobante> TiposComprobante { get; set; }
@@ -92,6 +96,7 @@ namespace Entidades
         public virtual DbSet<Vencimientos> Vencimientos { get; set; }
         public virtual DbSet<Zonas> Zonas { get; set; }
         public virtual DbSet<Choferes> Choferes { get; set; }
+        public virtual DbSet<CuentasCorrientes> CuentasCorrientes { get; set; }
         public virtual DbSet<DatosEmpleadosActivos> DatosEmpleadosActivos { get; set; }
         public virtual DbSet<DetallePago> DetallePago { get; set; }
         public virtual DbSet<DetallesSolicitudesEmpleo> DetallesSolicitudesEmpleo { get; set; }

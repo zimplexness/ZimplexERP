@@ -27,6 +27,8 @@ namespace ErpGestion
             if (loginfrm.DialogResult == DialogResult.OK)
             {
 
+
+
                 Application.Run(new ZimplexHome());
             } 
 

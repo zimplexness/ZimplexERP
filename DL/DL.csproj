@@ -54,7 +54,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.Context.tt</DependentUpon>
-      <CustomToolNamespace>Entidades</CustomToolNamespace>
     </Compile>
     <Compile Include="Model\Model.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -62,14 +61,6 @@
       <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Model\Model.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model.edmx</DependentUpon>
-      <LastGenOutput>Model.Context.cs</LastGenOutput>
-      <CustomToolNamespace>Entidades</CustomToolNamespace>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -90,6 +81,13 @@
       <Project>{c947aa29-c91e-450d-ad73-757a440984b1}</Project>
       <Name>Entidades</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\Model.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.Context.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

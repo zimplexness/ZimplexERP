@@ -240,6 +240,9 @@
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripTextBoxFilterApellidosH = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripButton16 = new System.Windows.Forms.ToolStripButton();
+            this.Legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -382,7 +385,7 @@
             // 
             this.metroDateTimeFechaBaja.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.metroDateTimeFechaBaja.Location = new System.Drawing.Point(6, 42);
-            this.metroDateTimeFechaBaja.MinimumSize = new System.Drawing.Size(4, 29);
+            this.metroDateTimeFechaBaja.MinimumSize = new System.Drawing.Size(0, 29);
             this.metroDateTimeFechaBaja.Name = "metroDateTimeFechaBaja";
             this.metroDateTimeFechaBaja.Size = new System.Drawing.Size(104, 29);
             this.metroDateTimeFechaBaja.TabIndex = 141;
@@ -1648,7 +1651,7 @@
             // 
             this.metroDateTimeFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.metroDateTimeFin.Location = new System.Drawing.Point(110, 22);
-            this.metroDateTimeFin.MinimumSize = new System.Drawing.Size(4, 29);
+            this.metroDateTimeFin.MinimumSize = new System.Drawing.Size(0, 29);
             this.metroDateTimeFin.Name = "metroDateTimeFin";
             this.metroDateTimeFin.Size = new System.Drawing.Size(101, 29);
             this.metroDateTimeFin.TabIndex = 76;
@@ -1657,7 +1660,7 @@
             // 
             this.metroDateTimeInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.metroDateTimeInicio.Location = new System.Drawing.Point(3, 22);
-            this.metroDateTimeInicio.MinimumSize = new System.Drawing.Size(4, 29);
+            this.metroDateTimeInicio.MinimumSize = new System.Drawing.Size(0, 29);
             this.metroDateTimeInicio.Name = "metroDateTimeInicio";
             this.metroDateTimeInicio.Size = new System.Drawing.Size(101, 29);
             this.metroDateTimeInicio.TabIndex = 75;
@@ -1887,7 +1890,7 @@
             // 
             this.metroDateTime3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.metroDateTime3.Location = new System.Drawing.Point(138, 23);
-            this.metroDateTime3.MinimumSize = new System.Drawing.Size(4, 29);
+            this.metroDateTime3.MinimumSize = new System.Drawing.Size(0, 29);
             this.metroDateTime3.Name = "metroDateTime3";
             this.metroDateTime3.Size = new System.Drawing.Size(104, 29);
             this.metroDateTime3.TabIndex = 87;
@@ -1896,7 +1899,7 @@
             // 
             this.metroDateTime4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.metroDateTime4.Location = new System.Drawing.Point(4, 23);
-            this.metroDateTime4.MinimumSize = new System.Drawing.Size(4, 29);
+            this.metroDateTime4.MinimumSize = new System.Drawing.Size(0, 29);
             this.metroDateTime4.Name = "metroDateTime4";
             this.metroDateTime4.Size = new System.Drawing.Size(112, 29);
             this.metroDateTime4.TabIndex = 86;
@@ -2147,7 +2150,7 @@
             // 
             this.metroDateTimeFechafin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.metroDateTimeFechafin.Location = new System.Drawing.Point(3, 19);
-            this.metroDateTimeFechafin.MinimumSize = new System.Drawing.Size(4, 29);
+            this.metroDateTimeFechafin.MinimumSize = new System.Drawing.Size(0, 29);
             this.metroDateTimeFechafin.Name = "metroDateTimeFechafin";
             this.metroDateTimeFechafin.Size = new System.Drawing.Size(116, 29);
             this.metroDateTimeFechafin.TabIndex = 87;
@@ -2434,7 +2437,7 @@
             // 
             this.metroDateTime1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.metroDateTime1.Location = new System.Drawing.Point(110, 22);
-            this.metroDateTime1.MinimumSize = new System.Drawing.Size(4, 29);
+            this.metroDateTime1.MinimumSize = new System.Drawing.Size(0, 29);
             this.metroDateTime1.Name = "metroDateTime1";
             this.metroDateTime1.Size = new System.Drawing.Size(101, 29);
             this.metroDateTime1.TabIndex = 83;
@@ -2443,7 +2446,7 @@
             // 
             this.metroDateTime2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.metroDateTime2.Location = new System.Drawing.Point(3, 22);
-            this.metroDateTime2.MinimumSize = new System.Drawing.Size(4, 29);
+            this.metroDateTime2.MinimumSize = new System.Drawing.Size(0, 29);
             this.metroDateTime2.Name = "metroDateTime2";
             this.metroDateTime2.Size = new System.Drawing.Size(101, 29);
             this.metroDateTime2.TabIndex = 82;
@@ -2468,6 +2471,10 @@
             dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.metroGridHistorial.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.metroGridHistorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.metroGridHistorial.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Legajo,
+            this.Nombre,
+            this.Apellido});
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -2636,6 +2643,21 @@
             this.toolStripButton16.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton16.Text = "toolStripButton11";
             this.toolStripButton16.Click += new System.EventHandler(this.toolStripButton16_Click);
+            // 
+            // Legajo
+            // 
+            this.Legajo.HeaderText = "Legajo";
+            this.Legajo.Name = "Legajo";
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            // 
+            // Apellido
+            // 
+            this.Apellido.HeaderText = "Apellido";
+            this.Apellido.Name = "Apellido";
             // 
             // EmpleadoForm
             // 
@@ -2891,5 +2913,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Celular;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Legajo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
     }
 }

@@ -17,6 +17,10 @@ namespace ErpGestion
             InitializeComponent();
         }
 
+        public int id { get; set; }
+        public string UserName { get; set; }
+
+
         private void ribbonPanel1_Click(object sender, EventArgs e)
         {
 
@@ -264,6 +268,16 @@ namespace ErpGestion
             Form polizaform = new PolizaSeguroFrm();
             polizaform.MdiParent = this;
             polizaform.Show();
+        }
+
+        private void ribbon1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ZimplexHome_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

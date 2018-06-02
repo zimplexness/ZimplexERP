@@ -19,5 +19,7 @@ namespace Entidades
         public string Nombre { get; set; }
         public Nullable<int> Vencimiento { get; set; }
         public string Comentario { get; set; }
+    
+        public virtual Proveedores Proveedores { get; set; }
     }
 }

@@ -91,6 +91,7 @@
             this.ribbonButton3 = new System.Windows.Forms.RibbonButton();
             this.ribbonButton4 = new System.Windows.Forms.RibbonButton();
             this.ribbonButton5 = new System.Windows.Forms.RibbonButton();
+            this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -162,9 +163,11 @@
             this.ribbon1.Tabs.Add(this.ribbonTabDatosPrincipales);
             this.ribbon1.Tabs.Add(this.ribbonTabReportes);
             this.ribbon1.Tabs.Add(this.ribbonTabAdmistracion);
+            this.ribbon1.Tabs.Add(this.ribbonTab1);
             this.ribbon1.TabsMargin = new System.Windows.Forms.Padding(12, 26, 20, 0);
             this.ribbon1.Text = "ribbon1";
             this.ribbon1.ThemeColor = System.Windows.Forms.RibbonTheme.Green;
+            this.ribbon1.Click += new System.EventHandler(this.ribbon1_Click);
             // 
             // ribbonOrbMenuItemLocalidad
             // 
@@ -480,6 +483,10 @@
             this.ribbonButton5.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton5.SmallImage")));
             this.ribbonButton5.Text = "ribbonButton5";
             // 
+            // ribbonTab1
+            // 
+            this.ribbonTab1.Text = "ribbonTab1";
+            // 
             // ZimplexHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -491,6 +498,7 @@
             this.Name = "ZimplexHome";
             this.Text = "Sistema de Gestion Integral V1.0";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.ZimplexHome_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -562,5 +570,6 @@
         private System.Windows.Forms.RibbonPanel ribbonPanelUser;
         private System.Windows.Forms.RibbonButton ribbonButtonUser;
         private System.Windows.Forms.RibbonPanel ribbonPanelPerfiles;
+        private System.Windows.Forms.RibbonTab ribbonTab1;
     }
 }

@@ -110,6 +110,9 @@
     <Compile Include="CuentaCorriente.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="CuentasCorrientes.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="CuentasxPagarProveedores_Result.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -209,6 +212,9 @@
     <Compile Include="MediosPago.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Menus.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -233,6 +239,9 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Pagos.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PermissionMenus.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Personas.cs">
@@ -288,6 +297,9 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="SP_DEUDASPROVEEDORES_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SubMenus.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="TablaDivisorCalculo.cs">

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entidades;
+using DL.Model;
 
 namespace BLayer
 {
@@ -66,7 +67,7 @@ namespace BLayer
         {
             using (Context = new Entities())
             {
-                var query = (from contable in Context.Contable select contable).ToList();
+                var query = (from c in Context.Contable select c).ToList();
                 return query;
             }
 

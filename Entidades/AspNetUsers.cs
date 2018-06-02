@@ -19,10 +19,12 @@ namespace Entidades
         {
             this.AspNetUserClaims = new HashSet<AspNetUserClaims>();
             this.AspNetUserLogins = new HashSet<AspNetUserLogins>();
+            this.Proveedores = new HashSet<Proveedores>();
+            this.Proveedores1 = new HashSet<Proveedores>();
             this.AspNetRoles = new HashSet<AspNetRoles>();
         }
     
-        public string Id { get; set; }
+        public int Id { get; set; }
         public int AccessFailedCount { get; set; }
         public string ConcurrencyStamp { get; set; }
         public string Email { get; set; }
@@ -42,6 +44,10 @@ namespace Entidades
         public virtual ICollection<AspNetUserClaims> AspNetUserClaims { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AspNetUserLogins> AspNetUserLogins { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Proveedores> Proveedores { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Proveedores> Proveedores1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AspNetRoles> AspNetRoles { get; set; }
     }

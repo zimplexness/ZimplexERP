@@ -96,6 +96,10 @@
             this.metroDateTimeFechaFinDeuda = new MetroFramework.Controls.MetroDateTime();
             this.metroDateTimeFechaInicioDeuda = new MetroFramework.Controls.MetroDateTime();
             this.metroGridDeudaProveedores = new MetroFramework.Controls.MetroGrid();
+            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
+            this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel15 = new MetroFramework.Controls.MetroLabel();
+            this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGridCompProveedores)).BeginInit();
@@ -414,6 +418,10 @@
             // 
             // metroTabPage2
             // 
+            this.metroTabPage2.Controls.Add(this.metroComboBox2);
+            this.metroTabPage2.Controls.Add(this.metroLabel15);
+            this.metroTabPage2.Controls.Add(this.metroLabel14);
+            this.metroTabPage2.Controls.Add(this.metroComboBox1);
             this.metroTabPage2.Controls.Add(this.metroButton3);
             this.metroTabPage2.Controls.Add(this.metroTextBoxIIBB);
             this.metroTabPage2.Controls.Add(this.metroLabel12);
@@ -438,6 +446,7 @@
             this.metroTabPage2.VerticalScrollbarBarColor = true;
             this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage2.VerticalScrollbarSize = 10;
+            this.metroTabPage2.Click += new System.EventHandler(this.metroTabPage2_Click);
             // 
             // metroButton3
             // 
@@ -881,7 +890,7 @@
             // 
             this.metroDateTimeFechaFinDeuda.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.metroDateTimeFechaFinDeuda.Location = new System.Drawing.Point(143, 27);
-            this.metroDateTimeFechaFinDeuda.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTimeFechaFinDeuda.MinimumSize = new System.Drawing.Size(4, 29);
             this.metroDateTimeFechaFinDeuda.Name = "metroDateTimeFechaFinDeuda";
             this.metroDateTimeFechaFinDeuda.Size = new System.Drawing.Size(114, 29);
             this.metroDateTimeFechaFinDeuda.TabIndex = 16;
@@ -890,7 +899,7 @@
             // 
             this.metroDateTimeFechaInicioDeuda.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.metroDateTimeFechaInicioDeuda.Location = new System.Drawing.Point(3, 27);
-            this.metroDateTimeFechaInicioDeuda.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTimeFechaInicioDeuda.MinimumSize = new System.Drawing.Size(4, 29);
             this.metroDateTimeFechaInicioDeuda.Name = "metroDateTimeFechaInicioDeuda";
             this.metroDateTimeFechaInicioDeuda.Size = new System.Drawing.Size(114, 29);
             this.metroDateTimeFechaInicioDeuda.TabIndex = 15;
@@ -944,6 +953,44 @@
             this.metroGridDeudaProveedores.TabIndex = 20;
             this.metroGridDeudaProveedores.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroGridDeudaProveedores.UseStyleColors = true;
+            // 
+            // metroComboBox1
+            // 
+            this.metroComboBox1.FormattingEnabled = true;
+            this.metroComboBox1.ItemHeight = 23;
+            this.metroComboBox1.Location = new System.Drawing.Point(413, 33);
+            this.metroComboBox1.Name = "metroComboBox1";
+            this.metroComboBox1.Size = new System.Drawing.Size(123, 29);
+            this.metroComboBox1.TabIndex = 24;
+            this.metroComboBox1.UseSelectable = true;
+            // 
+            // metroLabel14
+            // 
+            this.metroLabel14.AutoSize = true;
+            this.metroLabel14.Location = new System.Drawing.Point(413, 11);
+            this.metroLabel14.Name = "metroLabel14";
+            this.metroLabel14.Size = new System.Drawing.Size(100, 19);
+            this.metroLabel14.TabIndex = 25;
+            this.metroLabel14.Text = "Tipo de Factura";
+            // 
+            // metroLabel15
+            // 
+            this.metroLabel15.AutoSize = true;
+            this.metroLabel15.Location = new System.Drawing.Point(565, 11);
+            this.metroLabel15.Name = "metroLabel15";
+            this.metroLabel15.Size = new System.Drawing.Size(100, 19);
+            this.metroLabel15.TabIndex = 26;
+            this.metroLabel15.Text = "Tipo de Factura";
+            // 
+            // metroComboBox2
+            // 
+            this.metroComboBox2.FormattingEnabled = true;
+            this.metroComboBox2.ItemHeight = 23;
+            this.metroComboBox2.Location = new System.Drawing.Point(565, 33);
+            this.metroComboBox2.Name = "metroComboBox2";
+            this.metroComboBox2.Size = new System.Drawing.Size(170, 29);
+            this.metroComboBox2.TabIndex = 27;
+            this.metroComboBox2.UseSelectable = true;
             // 
             // ConsultasComprobantesFrm
             // 
@@ -1030,5 +1077,9 @@
         private MetroFramework.Controls.MetroDateTime metroDateTimeFechaFinDeuda;
         private MetroFramework.Controls.MetroDateTime metroDateTimeFechaInicioDeuda;
         private MetroFramework.Controls.MetroGrid metroGridDeudaProveedores;
+        private MetroFramework.Controls.MetroComboBox metroComboBox2;
+        private MetroFramework.Controls.MetroLabel metroLabel15;
+        private MetroFramework.Controls.MetroLabel metroLabel14;
+        private MetroFramework.Controls.MetroComboBox metroComboBox1;
     }
 }

@@ -50,6 +50,8 @@ namespace ErpGestion
                 {
                    // MessageBox.Show("Usuario y Contraseña correcta", "Sistema de Gestion de Compras", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+
+
                     this.DialogResult = DialogResult.OK;
                     
 

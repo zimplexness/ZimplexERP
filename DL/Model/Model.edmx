@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DbContextSitem.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="ERP_SITEMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="__EFMigrationsHistory">
           <Key>
             <PropertyRef Name="MigrationId" />
@@ -59,13 +59,13 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ClaimType" Type="nvarchar(max)" />
           <Property Name="ClaimValue" Type="nvarchar(max)" />
-          <Property Name="RoleId" Type="nvarchar" MaxLength="450" Nullable="false" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="AspNetRoles">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="nvarchar" MaxLength="450" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="ConcurrencyStamp" Type="nvarchar(max)" />
           <Property Name="Name" Type="nvarchar" MaxLength="256" />
           <Property Name="NormalizedName" Type="nvarchar" MaxLength="256" />
@@ -77,7 +77,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ClaimType" Type="nvarchar(max)" />
           <Property Name="ClaimValue" Type="nvarchar(max)" />
-          <Property Name="UserId" Type="nvarchar" MaxLength="450" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="AspNetUserLogins">
           <Key>
@@ -87,21 +87,23 @@
           <Property Name="LoginProvider" Type="nvarchar" MaxLength="450" Nullable="false" />
           <Property Name="ProviderKey" Type="nvarchar" MaxLength="450" Nullable="false" />
           <Property Name="ProviderDisplayName" Type="nvarchar(max)" />
-          <Property Name="UserId" Type="nvarchar" MaxLength="450" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
         </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.AspNetUserRoles' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="AspNetUserRoles">
           <Key>
             <PropertyRef Name="UserId" />
             <PropertyRef Name="RoleId" />
           </Key>
-          <Property Name="UserId" Type="nvarchar" MaxLength="450" Nullable="false" />
-          <Property Name="RoleId" Type="nvarchar" MaxLength="450" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="AspNetUsers">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="nvarchar" MaxLength="450" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="AccessFailedCount" Type="int" Nullable="false" />
           <Property Name="ConcurrencyStamp" Type="nvarchar(max)" />
           <Property Name="Email" Type="nvarchar" MaxLength="256" />
@@ -407,6 +409,13 @@
           <Property Name="IdMedioPago" Type="int" Nullable="false" />
           <Property Name="MediosPago" Type="varchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="Menus">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Menu" Type="varchar" MaxLength="100" />
+        </EntityType>
         <EntityType Name="ModelosVehiculos">
           <Key>
             <PropertyRef Name="IDModeloVehiculo" />
@@ -437,6 +446,15 @@
           <Property Name="Fecha" Type="date" />
           <Property Name="Importe" Type="float" />
           <Property Name="Concepto" Type="varchar" MaxLength="400" />
+        </EntityType>
+        <EntityType Name="PermissionMenus">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Rollid" Type="nvarchar" MaxLength="450" />
+          <Property Name="MenuId" Type="int" />
+          <Property Name="IsEnable" Type="bit" />
         </EntityType>
         <EntityType Name="Personas">
           <Key>
@@ -504,6 +522,10 @@
           <Property Name="Telefono" Type="nchar" MaxLength="70" />
           <Property Name="FechaIngreso" Type="date" />
           <Property Name="IDRubro" Type="int" />
+          <Property Name="UserAltaID" Type="int" />
+          <Property Name="FechaAlta" Type="date" />
+          <Property Name="UserUltModificacion" Type="int" />
+          <Property Name="FechaUltimaModificacion" Type="date" />
         </EntityType>
         <EntityType Name="Provincias">
           <Key>
@@ -558,6 +580,15 @@
           <Property Name="idPersona" Type="int" />
           <Property Name="AntecedentesLaborales" Type="varchar" MaxLength="300" />
           <Property Name="PretencionRemunerativa" Type="float" />
+        </EntityType>
+        <EntityType Name="SubMenus">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Submenu" Type="varchar" MaxLength="50" />
+          <Property Name="MenuID" Type="int" />
+          <Property Name="IsEnable" Type="bit" />
         </EntityType>
         <EntityType Name="TablaDivisorCalculo">
           <Key>
@@ -665,6 +696,19 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.Choferes' no tiene definida ni
           </Key>
           <Property Name="IDEmpleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Chofer" Type="varchar" MaxLength="171" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.CuentasCorrientes' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="CuentasCorrientes">
+          <Key>
+            <PropertyRef Name="Cuit" />
+          </Key>
+          <Property Name="Nombre" Type="varchar" MaxLength="150" />
+          <Property Name="Razon" Type="varchar" MaxLength="150" />
+          <Property Name="Cuit" Type="nchar" MaxLength="11" Nullable="false" />
+          <Property Name="NumeroCuenta" Type="nchar" MaxLength="11" />
+          <Property Name="Vencimiento" Type="int" />
+          <Property Name="Comentario" Type="varchar" MaxLength="50" />
         </EntityType>
         <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.DatosEmpleadosActivos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
@@ -988,6 +1032,18 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_CuentaCorriente_Proveedores">
+          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="0..1" />
+          <End Role="CuentaCorriente" Type="Self.CuentaCorriente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proveedores">
+              <PropertyRef Name="IdProveedores" />
+            </Principal>
+            <Dependent Role="CuentaCorriente">
+              <PropertyRef Name="IDProveedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Empleados_EmpresasClientes">
           <End Role="EmpresasClientes" Type="Self.EmpresasClientes" Multiplicity="0..1" />
           <End Role="Empleados" Type="Self.Empleados" Multiplicity="*" />
@@ -1084,30 +1140,6 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Mantenimiento_Mantenimiento">
-          <End Role="Mantenimiento" Type="Self.Mantenimiento" Multiplicity="1" />
-          <End Role="Mantenimiento1" Type="Self.Mantenimiento" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Mantenimiento">
-              <PropertyRef Name="IDMantenimiento" />
-            </Principal>
-            <Dependent Role="Mantenimiento1">
-              <PropertyRef Name="IDMantenimiento" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Mantenimiento_Mantenimiento1">
-          <End Role="Mantenimiento" Type="Self.Mantenimiento" Multiplicity="1" />
-          <End Role="Mantenimiento1" Type="Self.Mantenimiento" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Mantenimiento">
-              <PropertyRef Name="IDMantenimiento" />
-            </Principal>
-            <Dependent Role="Mantenimiento1">
-              <PropertyRef Name="IDMantenimiento" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_ModelosVehiculos_MarcasVehiculos">
           <End Role="MarcasVehiculos" Type="Self.MarcasVehiculos" Multiplicity="0..1" />
           <End Role="ModelosVehiculos" Type="Self.ModelosVehiculos" Multiplicity="*" />
@@ -1180,6 +1212,30 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Proveedores_AspNetUsers">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Proveedores">
+              <PropertyRef Name="UserAltaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Proveedores_AspNetUsers1">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Proveedores">
+              <PropertyRef Name="UserUltModificacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Referencias_Personas">
           <End Role="Personas" Type="Self.Personas" Multiplicity="0..1" />
           <End Role="Referencias" Type="Self.Referencias" Multiplicity="*" />
@@ -1201,6 +1257,18 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </Principal>
             <Dependent Role="SolicitudesEmpleo">
               <PropertyRef Name="idPersona" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SubMenus_Menus">
+          <End Role="Menus" Type="Self.Menus" Multiplicity="0..1" />
+          <End Role="SubMenus" Type="Self.SubMenus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Menus">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SubMenus">
+              <PropertyRef Name="MenuID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1704,7 +1772,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <Parameter Name="profile" Type="int" Mode="In" />
           <Parameter Name="responseMessage" Type="nvarchar" Mode="InOut" />
         </Function>
-        <EntityContainer Name="DbContextSitemStoreContainer">
+        <EntityContainer Name="ERP_SITEMModelStoreContainer">
           <EntitySet Name="__EFMigrationsHistory" EntityType="Self.__EFMigrationsHistory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ActividadMantenimiento" EntityType="Self.ActividadMantenimiento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AfectadoEmpresaCliente" EntityType="Self.AfectadoEmpresaCliente" Schema="dbo" store:Type="Tables" />
@@ -1714,7 +1782,6 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetUserTokens" EntityType="Self.AspNetUserTokens" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Bancos" EntityType="Self.Bancos" Schema="dbo" store:Type="Tables" />
@@ -1744,10 +1811,12 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <EntitySet Name="Mantenimiento" EntityType="Self.Mantenimiento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MarcasVehiculos" EntityType="Self.MarcasVehiculos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MediosPago" EntityType="Self.MediosPago" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Menus" EntityType="Self.Menus" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ModelosVehiculos" EntityType="Self.ModelosVehiculos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Nacionalidades" EntityType="Self.Nacionalidades" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ObraSocial" EntityType="Self.ObraSocial" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Pagos" EntityType="Self.Pagos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PermissionMenus" EntityType="Self.PermissionMenus" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Personas" EntityType="Self.Personas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PolizasSeguro" EntityType="Self.PolizasSeguro" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ProductoresSeguro" EntityType="Self.ProductoresSeguro" Schema="dbo" store:Type="Tables" />
@@ -1760,6 +1829,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <EntitySet Name="Sexos" EntityType="Self.Sexos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sindicatos" EntityType="Self.Sindicatos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SolicitudesEmpleo" EntityType="Self.SolicitudesEmpleo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SubMenus" EntityType="Self.SubMenus" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TablaDivisorCalculo" EntityType="Self.TablaDivisorCalculo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Talleres" EntityType="Self.Talleres" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TiposComprobante" EntityType="Self.TiposComprobante" Schema="dbo" store:Type="Tables" />
@@ -1770,11 +1840,27 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <EntitySet Name="Vehiculos" EntityType="Self.Vehiculos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Vencimientos" EntityType="Self.Vencimientos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Zonas" EntityType="Self.Zonas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [AspNetUserRoles].[UserId] AS [UserId], 
+    [AspNetUserRoles].[RoleId] AS [RoleId]
+    FROM [dbo].[AspNetUserRoles] AS [AspNetUserRoles]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="Choferes" EntityType="Self.Choferes" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [Choferes].[IDEmpleado] AS [IDEmpleado], 
     [Choferes].[Chofer] AS [Chofer]
     FROM [dbo].[Choferes] AS [Choferes]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="CuentasCorrientes" EntityType="Self.CuentasCorrientes" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [CuentasCorrientes].[Nombre] AS [Nombre], 
+    [CuentasCorrientes].[Razon] AS [Razon], 
+    [CuentasCorrientes].[Cuit] AS [Cuit], 
+    [CuentasCorrientes].[NumeroCuenta] AS [NumeroCuenta], 
+    [CuentasCorrientes].[Vencimiento] AS [Vencimiento], 
+    [CuentasCorrientes].[Comentario] AS [Comentario]
+    FROM [dbo].[CuentasCorrientes] AS [CuentasCorrientes]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="DatosEmpleadosActivos" EntityType="Self.DatosEmpleadosActivos" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -1945,6 +2031,10 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             <End Role="Sindicatos" EntitySet="Sindicatos" />
             <End Role="CategoriaEmpleado" EntitySet="CategoriaEmpleado" />
           </AssociationSet>
+          <AssociationSet Name="FK_CuentaCorriente_Proveedores" Association="Self.FK_CuentaCorriente_Proveedores">
+            <End Role="Proveedores" EntitySet="Proveedores" />
+            <End Role="CuentaCorriente" EntitySet="CuentaCorriente" />
+          </AssociationSet>
           <AssociationSet Name="FK_Empleados_EmpresasClientes" Association="Self.FK_Empleados_EmpresasClientes">
             <End Role="EmpresasClientes" EntitySet="EmpresasClientes" />
             <End Role="Empleados" EntitySet="Empleados" />
@@ -1977,14 +2067,6 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             <End Role="ActividadMantenimiento" EntitySet="ActividadMantenimiento" />
             <End Role="Mantenimiento" EntitySet="Mantenimiento" />
           </AssociationSet>
-          <AssociationSet Name="FK_Mantenimiento_Mantenimiento" Association="Self.FK_Mantenimiento_Mantenimiento">
-            <End Role="Mantenimiento" EntitySet="Mantenimiento" />
-            <End Role="Mantenimiento1" EntitySet="Mantenimiento" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Mantenimiento_Mantenimiento1" Association="Self.FK_Mantenimiento_Mantenimiento1">
-            <End Role="Mantenimiento" EntitySet="Mantenimiento" />
-            <End Role="Mantenimiento1" EntitySet="Mantenimiento" />
-          </AssociationSet>
           <AssociationSet Name="FK_ModelosVehiculos_MarcasVehiculos" Association="Self.FK_ModelosVehiculos_MarcasVehiculos">
             <End Role="MarcasVehiculos" EntitySet="MarcasVehiculos" />
             <End Role="ModelosVehiculos" EntitySet="ModelosVehiculos" />
@@ -2009,6 +2091,14 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             <End Role="Proveedores" EntitySet="Proveedores" />
             <End Role="PolizasSeguro" EntitySet="PolizasSeguro" />
           </AssociationSet>
+          <AssociationSet Name="FK_Proveedores_AspNetUsers" Association="Self.FK_Proveedores_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="Proveedores" EntitySet="Proveedores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Proveedores_AspNetUsers1" Association="Self.FK_Proveedores_AspNetUsers1">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="Proveedores" EntitySet="Proveedores" />
+          </AssociationSet>
           <AssociationSet Name="FK_Referencias_Personas" Association="Self.FK_Referencias_Personas">
             <End Role="Personas" EntitySet="Personas" />
             <End Role="Referencias" EntitySet="Referencias" />
@@ -2016,6 +2106,10 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <AssociationSet Name="FK_SolicitudesEmpleo_Personas" Association="Self.FK_SolicitudesEmpleo_Personas">
             <End Role="Personas" EntitySet="Personas" />
             <End Role="SolicitudesEmpleo" EntitySet="SolicitudesEmpleo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SubMenus_Menus" Association="Self.FK_SubMenus_Menus">
+            <End Role="Menus" EntitySet="Menus" />
+            <End Role="SubMenus" EntitySet="SubMenus" />
           </AssociationSet>
           <AssociationSet Name="FK_Table_Almacen_Table_Zonas" Association="Self.FK_Table_Almacen_Table_Zonas">
             <End Role="Zonas" EntitySet="Zonas" />
@@ -2166,7 +2260,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="DbContextSitem" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="ERP_SITEMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="C__EFMigrationsHistory">
           <Key>
             <PropertyRef Name="MigrationId" />
@@ -2230,14 +2324,14 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="RoleId" Type="String" MaxLength="450" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RoleId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="AspNetRoles" Relationship="Self.FK_AspNetRoleClaims_AspNetRoles_RoleId" FromRole="AspNetRoleClaims" ToRole="AspNetRoles" />
         </EntityType>
         <EntityType Name="AspNetRoles">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="String" MaxLength="450" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="ConcurrencyStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
           <Property Name="NormalizedName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
@@ -2251,7 +2345,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="UserId" Type="String" MaxLength="450" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_AspNetUserClaims_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
         </EntityType>
         <EntityType Name="AspNetUserLogins">
@@ -2262,14 +2356,14 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <Property Name="LoginProvider" Type="String" MaxLength="450" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ProviderKey" Type="String" MaxLength="450" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ProviderDisplayName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="UserId" Type="String" MaxLength="450" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_AspNetUserLogins_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
         </EntityType>
         <EntityType Name="AspNetUsers">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="String" MaxLength="450" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
           <Property Name="ConcurrencyStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
@@ -2286,6 +2380,8 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_AspNetUserClaims_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
           <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_AspNetUserLogins_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+          <NavigationProperty Name="Proveedores" Relationship="Self.FK_Proveedores_AspNetUsers" FromRole="AspNetUsers" ToRole="Proveedores" />
+          <NavigationProperty Name="Proveedores1" Relationship="Self.FK_Proveedores_AspNetUsers1" FromRole="AspNetUsers" ToRole="Proveedores" />
           <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
         </EntityType>
         <EntityType Name="AspNetUserTokens">
@@ -2401,6 +2497,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <Property Name="Nombre" Type="String" MaxLength="11" FixedLength="true" Unicode="true" />
           <Property Name="Vencimiento" Type="Int32" />
           <Property Name="Comentario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Proveedores" Relationship="Self.FK_CuentaCorriente_Proveedores" FromRole="CuentaCorriente" ToRole="Proveedores" />
         </EntityType>
         <EntityType Name="Departamentos">
           <Key>
@@ -2616,10 +2713,6 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <Property Name="Comentario" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
           <Property Name="IDUserTransac" Type="Int32" />
           <NavigationProperty Name="ActividadMantenimiento" Relationship="Self.FK_Mantenimiento_ActividadMantenimiento" FromRole="Mantenimiento" ToRole="ActividadMantenimiento" />
-          <NavigationProperty Name="Mantenimiento1" Relationship="Self.FK_Mantenimiento_Mantenimiento" FromRole="Mantenimiento" ToRole="Mantenimiento1" />
-          <NavigationProperty Name="Mantenimiento2" Relationship="Self.FK_Mantenimiento_Mantenimiento" FromRole="Mantenimiento1" ToRole="Mantenimiento" />
-          <NavigationProperty Name="Mantenimiento11" Relationship="Self.FK_Mantenimiento_Mantenimiento1" FromRole="Mantenimiento" ToRole="Mantenimiento1" />
-          <NavigationProperty Name="Mantenimiento3" Relationship="Self.FK_Mantenimiento_Mantenimiento1" FromRole="Mantenimiento1" ToRole="Mantenimiento" />
         </EntityType>
         <EntityType Name="MarcasVehiculos">
           <Key>
@@ -2637,6 +2730,14 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <Property Name="IdMedioPago" Type="Int32" Nullable="false" />
           <Property Name="MediosPago1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="DetalleMediosPagos" Relationship="Self.FK_Table_DetalleMediosPago_Table_MedioPago" FromRole="MediosPago" ToRole="DetalleMediosPagos" />
+        </EntityType>
+        <EntityType Name="Menus">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Menu" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SubMenus" Relationship="Self.FK_SubMenus_Menus" FromRole="Menus" ToRole="SubMenus" />
         </EntityType>
         <EntityType Name="ModelosVehiculos">
           <Key>
@@ -2676,6 +2777,15 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <Property Name="Concepto" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="DetalleMediosPagos" Relationship="Self.FK_Table_DetalleMediosPago_Table_Pagos" FromRole="Pagos" ToRole="DetalleMediosPagos" />
           <NavigationProperty Name="DetallesPago" Relationship="Self.FK_Table_DetallePago_Table_Pagos" FromRole="Pagos" ToRole="DetallesPago" />
+        </EntityType>
+        <EntityType Name="PermissionMenus">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Rollid" Type="String" MaxLength="450" FixedLength="false" Unicode="true" />
+          <Property Name="MenuId" Type="Int32" />
+          <Property Name="IsEnable" Type="Boolean" />
         </EntityType>
         <EntityType Name="Personas">
           <Key>
@@ -2753,7 +2863,14 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <Property Name="Telefono" Type="String" MaxLength="70" FixedLength="true" Unicode="true" />
           <Property Name="FechaIngreso" Type="DateTime" Precision="0" />
           <Property Name="IDRubro" Type="Int32" />
+          <Property Name="UserAltaID" Type="Int32" />
+          <Property Name="FechaAlta" Type="DateTime" Precision="0" />
+          <Property Name="UserUltModificacion" Type="Int32" />
+          <Property Name="FechaUltimaModificacion" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_Proveedores_AspNetUsers" FromRole="Proveedores" ToRole="AspNetUsers" />
+          <NavigationProperty Name="AspNetUsers1" Relationship="Self.FK_Proveedores_AspNetUsers1" FromRole="Proveedores" ToRole="AspNetUsers" />
           <NavigationProperty Name="Comprobantes" Relationship="Self.FK_Table_Comprobante_Table_Proveedores" FromRole="Proveedores" ToRole="Comprobantes" />
+          <NavigationProperty Name="CuentaCorriente" Relationship="Self.FK_CuentaCorriente_Proveedores" FromRole="Proveedores" ToRole="CuentaCorriente" />
           <NavigationProperty Name="DetalleProveedor_ProductorSeguro" Relationship="Self.FK_Table_DetalleProveedor_ProductorSeguro_Table_Proveedores" FromRole="Proveedores" ToRole="DetalleProveedor_ProductorSeguro" />
           <NavigationProperty Name="Localidades" Relationship="Self.FK_Table_Proveedores_Table_Localidades" FromRole="Proveedores" ToRole="Localidades" />
           <NavigationProperty Name="PolizasSeguro" Relationship="Self.FK_PolizasSeguro_Proveedores" FromRole="Proveedores" ToRole="PolizasSeguro" />
@@ -2818,6 +2935,16 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <Property Name="AntecedentesLaborales" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
           <Property Name="PretencionRemunerativa" Type="Double" />
           <NavigationProperty Name="Personas" Relationship="Self.FK_SolicitudesEmpleo_Personas" FromRole="SolicitudesEmpleo" ToRole="Personas" />
+        </EntityType>
+        <EntityType Name="SubMenus">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Submenu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MenuID" Type="Int32" />
+          <Property Name="IsEnable" Type="Boolean" />
+          <NavigationProperty Name="Menus" Relationship="Self.FK_SubMenus_Menus" FromRole="SubMenus" ToRole="Menus" />
         </EntityType>
         <EntityType Name="TablaDivisorCalculo">
           <Key>
@@ -2939,6 +3066,17 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           </Key>
           <Property Name="IDEmpleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Chofer" Type="String" MaxLength="171" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CuentasCorrientes">
+          <Key>
+            <PropertyRef Name="Cuit" />
+          </Key>
+          <Property Name="Nombre" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Razon" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Cuit" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="NumeroCuenta" Type="String" MaxLength="11" FixedLength="true" Unicode="true" />
+          <Property Name="Vencimiento" Type="Int32" />
+          <Property Name="Comentario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="DatosEmpleadosActivos">
           <Key>
@@ -3249,6 +3387,30 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Proveedores_AspNetUsers">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Proveedores">
+              <PropertyRef Name="UserAltaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Proveedores_AspNetUsers1">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Proveedores">
+              <PropertyRef Name="UserUltModificacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Table_DetalleMediosPago_Table_Banco">
           <End Role="Bancos" Type="Self.Bancos" Multiplicity="0..1" />
           <End Role="DetalleMediosPagos" Type="Self.DetalleMediosPagos" Multiplicity="*" />
@@ -3406,6 +3568,18 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </Principal>
             <Dependent Role="DetallesComprobanteArticulos">
               <PropertyRef Name="IdComprobante" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CuentaCorriente_Proveedores">
+          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="0..1" />
+          <End Role="CuentaCorriente" Type="Self.CuentaCorriente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proveedores">
+              <PropertyRef Name="IdProveedores" />
+            </Principal>
+            <Dependent Role="CuentaCorriente">
+              <PropertyRef Name="IDProveedor" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -3653,30 +3827,6 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Mantenimiento_Mantenimiento">
-          <End Role="Mantenimiento" Type="Self.Mantenimiento" Multiplicity="1" />
-          <End Role="Mantenimiento1" Type="Self.Mantenimiento" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Mantenimiento">
-              <PropertyRef Name="IDMantenimiento" />
-            </Principal>
-            <Dependent Role="Mantenimiento1">
-              <PropertyRef Name="IDMantenimiento" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Mantenimiento_Mantenimiento1">
-          <End Role="Mantenimiento" Type="Self.Mantenimiento" Multiplicity="1" />
-          <End Role="Mantenimiento1" Type="Self.Mantenimiento" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Mantenimiento">
-              <PropertyRef Name="IDMantenimiento" />
-            </Principal>
-            <Dependent Role="Mantenimiento1">
-              <PropertyRef Name="IDMantenimiento" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_ModelosVehiculos_MarcasVehiculos">
           <End Role="MarcasVehiculos" Type="Self.MarcasVehiculos" Multiplicity="0..1" />
           <End Role="ModelosVehiculos" Type="Self.ModelosVehiculos" Multiplicity="*" />
@@ -3698,6 +3848,18 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </Principal>
             <Dependent Role="Vehiculos">
               <PropertyRef Name="Marca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SubMenus_Menus">
+          <End Role="Menus" Type="Self.Menus" Multiplicity="0..1" />
+          <End Role="SubMenus" Type="Self.SubMenus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Menus">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SubMenus">
+              <PropertyRef Name="MenuID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -3876,10 +4038,12 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <EntitySet Name="Mantenimiento" EntityType="Self.Mantenimiento" />
           <EntitySet Name="MarcasVehiculos" EntityType="Self.MarcasVehiculos" />
           <EntitySet Name="MediosPago" EntityType="Self.MediosPago" />
+          <EntitySet Name="Menus" EntityType="Self.Menus" />
           <EntitySet Name="ModelosVehiculos" EntityType="Self.ModelosVehiculos" />
           <EntitySet Name="Nacionalidades" EntityType="Self.Nacionalidades" />
           <EntitySet Name="ObraSocial" EntityType="Self.ObraSocial" />
           <EntitySet Name="Pagos" EntityType="Self.Pagos" />
+          <EntitySet Name="PermissionMenus" EntityType="Self.PermissionMenus" />
           <EntitySet Name="Personas" EntityType="Self.Personas" />
           <EntitySet Name="PolizasSeguro" EntityType="Self.PolizasSeguro" />
           <EntitySet Name="ProductoresSeguro" EntityType="Self.ProductoresSeguro" />
@@ -3892,6 +4056,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <EntitySet Name="Sexos" EntityType="Self.Sexos" />
           <EntitySet Name="Sindicatos" EntityType="Self.Sindicatos" />
           <EntitySet Name="SolicitudesEmpleo" EntityType="Self.SolicitudesEmpleo" />
+          <EntitySet Name="SubMenus" EntityType="Self.SubMenus" />
           <EntitySet Name="TablaDivisorCalculo" EntityType="Self.TablaDivisorCalculo" />
           <EntitySet Name="Talleres" EntityType="Self.Talleres" />
           <EntitySet Name="TiposComprobante" EntityType="Self.TiposComprobante" />
@@ -3903,6 +4068,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <EntitySet Name="Vencimientos" EntityType="Self.Vencimientos" />
           <EntitySet Name="Zonas" EntityType="Self.Zonas" />
           <EntitySet Name="Choferes" EntityType="Self.Choferes" />
+          <EntitySet Name="CuentasCorrientes" EntityType="Self.CuentasCorrientes" />
           <EntitySet Name="DatosEmpleadosActivos" EntityType="Self.DatosEmpleadosActivos" />
           <EntitySet Name="DetallePago" EntityType="Self.DetallePago" />
           <EntitySet Name="DetallesSolicitudesEmpleo" EntityType="Self.DetallesSolicitudesEmpleo" />
@@ -3962,6 +4128,14 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
             <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
           </AssociationSet>
+          <AssociationSet Name="FK_Proveedores_AspNetUsers" Association="Self.FK_Proveedores_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="Proveedores" EntitySet="Proveedores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Proveedores_AspNetUsers1" Association="Self.FK_Proveedores_AspNetUsers1">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="Proveedores" EntitySet="Proveedores" />
+          </AssociationSet>
           <AssociationSet Name="FK_Table_DetalleMediosPago_Table_Banco" Association="Self.FK_Table_DetalleMediosPago_Table_Banco">
             <End Role="Bancos" EntitySet="Bancos" />
             <End Role="DetalleMediosPagos" EntitySet="DetalleMediosPagos" />
@@ -4013,6 +4187,10 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <AssociationSet Name="FK_Table_DetallesComprobanteArticulos_Table_Comprobante" Association="Self.FK_Table_DetallesComprobanteArticulos_Table_Comprobante">
             <End Role="Comprobantes" EntitySet="Comprobantes" />
             <End Role="DetallesComprobanteArticulos" EntitySet="DetallesComprobanteArticulos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CuentaCorriente_Proveedores" Association="Self.FK_CuentaCorriente_Proveedores">
+            <End Role="Proveedores" EntitySet="Proveedores" />
+            <End Role="CuentaCorriente" EntitySet="CuentaCorriente" />
           </AssociationSet>
           <AssociationSet Name="FK_Table_Empleado_Table_Departamento" Association="Self.FK_Table_Empleado_Table_Departamento">
             <End Role="Departamentos" EntitySet="Departamentos" />
@@ -4094,14 +4272,6 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             <End Role="Localidades" EntitySet="Localidades" />
             <End Role="Talleres" EntitySet="Talleres" />
           </AssociationSet>
-          <AssociationSet Name="FK_Mantenimiento_Mantenimiento" Association="Self.FK_Mantenimiento_Mantenimiento">
-            <End Role="Mantenimiento" EntitySet="Mantenimiento" />
-            <End Role="Mantenimiento1" EntitySet="Mantenimiento" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Mantenimiento_Mantenimiento1" Association="Self.FK_Mantenimiento_Mantenimiento1">
-            <End Role="Mantenimiento" EntitySet="Mantenimiento" />
-            <End Role="Mantenimiento1" EntitySet="Mantenimiento" />
-          </AssociationSet>
           <AssociationSet Name="FK_ModelosVehiculos_MarcasVehiculos" Association="Self.FK_ModelosVehiculos_MarcasVehiculos">
             <End Role="MarcasVehiculos" EntitySet="MarcasVehiculos" />
             <End Role="ModelosVehiculos" EntitySet="ModelosVehiculos" />
@@ -4109,6 +4279,10 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <AssociationSet Name="FK_Vehiculos_MarcasVehiculos" Association="Self.FK_Vehiculos_MarcasVehiculos">
             <End Role="MarcasVehiculos" EntitySet="MarcasVehiculos" />
             <End Role="Vehiculos" EntitySet="Vehiculos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SubMenus_Menus" Association="Self.FK_SubMenus_Menus">
+            <End Role="Menus" EntitySet="Menus" />
+            <End Role="SubMenus" EntitySet="SubMenus" />
           </AssociationSet>
           <AssociationSet Name="FK_Vehiculos_ModelosVehiculos" Association="Self.FK_Vehiculos_ModelosVehiculos">
             <End Role="ModelosVehiculos" EntitySet="ModelosVehiculos" />
@@ -4158,7 +4332,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             <End Role="AspNetRoles" EntitySet="AspNetRoles" />
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
           </AssociationSet>
-          <FunctionImport Name="ComprobantesGastos_Compras" ReturnType="Collection(DbContextSitem.ComprobantesGastos_Compras_Result)">
+          <FunctionImport Name="ComprobantesGastos_Compras" ReturnType="Collection(ERP_SITEMModel.ComprobantesGastos_Compras_Result)">
             <Parameter Name="fechainicio" Mode="In" Type="DateTime" />
             <Parameter Name="fechafin" Mode="In" Type="DateTime" />
           </FunctionImport>
@@ -4166,46 +4340,46 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             <Parameter Name="FECHAINICIO" Mode="In" Type="DateTime" />
             <Parameter Name="FECHAFIN" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="CuentasxPagarProveedores" ReturnType="Collection(DbContextSitem.CuentasxPagarProveedores_Result)" />
-          <FunctionImport Name="DetalleSolicitudEmpleo" ReturnType="Collection(DbContextSitem.DetalleSolicitudEmpleo_Result)" />
-          <FunctionImport Name="EncabezadoDeuda" ReturnType="Collection(DbContextSitem.EncabezadoDeuda_Result)">
+          <FunctionImport Name="CuentasxPagarProveedores" ReturnType="Collection(ERP_SITEMModel.CuentasxPagarProveedores_Result)" />
+          <FunctionImport Name="DetalleSolicitudEmpleo" ReturnType="Collection(ERP_SITEMModel.DetalleSolicitudEmpleo_Result)" />
+          <FunctionImport Name="EncabezadoDeuda" ReturnType="Collection(ERP_SITEMModel.EncabezadoDeuda_Result)">
             <Parameter Name="idproveedor" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="EncabezadoOrdenPago" ReturnType="Collection(DbContextSitem.EncabezadoOrdenPago_Result)">
+          <FunctionImport Name="EncabezadoOrdenPago" ReturnType="Collection(ERP_SITEMModel.EncabezadoOrdenPago_Result)">
             <Parameter Name="IdPago" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="FacturasPendientesPago" ReturnType="Collection(DbContextSitem.FacturasPendientesPago_Result)">
+          <FunctionImport Name="FacturasPendientesPago" ReturnType="Collection(ERP_SITEMModel.FacturasPendientesPago_Result)">
             <Parameter Name="idproveedor" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="FACTURASXPROVEEDORES" ReturnType="Collection(DbContextSitem.FACTURASXPROVEEDORES_Result)">
+          <FunctionImport Name="FACTURASXPROVEEDORES" ReturnType="Collection(ERP_SITEMModel.FACTURASXPROVEEDORES_Result)">
             <Parameter Name="FECHAINICIO" Mode="In" Type="DateTime" />
             <Parameter Name="FECHAFIN" Mode="In" Type="DateTime" />
             <Parameter Name="IDPROVEEDOR" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="Gastos_ComprasxPeriodo" ReturnType="Collection(DbContextSitem.Gastos_ComprasxPeriodo_Result)">
+          <FunctionImport Name="Gastos_ComprasxPeriodo" ReturnType="Collection(ERP_SITEMModel.Gastos_ComprasxPeriodo_Result)">
             <Parameter Name="fechainicio" Mode="In" Type="DateTime" />
             <Parameter Name="fechafin" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="HistorialEmpleadosSitem" ReturnType="Collection(DbContextSitem.HistorialEmpleadosSitem_Result)" />
-          <FunctionImport Name="ListaEmpleadosActivos" ReturnType="Collection(DbContextSitem.ListaEmpleadosActivos_Result)" />
-          <FunctionImport Name="ListaVehiculosActivos" ReturnType="Collection(DbContextSitem.ListaVehiculosActivos_Result)" />
-          <FunctionImport Name="OrdenPago" ReturnType="Collection(DbContextSitem.OrdenPago_Result)">
+          <FunctionImport Name="HistorialEmpleadosSitem" ReturnType="Collection(ERP_SITEMModel.HistorialEmpleadosSitem_Result)" />
+          <FunctionImport Name="ListaEmpleadosActivos" ReturnType="Collection(ERP_SITEMModel.ListaEmpleadosActivos_Result)" />
+          <FunctionImport Name="ListaVehiculosActivos" ReturnType="Collection(ERP_SITEMModel.ListaVehiculosActivos_Result)" />
+          <FunctionImport Name="OrdenPago" ReturnType="Collection(ERP_SITEMModel.OrdenPago_Result)">
             <Parameter Name="Idpago" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="ReporteNominaTelecentro" ReturnType="Collection(DbContextSitem.ReporteNominaTelecentro_Result)">
+          <FunctionImport Name="ReporteNominaTelecentro" ReturnType="Collection(ERP_SITEMModel.ReporteNominaTelecentro_Result)">
             <Parameter Name="fechafin" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="ReportePagosProveedores" ReturnType="Collection(DbContextSitem.ReportePagosProveedores_Result)">
+          <FunctionImport Name="ReportePagosProveedores" ReturnType="Collection(ERP_SITEMModel.ReportePagosProveedores_Result)">
             <Parameter Name="fechainicio" Mode="In" Type="DateTime" />
             <Parameter Name="fechafin" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="SeleccionarDetalleComprobantesArticulos" ReturnType="Collection(DbContextSitem.SeleccionarDetalleComprobantesArticulos_Result)">
+          <FunctionImport Name="SeleccionarDetalleComprobantesArticulos" ReturnType="Collection(ERP_SITEMModel.SeleccionarDetalleComprobantesArticulos_Result)">
             <Parameter Name="IDComprobante" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="SeleccionarMediosDePagos" ReturnType="Collection(DbContextSitem.SeleccionarMediosDePagos_Result)">
+          <FunctionImport Name="SeleccionarMediosDePagos" ReturnType="Collection(ERP_SITEMModel.SeleccionarMediosDePagos_Result)">
             <Parameter Name="idPago" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="SP_DEUDASPROVEEDORES" ReturnType="Collection(DbContextSitem.SP_DEUDASPROVEEDORES_Result)">
+          <FunctionImport Name="SP_DEUDASPROVEEDORES" ReturnType="Collection(ERP_SITEMModel.SP_DEUDASPROVEEDORES_Result)">
             <Parameter Name="fechainicio" Mode="In" Type="DateTime" />
             <Parameter Name="fechafin" Mode="In" Type="DateTime" />
           </FunctionImport>
@@ -4460,9 +4634,9 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DbContextSitemStoreContainer" CdmEntityContainer="Entities">
+        <EntityContainerMapping StorageEntityContainer="ERP_SITEMModelStoreContainer" CdmEntityContainer="Entities">
           <EntitySetMapping Name="C__EFMigrationsHistory">
-            <EntityTypeMapping TypeName="DbContextSitem.C__EFMigrationsHistory">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.C__EFMigrationsHistory">
               <MappingFragment StoreEntitySet="__EFMigrationsHistory">
                 <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
                 <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
@@ -4470,7 +4644,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ActividadMantenimiento">
-            <EntityTypeMapping TypeName="DbContextSitem.ActividadMantenimiento">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.ActividadMantenimiento">
               <MappingFragment StoreEntitySet="ActividadMantenimiento">
                 <ScalarProperty Name="IDActividadMantenimiento" ColumnName="IDActividadMantenimiento" />
                 <ScalarProperty Name="Detalle" ColumnName="Detalle" />
@@ -4478,7 +4652,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="AfectadoEmpresaCliente">
-            <EntityTypeMapping TypeName="DbContextSitem.AfectadoEmpresaCliente">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.AfectadoEmpresaCliente">
               <MappingFragment StoreEntitySet="AfectadoEmpresaCliente">
                 <ScalarProperty Name="IDAfectadoEmpresaCliente" ColumnName="IDAfectadoEmpresaCliente" />
                 <ScalarProperty Name="IdEmpresaCliente" ColumnName="IdEmpresaCliente" />
@@ -4487,7 +4661,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Almacenes">
-            <EntityTypeMapping TypeName="DbContextSitem.Almacenes">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.Almacenes">
               <MappingFragment StoreEntitySet="Almacenes">
                 <ScalarProperty Name="IdAlmacen" ColumnName="IdAlmacen" />
                 <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
@@ -4499,7 +4673,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Articulos">
-            <EntityTypeMapping TypeName="DbContextSitem.Articulos">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.Articulos">
               <MappingFragment StoreEntitySet="Articulos">
                 <ScalarProperty Name="IDArticulo" ColumnName="IDArticulo" />
                 <ScalarProperty Name="IDCategoria" ColumnName="IDCategoria" />
@@ -4514,7 +4688,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="AspNetRoleClaims">
-            <EntityTypeMapping TypeName="DbContextSitem.AspNetRoleClaims">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.AspNetRoleClaims">
               <MappingFragment StoreEntitySet="AspNetRoleClaims">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
@@ -4524,7 +4698,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="AspNetRoles">
-            <EntityTypeMapping TypeName="DbContextSitem.AspNetRoles">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.AspNetRoles">
               <MappingFragment StoreEntitySet="AspNetRoles">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="ConcurrencyStamp" ColumnName="ConcurrencyStamp" />
@@ -4534,7 +4708,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="AspNetUserClaims">
-            <EntityTypeMapping TypeName="DbContextSitem.AspNetUserClaims">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.AspNetUserClaims">
               <MappingFragment StoreEntitySet="AspNetUserClaims">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
@@ -4544,7 +4718,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="AspNetUserLogins">
-            <EntityTypeMapping TypeName="DbContextSitem.AspNetUserLogins">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.AspNetUserLogins">
               <MappingFragment StoreEntitySet="AspNetUserLogins">
                 <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
                 <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
@@ -4554,7 +4728,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="AspNetUsers">
-            <EntityTypeMapping TypeName="DbContextSitem.AspNetUsers">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.AspNetUsers">
               <MappingFragment StoreEntitySet="AspNetUsers">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
@@ -4575,7 +4749,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="AspNetUserTokens">
-            <EntityTypeMapping TypeName="DbContextSitem.AspNetUserTokens">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.AspNetUserTokens">
               <MappingFragment StoreEntitySet="AspNetUserTokens">
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
@@ -4585,7 +4759,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Bancos">
-            <EntityTypeMapping TypeName="DbContextSitem.Bancos">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.Bancos">
               <MappingFragment StoreEntitySet="Bancos">
                 <ScalarProperty Name="IdBanco" ColumnName="IdBanco" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -4597,7 +4771,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CategoriaEmpleado">
-            <EntityTypeMapping TypeName="DbContextSitem.CategoriaEmpleado">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.CategoriaEmpleado">
               <MappingFragment StoreEntitySet="CategoriaEmpleado">
                 <ScalarProperty Name="idCategoriaEmpleado" ColumnName="idCategoriaEmpleado" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
@@ -4606,7 +4780,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Categorias">
-            <EntityTypeMapping TypeName="DbContextSitem.Categorias">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.Categorias">
               <MappingFragment StoreEntitySet="Categorias">
                 <ScalarProperty Name="IDCategoria" ColumnName="IDCategoria" />
                 <ScalarProperty Name="Categoria" ColumnName="Categoria" />
@@ -4614,7 +4788,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CentroCostos">
-            <EntityTypeMapping TypeName="DbContextSitem.CentroCostos">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.CentroCostos">
               <MappingFragment StoreEntitySet="CentroCostos">
                 <ScalarProperty Name="IdCentroCosto" ColumnName="IdCentroCosto" />
                 <ScalarProperty Name="CentroCosto" ColumnName="CentroCosto" />
@@ -4622,7 +4796,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Combustibles">
-            <EntityTypeMapping TypeName="DbContextSitem.Combustibles">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.Combustibles">
               <MappingFragment StoreEntitySet="Combustibles">
                 <ScalarProperty Name="IDCombustible" ColumnName="IDCombustible" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
@@ -4630,7 +4804,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Comprobantes">
-            <EntityTypeMapping TypeName="DbContextSitem.Comprobantes">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.Comprobantes">
               <MappingFragment StoreEntitySet="Comprobantes">
                 <ScalarProperty Name="IdComprobante" ColumnName="IdComprobante" />
                 <ScalarProperty Name="Sucursal" ColumnName="Sucursal" />
@@ -4653,7 +4827,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CondicionesCompra">
-            <EntityTypeMapping TypeName="DbContextSitem.CondicionesCompra">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.CondicionesCompra">
               <MappingFragment StoreEntitySet="CondicionesCompra">
                 <ScalarProperty Name="IdCondicionCompra" ColumnName="IdCondicionCompra" />
                 <ScalarProperty Name="Condiciondecompra" ColumnName="Condiciondecompra" />
@@ -4661,7 +4835,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Contable">
-            <EntityTypeMapping TypeName="DbContextSitem.Contable">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.Contable">
               <MappingFragment StoreEntitySet="Contable">
                 <ScalarProperty Name="IdContable" ColumnName="IdContable" />
                 <ScalarProperty Name="Contable1" ColumnName="Contable" />
@@ -4669,7 +4843,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CuentaCorriente">
-            <EntityTypeMapping TypeName="DbContextSitem.CuentaCorriente">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.CuentaCorriente">
               <MappingFragment StoreEntitySet="CuentaCorriente">
                 <ScalarProperty Name="IdCuentaCorriente" ColumnName="IdCuentaCorriente" />
                 <ScalarProperty Name="IDProveedor" ColumnName="IDProveedor" />
@@ -4680,7 +4854,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Departamentos">
-            <EntityTypeMapping TypeName="DbContextSitem.Departamentos">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.Departamentos">
               <MappingFragment StoreEntitySet="Departamentos">
                 <ScalarProperty Name="IdDepartamento" ColumnName="IdDepartamento" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
@@ -4688,7 +4862,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DetalleMantenimientoRepuestos">
-            <EntityTypeMapping TypeName="DbContextSitem.DetalleMantenimientoRepuestos">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.DetalleMantenimientoRepuestos">
               <MappingFragment StoreEntitySet="DetalleMantenimientoRepuestos">
                 <ScalarProperty Name="IdDetalleMantenimientoRepuesto" ColumnName="IdDetalleMantenimientoRepuesto" />
                 <ScalarProperty Name="IDMantenimiento" ColumnName="IDMantenimiento" />
@@ -4697,7 +4871,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DetalleMediosPagos">
-            <EntityTypeMapping TypeName="DbContextSitem.DetalleMediosPagos">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.DetalleMediosPagos">
               <MappingFragment StoreEntitySet="DetalleMediosPagos">
                 <ScalarProperty Name="IdDetalleMedioPago" ColumnName="IdDetalleMedioPago" />
                 <ScalarProperty Name="IdMedioPago" ColumnName="IdMedioPago" />
@@ -4710,7 +4884,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DetalleProveedor_ProductorSeguro">
-            <EntityTypeMapping TypeName="DbContextSitem.DetalleProveedor_ProductorSeguro">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.DetalleProveedor_ProductorSeguro">
               <MappingFragment StoreEntitySet="DetalleProveedor_ProductorSeguro">
                 <ScalarProperty Name="IdDetalleProveedor_ProductorSeguro" ColumnName="IdDetalleProveedor_ProductorSeguro" />
                 <ScalarProperty Name="IdProveedor" ColumnName="IdProveedor" />
@@ -4719,7 +4893,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DetallesComprobanteArticulos">
-            <EntityTypeMapping TypeName="DbContextSitem.DetallesComprobanteArticulos">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.DetallesComprobanteArticulos">
               <MappingFragment StoreEntitySet="DetallesComprobanteArticulos">
                 <ScalarProperty Name="idTable_DetallesComprobanteArticulos" ColumnName="idTable_DetallesComprobanteArticulos" />
                 <ScalarProperty Name="IdComprobante" ColumnName="IdComprobante" />
@@ -4733,7 +4907,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DetallesPago">
-            <EntityTypeMapping TypeName="DbContextSitem.DetallesPago">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.DetallesPago">
               <MappingFragment StoreEntitySet="DetallesPago">
                 <ScalarProperty Name="IdDetallePago" ColumnName="IdDetallePago" />
                 <ScalarProperty Name="idComprobante" ColumnName="idComprobante" />
@@ -4742,7 +4916,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Empleados">
-            <EntityTypeMapping TypeName="DbContextSitem.Empleados">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.Empleados">
               <MappingFragment StoreEntitySet="Empleados">
                 <ScalarProperty Name="IDEmpleado" ColumnName="IDEmpleado" />
                 <ScalarProperty Name="Orden" ColumnName="Orden" />
@@ -4784,7 +4958,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Empresas">
-            <EntityTypeMapping TypeName="DbContextSitem.Empresas">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.Empresas">
               <MappingFragment StoreEntitySet="Empresas">
                 <ScalarProperty Name="idEmpresa" ColumnName="idEmpresa" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -4798,7 +4972,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="EmpresasClientes">
-            <EntityTypeMapping TypeName="DbContextSitem.EmpresasClientes">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.EmpresasClientes">
               <MappingFragment StoreEntitySet="EmpresasClientes">
                 <ScalarProperty Name="IDEmpresaCliente" ColumnName="IDEmpresaCliente" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -4806,7 +4980,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Especialidades">
-            <EntityTypeMapping TypeName="DbContextSitem.Especialidades">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.Especialidades">
               <MappingFragment StoreEntitySet="Especialidades">
                 <ScalarProperty Name="idEspecialidad" ColumnName="idEspecialidad" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
@@ -4814,7 +4988,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="EstadoCivil">
-            <EntityTypeMapping TypeName="DbContextSitem.EstadoCivil">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.EstadoCivil">
               <MappingFragment StoreEntitySet="EstadoCivil">
                 <ScalarProperty Name="IDEstadoCivil" ColumnName="IDEstadoCivil" />
                 <ScalarProperty Name="EstadoCivil1" ColumnName="EstadoCivil" />
@@ -4822,7 +4996,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Estados">
-            <EntityTypeMapping TypeName="DbContextSitem.Estados">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.Estados">
               <MappingFragment StoreEntitySet="Estados">
                 <ScalarProperty Name="idEstado" ColumnName="idEstado" />
                 <ScalarProperty Name="Estados1" ColumnName="Estados" />
@@ -4830,7 +5004,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="EstudiosRealizados">
-            <EntityTypeMapping TypeName="DbContextSitem.EstudiosRealizados">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.EstudiosRealizados">
               <MappingFragment StoreEntitySet="EstudiosRealizados">
                 <ScalarProperty Name="IDEstudios" ColumnName="IDEstudios" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
@@ -4838,7 +5012,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="IngresoMateriales">
-            <EntityTypeMapping TypeName="DbContextSitem.IngresoMateriales">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.IngresoMateriales">
               <MappingFragment StoreEntitySet="IngresoMateriales">
                 <ScalarProperty Name="iDingresoMateriales" ColumnName="iDingresoMateriales" />
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
@@ -4851,7 +5025,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Localidades">
-            <EntityTypeMapping TypeName="DbContextSitem.Localidades">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.Localidades">
               <MappingFragment StoreEntitySet="Localidades">
                 <ScalarProperty Name="IdLocalidad" ColumnName="IdLocalidad" />
                 <ScalarProperty Name="Localidades1" ColumnName="Localidades" />
@@ -4860,7 +5034,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Mantenimiento">
-            <EntityTypeMapping TypeName="DbContextSitem.Mantenimiento">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.Mantenimiento">
               <MappingFragment StoreEntitySet="Mantenimiento">
                 <ScalarProperty Name="IDMantenimiento" ColumnName="IDMantenimiento" />
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
@@ -4875,7 +5049,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="MarcasVehiculos">
-            <EntityTypeMapping TypeName="DbContextSitem.MarcasVehiculos">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.MarcasVehiculos">
               <MappingFragment StoreEntitySet="MarcasVehiculos">
                 <ScalarProperty Name="IDMarca" ColumnName="IDMarca" />
                 <ScalarProperty Name="Marcas" ColumnName="Marcas" />
@@ -4883,15 +5057,23 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="MediosPago">
-            <EntityTypeMapping TypeName="DbContextSitem.MediosPago">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.MediosPago">
               <MappingFragment StoreEntitySet="MediosPago">
                 <ScalarProperty Name="IdMedioPago" ColumnName="IdMedioPago" />
                 <ScalarProperty Name="MediosPago1" ColumnName="MediosPago" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Menus">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.Menus">
+              <MappingFragment StoreEntitySet="Menus">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Menu" ColumnName="Menu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="ModelosVehiculos">
-            <EntityTypeMapping TypeName="DbContextSitem.ModelosVehiculos">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.ModelosVehiculos">
               <MappingFragment StoreEntitySet="ModelosVehiculos">
                 <ScalarProperty Name="IDModeloVehiculo" ColumnName="IDModeloVehiculo" />
                 <ScalarProperty Name="Modelo" ColumnName="Modelo" />
@@ -4900,7 +5082,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Nacionalidades">
-            <EntityTypeMapping TypeName="DbContextSitem.Nacionalidades">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.Nacionalidades">
               <MappingFragment StoreEntitySet="Nacionalidades">
                 <ScalarProperty Name="IdNacionalidad" ColumnName="IdNacionalidad" />
                 <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
@@ -4908,7 +5090,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ObraSocial">
-            <EntityTypeMapping TypeName="DbContextSitem.ObraSocial">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.ObraSocial">
               <MappingFragment StoreEntitySet="ObraSocial">
                 <ScalarProperty Name="idObraSocial" ColumnName="idObraSocial" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
@@ -4916,7 +5098,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Pagos">
-            <EntityTypeMapping TypeName="DbContextSitem.Pagos">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.Pagos">
               <MappingFragment StoreEntitySet="Pagos">
                 <ScalarProperty Name="Idpago" ColumnName="Idpago" />
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
@@ -4925,8 +5107,18 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="PermissionMenus">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.PermissionMenus">
+              <MappingFragment StoreEntitySet="PermissionMenus">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Rollid" ColumnName="Rollid" />
+                <ScalarProperty Name="MenuId" ColumnName="MenuId" />
+                <ScalarProperty Name="IsEnable" ColumnName="IsEnable" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Personas">
-            <EntityTypeMapping TypeName="DbContextSitem.Personas">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.Personas">
               <MappingFragment StoreEntitySet="Personas">
                 <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
                 <ScalarProperty Name="ImagenPerfil" ColumnName="ImagenPerfil" />
@@ -4950,7 +5142,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PolizasSeguro">
-            <EntityTypeMapping TypeName="DbContextSitem.PolizasSeguro">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.PolizasSeguro">
               <MappingFragment StoreEntitySet="PolizasSeguro">
                 <ScalarProperty Name="IDPolizaSeguro" ColumnName="IDPolizaSeguro" />
                 <ScalarProperty Name="Nopoliza" ColumnName="Nopoliza" />
@@ -4962,7 +5154,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ProductoresSeguro">
-            <EntityTypeMapping TypeName="DbContextSitem.ProductoresSeguro">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.ProductoresSeguro">
               <MappingFragment StoreEntitySet="ProductoresSeguro">
                 <ScalarProperty Name="IdProductorSeguro" ColumnName="IdProductorSeguro" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -4973,7 +5165,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Profiles">
-            <EntityTypeMapping TypeName="DbContextSitem.Profiles">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.Profiles">
               <MappingFragment StoreEntitySet="Profiles">
                 <ScalarProperty Name="Id_Profiles" ColumnName="Id_Profiles" />
                 <ScalarProperty Name="Profiles1" ColumnName="Profiles" />
@@ -4981,7 +5173,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Proveedores">
-            <EntityTypeMapping TypeName="DbContextSitem.Proveedores">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.Proveedores">
               <MappingFragment StoreEntitySet="Proveedores">
                 <ScalarProperty Name="IdProveedores" ColumnName="IdProveedores" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -4994,11 +5186,15 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
                 <ScalarProperty Name="Telefono" ColumnName="Telefono" />
                 <ScalarProperty Name="FechaIngreso" ColumnName="FechaIngreso" />
                 <ScalarProperty Name="IDRubro" ColumnName="IDRubro" />
+                <ScalarProperty Name="UserAltaID" ColumnName="UserAltaID" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="UserUltModificacion" ColumnName="UserUltModificacion" />
+                <ScalarProperty Name="FechaUltimaModificacion" ColumnName="FechaUltimaModificacion" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Provincias">
-            <EntityTypeMapping TypeName="DbContextSitem.Provincias">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.Provincias">
               <MappingFragment StoreEntitySet="Provincias">
                 <ScalarProperty Name="IDProvincias" ColumnName="IDProvincias" />
                 <ScalarProperty Name="Provincias1" ColumnName="Provincias" />
@@ -5006,7 +5202,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Referencias">
-            <EntityTypeMapping TypeName="DbContextSitem.Referencias">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.Referencias">
               <MappingFragment StoreEntitySet="Referencias">
                 <ScalarProperty Name="IDReferencia" ColumnName="IDReferencia" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -5016,7 +5212,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="RegistroConducirBool">
-            <EntityTypeMapping TypeName="DbContextSitem.RegistroConducirBool">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.RegistroConducirBool">
               <MappingFragment StoreEntitySet="RegistroConducirBool">
                 <ScalarProperty Name="IDRegistroConducir" ColumnName="IDRegistroConducir" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
@@ -5024,7 +5220,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="RubroProveedor">
-            <EntityTypeMapping TypeName="DbContextSitem.RubroProveedor">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.RubroProveedor">
               <MappingFragment StoreEntitySet="RubroProveedor">
                 <ScalarProperty Name="IDRubroProveedor" ColumnName="IDRubroProveedor" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
@@ -5032,7 +5228,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Sexos">
-            <EntityTypeMapping TypeName="DbContextSitem.Sexos">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.Sexos">
               <MappingFragment StoreEntitySet="Sexos">
                 <ScalarProperty Name="IDSexo" ColumnName="IDSexo" />
                 <ScalarProperty Name="Sexo" ColumnName="Sexo" />
@@ -5040,7 +5236,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Sindicatos">
-            <EntityTypeMapping TypeName="DbContextSitem.Sindicatos">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.Sindicatos">
               <MappingFragment StoreEntitySet="Sindicatos">
                 <ScalarProperty Name="idSindicato" ColumnName="idSindicato" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
@@ -5048,7 +5244,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SolicitudesEmpleo">
-            <EntityTypeMapping TypeName="DbContextSitem.SolicitudesEmpleo">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.SolicitudesEmpleo">
               <MappingFragment StoreEntitySet="SolicitudesEmpleo">
                 <ScalarProperty Name="IdSolicitudEmpleo" ColumnName="IdSolicitudEmpleo" />
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
@@ -5058,8 +5254,18 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="SubMenus">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.SubMenus">
+              <MappingFragment StoreEntitySet="SubMenus">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Submenu" ColumnName="Submenu" />
+                <ScalarProperty Name="MenuID" ColumnName="MenuID" />
+                <ScalarProperty Name="IsEnable" ColumnName="IsEnable" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="TablaDivisorCalculo">
-            <EntityTypeMapping TypeName="DbContextSitem.TablaDivisorCalculo">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.TablaDivisorCalculo">
               <MappingFragment StoreEntitySet="TablaDivisorCalculo">
                 <ScalarProperty Name="IdDivisor" ColumnName="IdDivisor" />
                 <ScalarProperty Name="Divisor" ColumnName="Divisor" />
@@ -5068,7 +5274,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Talleres">
-            <EntityTypeMapping TypeName="DbContextSitem.Talleres">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.Talleres">
               <MappingFragment StoreEntitySet="Talleres">
                 <ScalarProperty Name="IDTalleres" ColumnName="IDTalleres" />
                 <ScalarProperty Name="NombreTaller" ColumnName="NombreTaller" />
@@ -5081,7 +5287,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TiposComprobante">
-            <EntityTypeMapping TypeName="DbContextSitem.TiposComprobante">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.TiposComprobante">
               <MappingFragment StoreEntitySet="TiposComprobante">
                 <ScalarProperty Name="IdTipoComprobante" ColumnName="IdTipoComprobante" />
                 <ScalarProperty Name="TipoComprobante" ColumnName="TipoComprobante" />
@@ -5089,7 +5295,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TiposFactura">
-            <EntityTypeMapping TypeName="DbContextSitem.TiposFactura">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.TiposFactura">
               <MappingFragment StoreEntitySet="TiposFactura">
                 <ScalarProperty Name="IdTipoFactura" ColumnName="IdTipoFactura" />
                 <ScalarProperty Name="TipoFactura" ColumnName="TipoFactura" />
@@ -5097,7 +5303,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TipoTaller">
-            <EntityTypeMapping TypeName="DbContextSitem.TipoTaller">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.TipoTaller">
               <MappingFragment StoreEntitySet="TipoTaller">
                 <ScalarProperty Name="IdTipoTaller" ColumnName="IdTipoTaller" />
                 <ScalarProperty Name="DescripcionTaller" ColumnName="DescripcionTaller" />
@@ -5105,7 +5311,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Ubicacion">
-            <EntityTypeMapping TypeName="DbContextSitem.Ubicacion">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.Ubicacion">
               <MappingFragment StoreEntitySet="Ubicacion">
                 <ScalarProperty Name="IdUbicacion" ColumnName="IdUbicacion" />
                 <ScalarProperty Name="Ubicacion1" ColumnName="Ubicacion" />
@@ -5113,7 +5319,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="DbContextSitem.Users">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.Users">
               <MappingFragment StoreEntitySet="Users">
                 <ScalarProperty Name="IDUser" ColumnName="IDUser" />
                 <ScalarProperty Name="Username" ColumnName="Username" />
@@ -5124,7 +5330,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Vehiculos">
-            <EntityTypeMapping TypeName="DbContextSitem.Vehiculos">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.Vehiculos">
               <MappingFragment StoreEntitySet="Vehiculos">
                 <ScalarProperty Name="IDVehiculo" ColumnName="IDVehiculo" />
                 <ScalarProperty Name="Activo" ColumnName="Activo" />
@@ -5150,7 +5356,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Vencimientos">
-            <EntityTypeMapping TypeName="DbContextSitem.Vencimientos">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.Vencimientos">
               <MappingFragment StoreEntitySet="Vencimientos">
                 <ScalarProperty Name="IdVencimiento" ColumnName="IdVencimiento" />
                 <ScalarProperty Name="Vencimiento" ColumnName="Vencimiento" />
@@ -5158,7 +5364,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Zonas">
-            <EntityTypeMapping TypeName="DbContextSitem.Zonas">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.Zonas">
               <MappingFragment StoreEntitySet="Zonas">
                 <ScalarProperty Name="IdZona" ColumnName="IdZona" />
                 <ScalarProperty Name="Zonas1" ColumnName="Zonas" />
@@ -5166,15 +5372,27 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Choferes">
-            <EntityTypeMapping TypeName="DbContextSitem.Choferes">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.Choferes">
               <MappingFragment StoreEntitySet="Choferes">
                 <ScalarProperty Name="IDEmpleado" ColumnName="IDEmpleado" />
                 <ScalarProperty Name="Chofer" ColumnName="Chofer" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="CuentasCorrientes">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.CuentasCorrientes">
+              <MappingFragment StoreEntitySet="CuentasCorrientes">
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Razon" ColumnName="Razon" />
+                <ScalarProperty Name="Cuit" ColumnName="Cuit" />
+                <ScalarProperty Name="NumeroCuenta" ColumnName="NumeroCuenta" />
+                <ScalarProperty Name="Vencimiento" ColumnName="Vencimiento" />
+                <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="DatosEmpleadosActivos">
-            <EntityTypeMapping TypeName="DbContextSitem.DatosEmpleadosActivos">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.DatosEmpleadosActivos">
               <MappingFragment StoreEntitySet="DatosEmpleadosActivos">
                 <ScalarProperty Name="IDEmpleado" ColumnName="IDEmpleado" />
                 <ScalarProperty Name="NoLegajo" ColumnName="NoLegajo" />
@@ -5197,7 +5415,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DetallePago">
-            <EntityTypeMapping TypeName="DbContextSitem.DetallePago">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.DetallePago">
               <MappingFragment StoreEntitySet="DetallePago">
                 <ScalarProperty Name="Sucursal" ColumnName="Sucursal" />
                 <ScalarProperty Name="NoFactura" ColumnName="NoFactura" />
@@ -5214,7 +5432,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DetallesSolicitudesEmpleo">
-            <EntityTypeMapping TypeName="DbContextSitem.DetallesSolicitudesEmpleo">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.DetallesSolicitudesEmpleo">
               <MappingFragment StoreEntitySet="DetallesSolicitudesEmpleo">
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
                 <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
@@ -5241,7 +5459,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ListaTalleresMecanicos">
-            <EntityTypeMapping TypeName="DbContextSitem.ListaTalleresMecanicos">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.ListaTalleresMecanicos">
               <MappingFragment StoreEntitySet="ListaTalleresMecanicos">
                 <ScalarProperty Name="IDTalleres" ColumnName="IDTalleres" />
                 <ScalarProperty Name="NombreTaller" ColumnName="NombreTaller" />
@@ -5254,7 +5472,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NominaCV">
-            <EntityTypeMapping TypeName="DbContextSitem.NominaCV">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.NominaCV">
               <MappingFragment StoreEntitySet="NominaCV">
                 <ScalarProperty Name="IDEmpleado" ColumnName="IDEmpleado" />
                 <ScalarProperty Name="Nombres" ColumnName="Nombres" />
@@ -5264,7 +5482,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NominaTelecentro">
-            <EntityTypeMapping TypeName="DbContextSitem.NominaTelecentro">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.NominaTelecentro">
               <MappingFragment StoreEntitySet="NominaTelecentro">
                 <ScalarProperty Name="IDEmpleado" ColumnName="IDEmpleado" />
                 <ScalarProperty Name="Nombres" ColumnName="Nombres" />
@@ -5274,7 +5492,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Solicitudesempleos">
-            <EntityTypeMapping TypeName="DbContextSitem.Solicitudesempleos">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.Solicitudesempleos">
               <MappingFragment StoreEntitySet="Solicitudesempleos">
                 <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
                 <ScalarProperty Name="nombrepersona" ColumnName="nombrepersona" />
@@ -5282,7 +5500,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="View_DetalleArticulo">
-            <EntityTypeMapping TypeName="DbContextSitem.View_DetalleArticulo">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.View_DetalleArticulo">
               <MappingFragment StoreEntitySet="View_DetalleArticulo">
                 <ScalarProperty Name="IDArticulo" ColumnName="IDArticulo" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -5295,7 +5513,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="View_DetalleArticuloComprobante">
-            <EntityTypeMapping TypeName="DbContextSitem.View_DetalleArticuloComprobante">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.View_DetalleArticuloComprobante">
               <MappingFragment StoreEntitySet="View_DetalleArticuloComprobante">
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
@@ -5309,7 +5527,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="View_ListaEmpleados">
-            <EntityTypeMapping TypeName="DbContextSitem.View_ListaEmpleados">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.View_ListaEmpleados">
               <MappingFragment StoreEntitySet="View_ListaEmpleados">
                 <ScalarProperty Name="IDEmpleado" ColumnName="IDEmpleado" />
                 <ScalarProperty Name="Nombres" ColumnName="Nombres" />
@@ -5317,7 +5535,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="View_Proveedores">
-            <EntityTypeMapping TypeName="DbContextSitem.View_Proveedores">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.View_Proveedores">
               <MappingFragment StoreEntitySet="View_Proveedores">
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="Razon" ColumnName="Razon" />
@@ -5332,7 +5550,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="AspNetUserRoles" TypeName="DbContextSitem.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+          <AssociationSetMapping Name="AspNetUserRoles" TypeName="ERP_SITEMModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
             <EndProperty Name="AspNetRoles">
               <ScalarProperty Name="Id" ColumnName="RoleId" />
             </EndProperty>
@@ -5340,9 +5558,9 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
               <ScalarProperty Name="Id" ColumnName="UserId" />
             </EndProperty>
           </AssociationSetMapping>
-          <FunctionImportMapping FunctionImportName="ComprobantesGastos_Compras" FunctionName="DbContextSitem.Store.ComprobantesGastos_Compras">
+          <FunctionImportMapping FunctionImportName="ComprobantesGastos_Compras" FunctionName="ERP_SITEMModel.Store.ComprobantesGastos_Compras">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DbContextSitem.ComprobantesGastos_Compras_Result">
+              <ComplexTypeMapping TypeName="ERP_SITEMModel.ComprobantesGastos_Compras_Result">
                 <ScalarProperty Name="NombreProveedor" ColumnName="NombreProveedor" />
                 <ScalarProperty Name="TipoComprobante" ColumnName="TipoComprobante" />
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
@@ -5355,10 +5573,10 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="CUENTASXPAGAR" FunctionName="DbContextSitem.Store.CUENTASXPAGAR" />
-          <FunctionImportMapping FunctionImportName="CuentasxPagarProveedores" FunctionName="DbContextSitem.Store.CuentasxPagarProveedores">
+          <FunctionImportMapping FunctionImportName="CUENTASXPAGAR" FunctionName="ERP_SITEMModel.Store.CUENTASXPAGAR" />
+          <FunctionImportMapping FunctionImportName="CuentasxPagarProveedores" FunctionName="ERP_SITEMModel.Store.CuentasxPagarProveedores">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DbContextSitem.CuentasxPagarProveedores_Result">
+              <ComplexTypeMapping TypeName="ERP_SITEMModel.CuentasxPagarProveedores_Result">
                 <ScalarProperty Name="NombreProveedor" ColumnName="NombreProveedor" />
                 <ScalarProperty Name="TipoComprobante" ColumnName="TipoComprobante" />
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
@@ -5371,9 +5589,9 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="DetalleSolicitudEmpleo" FunctionName="DbContextSitem.Store.DetalleSolicitudEmpleo">
+          <FunctionImportMapping FunctionImportName="DetalleSolicitudEmpleo" FunctionName="ERP_SITEMModel.Store.DetalleSolicitudEmpleo">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DbContextSitem.DetalleSolicitudEmpleo_Result">
+              <ComplexTypeMapping TypeName="ERP_SITEMModel.DetalleSolicitudEmpleo_Result">
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
                 <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -5398,9 +5616,9 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="EncabezadoDeuda" FunctionName="DbContextSitem.Store.EncabezadoDeuda">
+          <FunctionImportMapping FunctionImportName="EncabezadoDeuda" FunctionName="ERP_SITEMModel.Store.EncabezadoDeuda">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DbContextSitem.EncabezadoDeuda_Result">
+              <ComplexTypeMapping TypeName="ERP_SITEMModel.EncabezadoDeuda_Result">
                 <ScalarProperty Name="NombreProveedor" ColumnName="NombreProveedor" />
                 <ScalarProperty Name="Razon" ColumnName="Razon" />
                 <ScalarProperty Name="Cuit" ColumnName="Cuit" />
@@ -5408,9 +5626,9 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="EncabezadoOrdenPago" FunctionName="DbContextSitem.Store.EncabezadoOrdenPago">
+          <FunctionImportMapping FunctionImportName="EncabezadoOrdenPago" FunctionName="ERP_SITEMModel.Store.EncabezadoOrdenPago">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DbContextSitem.EncabezadoOrdenPago_Result">
+              <ComplexTypeMapping TypeName="ERP_SITEMModel.EncabezadoOrdenPago_Result">
                 <ScalarProperty Name="Razon" ColumnName="Razon" />
                 <ScalarProperty Name="Cuit" ColumnName="Cuit" />
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
@@ -5419,9 +5637,9 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="FacturasPendientesPago" FunctionName="DbContextSitem.Store.FacturasPendientesPago">
+          <FunctionImportMapping FunctionImportName="FacturasPendientesPago" FunctionName="ERP_SITEMModel.Store.FacturasPendientesPago">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DbContextSitem.FacturasPendientesPago_Result">
+              <ComplexTypeMapping TypeName="ERP_SITEMModel.FacturasPendientesPago_Result">
                 <ScalarProperty Name="IDproveedor" ColumnName="IDproveedor" />
                 <ScalarProperty Name="IdComprobante" ColumnName="IdComprobante" />
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
@@ -5432,9 +5650,9 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="FACTURASXPROVEEDORES" FunctionName="DbContextSitem.Store.FACTURASXPROVEEDORES">
+          <FunctionImportMapping FunctionImportName="FACTURASXPROVEEDORES" FunctionName="ERP_SITEMModel.Store.FACTURASXPROVEEDORES">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DbContextSitem.FACTURASXPROVEEDORES_Result">
+              <ComplexTypeMapping TypeName="ERP_SITEMModel.FACTURASXPROVEEDORES_Result">
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
                 <ScalarProperty Name="TipoFactura" ColumnName="TipoFactura" />
                 <ScalarProperty Name="Sucursal" ColumnName="Sucursal" />
@@ -5445,9 +5663,9 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Gastos_ComprasxPeriodo" FunctionName="DbContextSitem.Store.Gastos_ComprasxPeriodo">
+          <FunctionImportMapping FunctionImportName="Gastos_ComprasxPeriodo" FunctionName="ERP_SITEMModel.Store.Gastos_ComprasxPeriodo">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DbContextSitem.Gastos_ComprasxPeriodo_Result">
+              <ComplexTypeMapping TypeName="ERP_SITEMModel.Gastos_ComprasxPeriodo_Result">
                 <ScalarProperty Name="IdComprobante" ColumnName="IdComprobante" />
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
                 <ScalarProperty Name="NombreProveedor" ColumnName="NombreProveedor" />
@@ -5466,9 +5684,9 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="HistorialEmpleadosSitem" FunctionName="DbContextSitem.Store.HistorialEmpleadosSitem">
+          <FunctionImportMapping FunctionImportName="HistorialEmpleadosSitem" FunctionName="ERP_SITEMModel.Store.HistorialEmpleadosSitem">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DbContextSitem.HistorialEmpleadosSitem_Result">
+              <ComplexTypeMapping TypeName="ERP_SITEMModel.HistorialEmpleadosSitem_Result">
                 <ScalarProperty Name="IDEmpleado" ColumnName="IDEmpleado" />
                 <ScalarProperty Name="FechaIngreso" ColumnName="FechaIngreso" />
                 <ScalarProperty Name="FechaCeseLaboral" ColumnName="FechaCeseLaboral" />
@@ -5501,9 +5719,9 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="ListaEmpleadosActivos" FunctionName="DbContextSitem.Store.ListaEmpleadosActivos">
+          <FunctionImportMapping FunctionImportName="ListaEmpleadosActivos" FunctionName="ERP_SITEMModel.Store.ListaEmpleadosActivos">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DbContextSitem.ListaEmpleadosActivos_Result">
+              <ComplexTypeMapping TypeName="ERP_SITEMModel.ListaEmpleadosActivos_Result">
                 <ScalarProperty Name="IDEmpleado" ColumnName="IDEmpleado" />
                 <ScalarProperty Name="FechaIngreso" ColumnName="FechaIngreso" />
                 <ScalarProperty Name="FechaCeseLaboral" ColumnName="FechaCeseLaboral" />
@@ -5538,9 +5756,9 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="ListaVehiculosActivos" FunctionName="DbContextSitem.Store.ListaVehiculosActivos">
+          <FunctionImportMapping FunctionImportName="ListaVehiculosActivos" FunctionName="ERP_SITEMModel.Store.ListaVehiculosActivos">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DbContextSitem.ListaVehiculosActivos_Result">
+              <ComplexTypeMapping TypeName="ERP_SITEMModel.ListaVehiculosActivos_Result">
                 <ScalarProperty Name="IDVehiculo" ColumnName="IDVehiculo" />
                 <ScalarProperty Name="Activo" ColumnName="Activo" />
                 <ScalarProperty Name="Patente" ColumnName="Patente" />
@@ -5563,9 +5781,9 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="OrdenPago" FunctionName="DbContextSitem.Store.OrdenPago">
+          <FunctionImportMapping FunctionImportName="OrdenPago" FunctionName="ERP_SITEMModel.Store.OrdenPago">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DbContextSitem.OrdenPago_Result">
+              <ComplexTypeMapping TypeName="ERP_SITEMModel.OrdenPago_Result">
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
                 <ScalarProperty Name="TipoFactura" ColumnName="TipoFactura" />
                 <ScalarProperty Name="Sucursal" ColumnName="Sucursal" />
@@ -5574,9 +5792,9 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="ReporteNominaTelecentro" FunctionName="DbContextSitem.Store.ReporteNominaTelecentro">
+          <FunctionImportMapping FunctionImportName="ReporteNominaTelecentro" FunctionName="ERP_SITEMModel.Store.ReporteNominaTelecentro">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DbContextSitem.ReporteNominaTelecentro_Result">
+              <ComplexTypeMapping TypeName="ERP_SITEMModel.ReporteNominaTelecentro_Result">
                 <ScalarProperty Name="NoLegajo" ColumnName="NoLegajo" />
                 <ScalarProperty Name="foto" ColumnName="foto" />
                 <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
@@ -5592,9 +5810,9 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="ReportePagosProveedores" FunctionName="DbContextSitem.Store.ReportePagosProveedores">
+          <FunctionImportMapping FunctionImportName="ReportePagosProveedores" FunctionName="ERP_SITEMModel.Store.ReportePagosProveedores">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DbContextSitem.ReportePagosProveedores_Result">
+              <ComplexTypeMapping TypeName="ERP_SITEMModel.ReportePagosProveedores_Result">
                 <ScalarProperty Name="Razon" ColumnName="Razon" />
                 <ScalarProperty Name="FechaComprobantes" ColumnName="FechaComprobantes" />
                 <ScalarProperty Name="PuntoV" ColumnName="PuntoV" />
@@ -5609,9 +5827,9 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="SeleccionarDetalleComprobantesArticulos" FunctionName="DbContextSitem.Store.SeleccionarDetalleComprobantesArticulos">
+          <FunctionImportMapping FunctionImportName="SeleccionarDetalleComprobantesArticulos" FunctionName="ERP_SITEMModel.Store.SeleccionarDetalleComprobantesArticulos">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DbContextSitem.SeleccionarDetalleComprobantesArticulos_Result">
+              <ComplexTypeMapping TypeName="ERP_SITEMModel.SeleccionarDetalleComprobantesArticulos_Result">
                 <ScalarProperty Name="idTable_DetallesComprobanteArticulos" ColumnName="idTable_DetallesComprobanteArticulos" />
                 <ScalarProperty Name="IdComprobante" ColumnName="IdComprobante" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -5622,9 +5840,9 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="SeleccionarMediosDePagos" FunctionName="DbContextSitem.Store.SeleccionarMediosDePagos">
+          <FunctionImportMapping FunctionImportName="SeleccionarMediosDePagos" FunctionName="ERP_SITEMModel.Store.SeleccionarMediosDePagos">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DbContextSitem.SeleccionarMediosDePagos_Result">
+              <ComplexTypeMapping TypeName="ERP_SITEMModel.SeleccionarMediosDePagos_Result">
                 <ScalarProperty Name="MediosPago" ColumnName="MediosPago" />
                 <ScalarProperty Name="NoCheque" ColumnName="NoCheque" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -5632,9 +5850,9 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="SP_DEUDASPROVEEDORES" FunctionName="DbContextSitem.Store.SP_DEUDASPROVEEDORES">
+          <FunctionImportMapping FunctionImportName="SP_DEUDASPROVEEDORES" FunctionName="ERP_SITEMModel.Store.SP_DEUDASPROVEEDORES">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DbContextSitem.SP_DEUDASPROVEEDORES_Result">
+              <ComplexTypeMapping TypeName="ERP_SITEMModel.SP_DEUDASPROVEEDORES_Result">
                 <ScalarProperty Name="NombreProveedor" ColumnName="NombreProveedor" />
                 <ScalarProperty Name="TipoComprobante" ColumnName="TipoComprobante" />
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
@@ -5647,7 +5865,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="uspAddUser" FunctionName="DbContextSitem.Store.uspAddUser" />
+          <FunctionImportMapping FunctionImportName="uspAddUser" FunctionName="ERP_SITEMModel.Store.uspAddUser" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -25,9 +25,5 @@ namespace Entidades
         public Nullable<int> IDUserTransac { get; set; }
     
         public virtual ActividadMantenimiento ActividadMantenimiento { get; set; }
-        public virtual Mantenimiento Mantenimiento1 { get; set; }
-        public virtual Mantenimiento Mantenimiento2 { get; set; }
-        public virtual Mantenimiento Mantenimiento11 { get; set; }
-        public virtual Mantenimiento Mantenimiento3 { get; set; }
     }
 }
