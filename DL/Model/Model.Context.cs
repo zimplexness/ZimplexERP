@@ -28,17 +28,10 @@ namespace DL.Model
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<C__EFMigrationsHistory> C__EFMigrationsHistory { get; set; }
         public virtual DbSet<ActividadMantenimiento> ActividadMantenimiento { get; set; }
         public virtual DbSet<AfectadoEmpresaCliente> AfectadoEmpresaCliente { get; set; }
         public virtual DbSet<Almacenes> Almacenes { get; set; }
         public virtual DbSet<Articulos> Articulos { get; set; }
-        public virtual DbSet<AspNetRoleClaims> AspNetRoleClaims { get; set; }
-        public virtual DbSet<AspNetRoles> AspNetRoles { get; set; }
-        public virtual DbSet<AspNetUserClaims> AspNetUserClaims { get; set; }
-        public virtual DbSet<AspNetUserLogins> AspNetUserLogins { get; set; }
-        public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
-        public virtual DbSet<AspNetUserTokens> AspNetUserTokens { get; set; }
         public virtual DbSet<Bancos> Bancos { get; set; }
         public virtual DbSet<CategoriaEmpleado> CategoriaEmpleado { get; set; }
         public virtual DbSet<Categorias> Categorias { get; set; }
@@ -69,6 +62,9 @@ namespace DL.Model
         public virtual DbSet<Menus> Menus { get; set; }
         public virtual DbSet<ModelosVehiculos> ModelosVehiculos { get; set; }
         public virtual DbSet<Nacionalidades> Nacionalidades { get; set; }
+        public virtual DbSet<NetRoles> NetRoles { get; set; }
+        public virtual DbSet<NetUser> NetUser { get; set; }
+        public virtual DbSet<NetUserLogin> NetUserLogin { get; set; }
         public virtual DbSet<ObraSocial> ObraSocial { get; set; }
         public virtual DbSet<Pagos> Pagos { get; set; }
         public virtual DbSet<PermissionMenus> PermissionMenus { get; set; }
@@ -298,6 +294,27 @@ namespace DL.Model
                 new ObjectParameter("profile", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("uspAddUser", iduserParameter, pUserNameParameter, pPasswordParameter, profileParameter, responseMessage);
+        }
+    
+        public virtual ObjectResult<GastosXCentroCostos_Result> GastosXCentroCostos(Nullable<System.DateTime> fechaini, Nullable<System.DateTime> fechafin, Nullable<int> centroCosto, Nullable<int> contable)
+        {
+            var fechainiParameter = fechaini.HasValue ?
+                new ObjectParameter("fechaini", fechaini) :
+                new ObjectParameter("fechaini", typeof(System.DateTime));
+    
+            var fechafinParameter = fechafin.HasValue ?
+                new ObjectParameter("fechafin", fechafin) :
+                new ObjectParameter("fechafin", typeof(System.DateTime));
+    
+            var centroCostoParameter = centroCosto.HasValue ?
+                new ObjectParameter("CentroCosto", centroCosto) :
+                new ObjectParameter("CentroCosto", typeof(int));
+    
+            var contableParameter = contable.HasValue ?
+                new ObjectParameter("Contable", contable) :
+                new ObjectParameter("Contable", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GastosXCentroCostos_Result>("GastosXCentroCostos", fechainiParameter, fechafinParameter, centroCostoParameter, contableParameter);
         }
     }
 }

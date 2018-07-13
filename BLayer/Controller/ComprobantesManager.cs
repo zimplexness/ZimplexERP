@@ -27,6 +27,25 @@ namespace BLayer
 
         }
 
+
+        public List<GastosXCentroCostos_Result> GetGastosxCentrosCostos(DateTime fechain, DateTime fechafin, int idcontable, int idcentrocosto) {
+
+            using (Context=new Entities())
+            {
+                var query = Context.GastosXCentroCostos(fechain,fechafin,idcontable,idcentrocosto);
+
+                return query.ToList();
+
+
+            }
+
+
+        }
+
+
+
+
+
         public List<TiposComprobante> ListarTipoComprobantes()
         {
             using (Context = new Entities())
@@ -289,6 +308,9 @@ namespace BLayer
             using (Context = new Entities())
             {
                 var query = Context.Gastos_ComprasxPeriodo(fechainicio,fechafin);
+                
+                
+
                 return query.ToList();
 
             }

@@ -40,7 +40,9 @@
             this.metroComboBoxMedioPago = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel20 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel19 = new MetroFramework.Controls.MetroLabel();
+            this.metroButtonDescartar = new MetroFramework.Controls.MetroButton();
             this.metroTextBoxConceptoPago = new MetroFramework.Controls.MetroTextBox();
+            this.metroButtonConfirmar = new MetroFramework.Controls.MetroButton();
             this.metroLabel22 = new MetroFramework.Controls.MetroLabel();
             this.metroTextBoxImporte = new MetroFramework.Controls.MetroTextBox();
             this.metroPanelGastos = new MetroFramework.Controls.MetroPanel();
@@ -62,6 +64,8 @@
             this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metroPanelProducto = new MetroFramework.Controls.MetroPanel();
             this.metroTextBoxProducto = new MetroFramework.Controls.MetroTextBox();
+            this.metroButtonCancelarProducto = new MetroFramework.Controls.MetroButton();
+            this.metroButtonAgregarProducto = new MetroFramework.Controls.MetroButton();
             this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
@@ -70,6 +74,8 @@
             this.metroTextBoxIva = new MetroFramework.Controls.MetroTextBox();
             this.metroTextBoxCantidad = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
+            this.metroButtonAgregarComprobante = new MetroFramework.Controls.MetroButton();
+            this.metroButtonCancelarComprobante = new MetroFramework.Controls.MetroButton();
             this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
             this.metroDateTimeVencimiento = new MetroFramework.Controls.MetroDateTime();
@@ -90,12 +96,6 @@
             this.metroComboBoxTipoComprobante = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
-            this.metroButtonDescartar = new MetroFramework.Controls.MetroButton();
-            this.metroButtonConfirmar = new MetroFramework.Controls.MetroButton();
-            this.metroButtonCancelarProducto = new MetroFramework.Controls.MetroButton();
-            this.metroButtonAgregarProducto = new MetroFramework.Controls.MetroButton();
-            this.metroButtonAgregarComprobante = new MetroFramework.Controls.MetroButton();
-            this.metroButtonCancelarComprobante = new MetroFramework.Controls.MetroButton();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroPanelPago.SuspendLayout();
@@ -257,6 +257,16 @@
             this.metroLabel19.TabIndex = 38;
             this.metroLabel19.Text = "Concepto Pago";
             // 
+            // metroButtonDescartar
+            // 
+            this.metroButtonDescartar.BackgroundImage = global::ErpGestion.Properties.Resources._1497285708_Cancel;
+            this.metroButtonDescartar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.metroButtonDescartar.Location = new System.Drawing.Point(368, 7);
+            this.metroButtonDescartar.Name = "metroButtonDescartar";
+            this.metroButtonDescartar.Size = new System.Drawing.Size(36, 40);
+            this.metroButtonDescartar.TabIndex = 36;
+            this.metroButtonDescartar.UseSelectable = true;
+            // 
             // metroTextBoxConceptoPago
             // 
             // 
@@ -287,6 +297,17 @@
             this.metroTextBoxConceptoPago.UseSelectable = true;
             this.metroTextBoxConceptoPago.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBoxConceptoPago.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // metroButtonConfirmar
+            // 
+            this.metroButtonConfirmar.BackgroundImage = global::ErpGestion.Properties.Resources.if_11_330397;
+            this.metroButtonConfirmar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.metroButtonConfirmar.Location = new System.Drawing.Point(410, 7);
+            this.metroButtonConfirmar.Name = "metroButtonConfirmar";
+            this.metroButtonConfirmar.Size = new System.Drawing.Size(36, 40);
+            this.metroButtonConfirmar.TabIndex = 35;
+            this.metroButtonConfirmar.UseSelectable = true;
+            this.metroButtonConfirmar.Click += new System.EventHandler(this.metroButtonConfirmar_Click);
             // 
             // metroLabel22
             // 
@@ -661,6 +682,31 @@
             this.metroTextBoxProducto.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBoxProducto.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
+            // metroButtonCancelarProducto
+            // 
+            this.metroButtonCancelarProducto.BackgroundImage = global::ErpGestion.Properties.Resources._1497285708_Cancel;
+            this.metroButtonCancelarProducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.metroButtonCancelarProducto.Location = new System.Drawing.Point(690, 22);
+            this.metroButtonCancelarProducto.Name = "metroButtonCancelarProducto";
+            this.metroButtonCancelarProducto.Size = new System.Drawing.Size(38, 40);
+            this.metroButtonCancelarProducto.Style = MetroFramework.MetroColorStyle.White;
+            this.metroButtonCancelarProducto.TabIndex = 34;
+            this.metroButtonCancelarProducto.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroButtonCancelarProducto.UseSelectable = true;
+            this.metroButtonCancelarProducto.UseStyleColors = true;
+            this.metroButtonCancelarProducto.Click += new System.EventHandler(this.metroButtonCancelarProducto_Click);
+            // 
+            // metroButtonAgregarProducto
+            // 
+            this.metroButtonAgregarProducto.BackgroundImage = global::ErpGestion.Properties.Resources._1497545233_arrow_down;
+            this.metroButtonAgregarProducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.metroButtonAgregarProducto.Location = new System.Drawing.Point(736, 22);
+            this.metroButtonAgregarProducto.Name = "metroButtonAgregarProducto";
+            this.metroButtonAgregarProducto.Size = new System.Drawing.Size(34, 40);
+            this.metroButtonAgregarProducto.TabIndex = 33;
+            this.metroButtonAgregarProducto.UseSelectable = true;
+            this.metroButtonAgregarProducto.Click += new System.EventHandler(this.metroButtonAgregarProducto_Click);
+            // 
             // metroLabel14
             // 
             this.metroLabel14.AutoSize = true;
@@ -799,6 +845,28 @@
             this.metroLabel11.Size = new System.Drawing.Size(125, 19);
             this.metroLabel11.TabIndex = 24;
             this.metroLabel11.Text = "Producto o Servicio";
+            // 
+            // metroButtonAgregarComprobante
+            // 
+            this.metroButtonAgregarComprobante.BackgroundImage = global::ErpGestion.Properties.Resources._1497545233_arrow_down;
+            this.metroButtonAgregarComprobante.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.metroButtonAgregarComprobante.Location = new System.Drawing.Point(946, 10);
+            this.metroButtonAgregarComprobante.Name = "metroButtonAgregarComprobante";
+            this.metroButtonAgregarComprobante.Size = new System.Drawing.Size(41, 35);
+            this.metroButtonAgregarComprobante.TabIndex = 23;
+            this.metroButtonAgregarComprobante.UseSelectable = true;
+            this.metroButtonAgregarComprobante.Click += new System.EventHandler(this.metroButtonAgregarComprobante_Click);
+            // 
+            // metroButtonCancelarComprobante
+            // 
+            this.metroButtonCancelarComprobante.BackgroundImage = global::ErpGestion.Properties.Resources._1497285708_Cancel;
+            this.metroButtonCancelarComprobante.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.metroButtonCancelarComprobante.Location = new System.Drawing.Point(896, 10);
+            this.metroButtonCancelarComprobante.Name = "metroButtonCancelarComprobante";
+            this.metroButtonCancelarComprobante.Size = new System.Drawing.Size(44, 35);
+            this.metroButtonCancelarComprobante.TabIndex = 22;
+            this.metroButtonCancelarComprobante.UseSelectable = true;
+            this.metroButtonCancelarComprobante.Click += new System.EventHandler(this.metroButtonCancelarComprobante_Click);
             // 
             // metroLabel10
             // 
@@ -1038,74 +1106,6 @@
             this.metroTabPage2.VerticalScrollbarBarColor = true;
             this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage2.VerticalScrollbarSize = 10;
-            // 
-            // metroButtonDescartar
-            // 
-            this.metroButtonDescartar.BackgroundImage = global::ErpGestion.Properties.Resources._1497285708_Cancel;
-            this.metroButtonDescartar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.metroButtonDescartar.Location = new System.Drawing.Point(404, 7);
-            this.metroButtonDescartar.Name = "metroButtonDescartar";
-            this.metroButtonDescartar.Size = new System.Drawing.Size(36, 40);
-            this.metroButtonDescartar.TabIndex = 36;
-            this.metroButtonDescartar.UseSelectable = true;
-            // 
-            // metroButtonConfirmar
-            // 
-            this.metroButtonConfirmar.BackgroundImage = global::ErpGestion.Properties.Resources.if_11_330397;
-            this.metroButtonConfirmar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.metroButtonConfirmar.Location = new System.Drawing.Point(352, 7);
-            this.metroButtonConfirmar.Name = "metroButtonConfirmar";
-            this.metroButtonConfirmar.Size = new System.Drawing.Size(36, 40);
-            this.metroButtonConfirmar.TabIndex = 35;
-            this.metroButtonConfirmar.UseSelectable = true;
-            this.metroButtonConfirmar.Click += new System.EventHandler(this.metroButtonConfirmar_Click);
-            // 
-            // metroButtonCancelarProducto
-            // 
-            this.metroButtonCancelarProducto.BackgroundImage = global::ErpGestion.Properties.Resources._1497285708_Cancel;
-            this.metroButtonCancelarProducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.metroButtonCancelarProducto.Location = new System.Drawing.Point(732, 22);
-            this.metroButtonCancelarProducto.Name = "metroButtonCancelarProducto";
-            this.metroButtonCancelarProducto.Size = new System.Drawing.Size(38, 40);
-            this.metroButtonCancelarProducto.Style = MetroFramework.MetroColorStyle.White;
-            this.metroButtonCancelarProducto.TabIndex = 34;
-            this.metroButtonCancelarProducto.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroButtonCancelarProducto.UseSelectable = true;
-            this.metroButtonCancelarProducto.UseStyleColors = true;
-            this.metroButtonCancelarProducto.Click += new System.EventHandler(this.metroButtonCancelarProducto_Click);
-            // 
-            // metroButtonAgregarProducto
-            // 
-            this.metroButtonAgregarProducto.BackgroundImage = global::ErpGestion.Properties.Resources._1497545233_arrow_down;
-            this.metroButtonAgregarProducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.metroButtonAgregarProducto.Location = new System.Drawing.Point(692, 22);
-            this.metroButtonAgregarProducto.Name = "metroButtonAgregarProducto";
-            this.metroButtonAgregarProducto.Size = new System.Drawing.Size(34, 40);
-            this.metroButtonAgregarProducto.TabIndex = 33;
-            this.metroButtonAgregarProducto.UseSelectable = true;
-            this.metroButtonAgregarProducto.Click += new System.EventHandler(this.metroButtonAgregarProducto_Click);
-            // 
-            // metroButtonAgregarComprobante
-            // 
-            this.metroButtonAgregarComprobante.BackgroundImage = global::ErpGestion.Properties.Resources._1497545233_arrow_down;
-            this.metroButtonAgregarComprobante.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.metroButtonAgregarComprobante.Location = new System.Drawing.Point(896, 10);
-            this.metroButtonAgregarComprobante.Name = "metroButtonAgregarComprobante";
-            this.metroButtonAgregarComprobante.Size = new System.Drawing.Size(41, 35);
-            this.metroButtonAgregarComprobante.TabIndex = 23;
-            this.metroButtonAgregarComprobante.UseSelectable = true;
-            this.metroButtonAgregarComprobante.Click += new System.EventHandler(this.metroButtonAgregarComprobante_Click);
-            // 
-            // metroButtonCancelarComprobante
-            // 
-            this.metroButtonCancelarComprobante.BackgroundImage = global::ErpGestion.Properties.Resources._1497285708_Cancel;
-            this.metroButtonCancelarComprobante.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.metroButtonCancelarComprobante.Location = new System.Drawing.Point(943, 10);
-            this.metroButtonCancelarComprobante.Name = "metroButtonCancelarComprobante";
-            this.metroButtonCancelarComprobante.Size = new System.Drawing.Size(44, 35);
-            this.metroButtonCancelarComprobante.TabIndex = 22;
-            this.metroButtonCancelarComprobante.UseSelectable = true;
-            this.metroButtonCancelarComprobante.Click += new System.EventHandler(this.metroButtonCancelarComprobante_Click);
             // 
             // ComprobantesFrm
             // 

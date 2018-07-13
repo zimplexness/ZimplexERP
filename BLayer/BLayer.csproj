@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AplicationUsers.cs" />
     <Compile Include="Controller\Afectado_a_Cliente.cs" />
     <Compile Include="Controller\AlmacenManager.cs" />
     <Compile Include="Controller\ArticuloManager.cs" />
@@ -65,7 +66,9 @@
     <Compile Include="Controller\UserManager.cs" />
     <Compile Include="Controller\VehiculosManager.cs" />
     <Compile Include="Controller\ZonasController.cs" />
+    <Compile Include="helper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProveedorController.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DL\DL.csproj">
@@ -75,6 +78,10 @@
     <ProjectReference Include="..\Entidades\Entidades.csproj">
       <Project>{c947aa29-c91e-450d-ad73-757a440984b1}</Project>
       <Name>Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repositories\Repositories.csproj">
+      <Project>{19504a38-d4cf-43cf-ab39-e1fd44c7b7d7}</Project>
+      <Name>Repositories</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -30,7 +30,8 @@
         {
             this.metroTabControlListar = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
-            this.metroButtonConfirmar = new MetroFramework.Controls.MetroButton();
+            this.metroComboBoxProveedor = new MetroFramework.Controls.MetroComboBox();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroTextBoxDescripcionPoliza = new MetroFramework.Controls.MetroTextBox();
@@ -40,8 +41,6 @@
             this.metroTextBoxNoPoliza = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
-            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
-            this.metroComboBoxProveedor = new MetroFramework.Controls.MetroComboBox();
             this.metroTabControlListar.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -62,7 +61,6 @@
             // 
             this.metroTabPage1.Controls.Add(this.metroComboBoxProveedor);
             this.metroTabPage1.Controls.Add(this.metroLabel5);
-            this.metroTabPage1.Controls.Add(this.metroButtonConfirmar);
             this.metroTabPage1.Controls.Add(this.metroLabel4);
             this.metroTabPage1.Controls.Add(this.metroLabel3);
             this.metroTabPage1.Controls.Add(this.metroTextBoxDescripcionPoliza);
@@ -84,15 +82,24 @@
             this.metroTabPage1.VerticalScrollbarSize = 10;
             this.metroTabPage1.Click += new System.EventHandler(this.metroTabPage1_Click);
             // 
-            // metroButtonConfirmar
+            // metroComboBoxProveedor
             // 
-            this.metroButtonConfirmar.BackgroundImage = global::ErpGestion.Properties.Resources.if_11_330397;
-            this.metroButtonConfirmar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.metroButtonConfirmar.Location = new System.Drawing.Point(477, 22);
-            this.metroButtonConfirmar.Name = "metroButtonConfirmar";
-            this.metroButtonConfirmar.Size = new System.Drawing.Size(36, 40);
-            this.metroButtonConfirmar.TabIndex = 45;
-            this.metroButtonConfirmar.UseSelectable = true;
+            this.metroComboBoxProveedor.FormattingEnabled = true;
+            this.metroComboBoxProveedor.ItemHeight = 23;
+            this.metroComboBoxProveedor.Location = new System.Drawing.Point(3, 81);
+            this.metroComboBoxProveedor.Name = "metroComboBoxProveedor";
+            this.metroComboBoxProveedor.Size = new System.Drawing.Size(271, 29);
+            this.metroComboBoxProveedor.TabIndex = 47;
+            this.metroComboBoxProveedor.UseSelectable = true;
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Location = new System.Drawing.Point(3, 59);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(70, 19);
+            this.metroLabel5.TabIndex = 46;
+            this.metroLabel5.Text = "Compañia";
             // 
             // metroLabel4
             // 
@@ -118,9 +125,9 @@
             // 
             // 
             this.metroTextBoxDescripcionPoliza.CustomButton.Image = null;
-            this.metroTextBoxDescripcionPoliza.CustomButton.Location = new System.Drawing.Point(358, 1);
+            this.metroTextBoxDescripcionPoliza.CustomButton.Location = new System.Drawing.Point(404, 2);
             this.metroTextBoxDescripcionPoliza.CustomButton.Name = "";
-            this.metroTextBoxDescripcionPoliza.CustomButton.Size = new System.Drawing.Size(133, 133);
+            this.metroTextBoxDescripcionPoliza.CustomButton.Size = new System.Drawing.Size(85, 85);
             this.metroTextBoxDescripcionPoliza.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTextBoxDescripcionPoliza.CustomButton.TabIndex = 1;
             this.metroTextBoxDescripcionPoliza.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -137,7 +144,7 @@
             this.metroTextBoxDescripcionPoliza.SelectionLength = 0;
             this.metroTextBoxDescripcionPoliza.SelectionStart = 0;
             this.metroTextBoxDescripcionPoliza.ShortcutsEnabled = true;
-            this.metroTextBoxDescripcionPoliza.Size = new System.Drawing.Size(492, 135);
+            this.metroTextBoxDescripcionPoliza.Size = new System.Drawing.Size(492, 90);
             this.metroTextBoxDescripcionPoliza.TabIndex = 42;
             this.metroTextBoxDescripcionPoliza.UseSelectable = true;
             this.metroTextBoxDescripcionPoliza.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -223,25 +230,6 @@
             this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage2.VerticalScrollbarSize = 10;
             // 
-            // metroLabel5
-            // 
-            this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(3, 59);
-            this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(70, 19);
-            this.metroLabel5.TabIndex = 46;
-            this.metroLabel5.Text = "Compañia";
-            // 
-            // metroComboBoxProveedor
-            // 
-            this.metroComboBoxProveedor.FormattingEnabled = true;
-            this.metroComboBoxProveedor.ItemHeight = 23;
-            this.metroComboBoxProveedor.Location = new System.Drawing.Point(3, 81);
-            this.metroComboBoxProveedor.Name = "metroComboBoxProveedor";
-            this.metroComboBoxProveedor.Size = new System.Drawing.Size(271, 29);
-            this.metroComboBoxProveedor.TabIndex = 47;
-            this.metroComboBoxProveedor.UseSelectable = true;
-            // 
             // PolizaSeguroFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -265,7 +253,6 @@
         private MetroFramework.Controls.MetroTabPage metroTabPage1;
         private MetroFramework.Controls.MetroComboBox metroComboBoxProveedor;
         private MetroFramework.Controls.MetroLabel metroLabel5;
-        private MetroFramework.Controls.MetroButton metroButtonConfirmar;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroTextBox metroTextBoxDescripcionPoliza;

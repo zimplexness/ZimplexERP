@@ -31,6 +31,15 @@ namespace ErpGestion
             metroTextBoxFiltroProveedor.AutoCompleteSource = AutoCompleteSource.CustomSource;
             metroTextBoxFiltroProveedor.AutoCompleteCustomSource = sourcename;
 
+            metroComboBoxCentroCosto.DataSource = new ComprobantesManager().ListarCentroCosto();
+            metroComboBoxCentroCosto.DisplayMember = "CentroCosto";
+            metroComboBoxCentroCosto.ValueMember = "IdCentroCosto";
+
+            metroComboBoxContable.DataSource = new ComprobantesManager().ListarContable();
+            metroComboBoxContable.DisplayMember = "Contable1";
+            metroComboBoxContable.ValueMember = "IdContable";
+
+
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
@@ -102,7 +111,7 @@ namespace ErpGestion
 
 
 
-                List<Gastos_ComprasxPeriodo_Result> ComprobantesComprasGastos = CManager.ListarFacturasComprasGastos(metroDateTimeInicio1.Value, metroDateTimeFin2.Value);
+                List<GastosXCentroCostos_Result> ComprobantesComprasGastos = CManager.GetGastosxCentrosCostos(metroDateTimeInicio1.Value, metroDateTimeFin2.Value,(int)metroComboBoxCentroCosto.SelectedValue, (int)metroComboBoxContable.SelectedValue);
                 metroGridTodosComprobantes.AutoGenerateColumns = false;
                 metroGridTodosComprobantes.DataSource = ComprobantesComprasGastos;
                 metroGridTodosComprobantes.AutoSize = false;
@@ -248,6 +257,11 @@ namespace ErpGestion
         }
 
         private void metroTabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroGridTodosComprobantes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

@@ -104,7 +104,7 @@
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTabControl1.Location = new System.Drawing.Point(20, 60);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 1;
+            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(1170, 505);
             this.metroTabControl1.TabIndex = 1;
             this.metroTabControl1.UseSelectable = true;
@@ -155,9 +155,9 @@
             // 
             this.metroButton5.BackgroundImage = global::ErpGestion.Properties.Resources.if_Tick_Mark_Circle_1398913;
             this.metroButton5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.metroButton5.Location = new System.Drawing.Point(673, 16);
+            this.metroButton5.Location = new System.Drawing.Point(632, 22);
             this.metroButton5.Name = "metroButton5";
-            this.metroButton5.Size = new System.Drawing.Size(27, 28);
+            this.metroButton5.Size = new System.Drawing.Size(39, 30);
             this.metroButton5.TabIndex = 46;
             this.metroButton5.UseSelectable = true;
             this.metroButton5.Click += new System.EventHandler(this.metroButton5_Click);
@@ -165,7 +165,7 @@
             // metroLabel9
             // 
             this.metroLabel9.AutoSize = true;
-            this.metroLabel9.Location = new System.Drawing.Point(589, 2);
+            this.metroLabel9.Location = new System.Drawing.Point(535, 10);
             this.metroLabel9.Name = "metroLabel9";
             this.metroLabel9.Size = new System.Drawing.Size(36, 19);
             this.metroLabel9.TabIndex = 45;
@@ -177,7 +177,7 @@
             // 
             // 
             this.metroTextBoxTotalFact.CustomButton.Image = null;
-            this.metroTextBoxTotalFact.CustomButton.Location = new System.Drawing.Point(56, 1);
+            this.metroTextBoxTotalFact.CustomButton.Location = new System.Drawing.Point(69, 1);
             this.metroTextBoxTotalFact.CustomButton.Name = "";
             this.metroTextBoxTotalFact.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.metroTextBoxTotalFact.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -186,7 +186,7 @@
             this.metroTextBoxTotalFact.CustomButton.UseSelectable = true;
             this.metroTextBoxTotalFact.CustomButton.Visible = false;
             this.metroTextBoxTotalFact.Lines = new string[0];
-            this.metroTextBoxTotalFact.Location = new System.Drawing.Point(589, 21);
+            this.metroTextBoxTotalFact.Location = new System.Drawing.Point(535, 29);
             this.metroTextBoxTotalFact.MaxLength = 32767;
             this.metroTextBoxTotalFact.Name = "metroTextBoxTotalFact";
             this.metroTextBoxTotalFact.PasswordChar = '\0';
@@ -195,7 +195,7 @@
             this.metroTextBoxTotalFact.SelectionLength = 0;
             this.metroTextBoxTotalFact.SelectionStart = 0;
             this.metroTextBoxTotalFact.ShortcutsEnabled = true;
-            this.metroTextBoxTotalFact.Size = new System.Drawing.Size(78, 23);
+            this.metroTextBoxTotalFact.Size = new System.Drawing.Size(91, 23);
             this.metroTextBoxTotalFact.TabIndex = 44;
             this.metroTextBoxTotalFact.UseSelectable = true;
             this.metroTextBoxTotalFact.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -204,7 +204,7 @@
             // metroCheckBoxSelectAll
             // 
             this.metroCheckBoxSelectAll.AutoSize = true;
-            this.metroCheckBoxSelectAll.Location = new System.Drawing.Point(467, 21);
+            this.metroCheckBoxSelectAll.Location = new System.Drawing.Point(715, 38);
             this.metroCheckBoxSelectAll.Name = "metroCheckBoxSelectAll";
             this.metroCheckBoxSelectAll.Size = new System.Drawing.Size(116, 15);
             this.metroCheckBoxSelectAll.TabIndex = 43;
@@ -218,7 +218,7 @@
             // 
             this.metroButton4.BackgroundImage = global::ErpGestion.Properties.Resources.if_document_print_118913;
             this.metroButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.metroButton4.Location = new System.Drawing.Point(355, 3);
+            this.metroButton4.Location = new System.Drawing.Point(355, 6);
             this.metroButton4.Name = "metroButton4";
             this.metroButton4.Size = new System.Drawing.Size(42, 39);
             this.metroButton4.TabIndex = 26;
@@ -268,7 +268,7 @@
             // 
             this.metroButton3.BackgroundImage = global::ErpGestion.Properties.Resources._1497285708_Cancel;
             this.metroButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.metroButton3.Location = new System.Drawing.Point(873, 266);
+            this.metroButton3.Location = new System.Drawing.Point(831, 266);
             this.metroButton3.Name = "metroButton3";
             this.metroButton3.Size = new System.Drawing.Size(48, 40);
             this.metroButton3.TabIndex = 23;
@@ -279,7 +279,7 @@
             // 
             this.metroButton2.BackgroundImage = global::ErpGestion.Properties.Resources._1497285414_Checkmark;
             this.metroButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.metroButton2.Location = new System.Drawing.Point(818, 266);
+            this.metroButton2.Location = new System.Drawing.Point(885, 266);
             this.metroButton2.Name = "metroButton2";
             this.metroButton2.Size = new System.Drawing.Size(49, 40);
             this.metroButton2.TabIndex = 22;
@@ -386,7 +386,7 @@
             // 
             this.metroButtonCancelarPago.BackgroundImage = global::ErpGestion.Properties.Resources._1497285708_Cancel;
             this.metroButtonCancelarPago.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.metroButtonCancelarPago.Location = new System.Drawing.Point(905, 10);
+            this.metroButtonCancelarPago.Location = new System.Drawing.Point(1019, 10);
             this.metroButtonCancelarPago.Name = "metroButtonCancelarPago";
             this.metroButtonCancelarPago.Size = new System.Drawing.Size(41, 43);
             this.metroButtonCancelarPago.TabIndex = 20;
@@ -397,7 +397,7 @@
             // 
             this.metroButtonAgregarPago.BackgroundImage = global::ErpGestion.Properties.Resources._1497285414_Checkmark;
             this.metroButtonAgregarPago.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.metroButtonAgregarPago.Location = new System.Drawing.Point(857, 10);
+            this.metroButtonAgregarPago.Location = new System.Drawing.Point(1066, 10);
             this.metroButtonAgregarPago.Name = "metroButtonAgregarPago";
             this.metroButtonAgregarPago.Size = new System.Drawing.Size(42, 43);
             this.metroButtonAgregarPago.TabIndex = 19;
@@ -410,9 +410,9 @@
             // 
             // 
             this.metroTextBoxConcepto.CustomButton.Image = null;
-            this.metroTextBoxConcepto.CustomButton.Location = new System.Drawing.Point(113, 2);
+            this.metroTextBoxConcepto.CustomButton.Location = new System.Drawing.Point(142, 2);
             this.metroTextBoxConcepto.CustomButton.Name = "";
-            this.metroTextBoxConcepto.CustomButton.Size = new System.Drawing.Size(135, 135);
+            this.metroTextBoxConcepto.CustomButton.Size = new System.Drawing.Size(157, 157);
             this.metroTextBoxConcepto.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTextBoxConcepto.CustomButton.TabIndex = 1;
             this.metroTextBoxConcepto.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -429,7 +429,7 @@
             this.metroTextBoxConcepto.SelectionLength = 0;
             this.metroTextBoxConcepto.SelectionStart = 0;
             this.metroTextBoxConcepto.ShortcutsEnabled = true;
-            this.metroTextBoxConcepto.Size = new System.Drawing.Size(251, 140);
+            this.metroTextBoxConcepto.Size = new System.Drawing.Size(302, 162);
             this.metroTextBoxConcepto.TabIndex = 18;
             this.metroTextBoxConcepto.UseSelectable = true;
             this.metroTextBoxConcepto.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -447,7 +447,7 @@
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(715, 2);
+            this.metroLabel6.Location = new System.Drawing.Point(857, 10);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(89, 19);
             this.metroLabel6.TabIndex = 16;
@@ -456,7 +456,7 @@
             // metroDateTimeFechaPago
             // 
             this.metroDateTimeFechaPago.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.metroDateTimeFechaPago.Location = new System.Drawing.Point(715, 24);
+            this.metroDateTimeFechaPago.Location = new System.Drawing.Point(857, 32);
             this.metroDateTimeFechaPago.MinimumSize = new System.Drawing.Size(0, 29);
             this.metroDateTimeFechaPago.Name = "metroDateTimeFechaPago";
             this.metroDateTimeFechaPago.Size = new System.Drawing.Size(111, 29);
@@ -650,7 +650,7 @@
             // 
             this.metroButton1.BackgroundImage = global::ErpGestion.Properties.Resources._1498842292_Citycons_magnify;
             this.metroButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.metroButton1.Location = new System.Drawing.Point(305, 2);
+            this.metroButton1.Location = new System.Drawing.Point(305, 5);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(44, 40);
             this.metroButton1.TabIndex = 4;

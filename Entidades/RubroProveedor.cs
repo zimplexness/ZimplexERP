@@ -14,7 +14,16 @@ namespace Entidades
     
     public partial class RubroProveedor
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public RubroProveedor()
+        {
+            this.Proveedores = new HashSet<Proveedores>();
+        }
+    
         public int IDRubroProveedor { get; set; }
         public string Descripcion { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Proveedores> Proveedores { get; set; }
     }
 }

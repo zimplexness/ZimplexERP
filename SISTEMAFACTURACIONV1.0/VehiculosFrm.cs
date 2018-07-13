@@ -155,5 +155,42 @@ namespace ErpGestion
            metroComboBoxChoferes.DisplayMember = "Chofer";
            metroComboBoxChoferes.ValueMember = "IDEmpleado";
         }
+
+        private void toolStripTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            bindingSourceVehiculos.DataSource = new VehiculosManager().FiltrarVehiculosxPatentes(toolStripTextBoxFilter.Text);
+        }
+
+        private void metroTextBoxMarca_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void metroTextBoxAnno_TextChanged(object sender, EventArgs e)
+        {
+
+            if (metroTextBoxAnno.Text == "")
+            {
+                metroGridvehiculos.DataSource = new VehiculosManager().listaVehiculosActivos();
+            }
+            else { 
+            metroGridvehiculos.DataSource = new VehiculosManager().FiltrarVehiculosxYear(int.Parse(metroTextBoxAnno.Text.ToString()));
+             }
+        }
+
+        private void metroTextBoxMarca_TextChanged_1(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void metroTextBoxBrand_TextChanged(object sender, EventArgs e)
+        {
+            if (metroTextBoxBrand.Text=="")
+            {
+                metroGridvehiculos.DataSource = new VehiculosManager().listaVehiculosActivos();
+
+            }
+            metroGridvehiculos.DataSource = new VehiculosManager().FiltrarVehiculosxMarca(metroTextBoxBrand.Text);
+        }
     }
 }

@@ -159,8 +159,6 @@
             this.Domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Localidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nacionalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.metroTabPage5 = new MetroFramework.Controls.MetroTabPage();
             this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
@@ -240,9 +238,6 @@
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripTextBoxFilterApellidosH = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripButton16 = new System.Windows.Forms.ToolStripButton();
-            this.Legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -255,7 +250,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGridEmpleadosActivos)).BeginInit();
-            this.metroTabPage3.SuspendLayout();
             this.metroTabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorNominaCablevision)).BeginInit();
             this.bindingNavigatorNominaCablevision.SuspendLayout();
@@ -277,14 +271,13 @@
             // 
             this.metroTabControl1.Controls.Add(this.metroTabPage1);
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
-            this.metroTabControl1.Controls.Add(this.metroTabPage3);
             this.metroTabControl1.Controls.Add(this.metroTabPage5);
             this.metroTabControl1.Controls.Add(this.metroTabPage6);
             this.metroTabControl1.Controls.Add(this.metroTabPage4);
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTabControl1.Location = new System.Drawing.Point(20, 60);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 5;
+            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(1126, 505);
             this.metroTabControl1.TabIndex = 1;
             this.metroTabControl1.UseSelectable = true;
@@ -598,8 +591,8 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
-            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
             // 
             // bindingNavigatorMoveFirstItem
@@ -1534,8 +1527,8 @@
             // bindingNavigatorCountItem2
             // 
             this.bindingNavigatorCountItem2.Name = "bindingNavigatorCountItem2";
-            this.bindingNavigatorCountItem2.Size = new System.Drawing.Size(37, 22);
-            this.bindingNavigatorCountItem2.Text = "de {0}";
+            this.bindingNavigatorCountItem2.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem2.Text = "of {0}";
             this.bindingNavigatorCountItem2.ToolTipText = "Número total de elementos";
             // 
             // bindingNavigatorDeleteItem
@@ -1651,7 +1644,7 @@
             // 
             this.metroDateTimeFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.metroDateTimeFin.Location = new System.Drawing.Point(110, 22);
-            this.metroDateTimeFin.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTimeFin.MinimumSize = new System.Drawing.Size(4, 29);
             this.metroDateTimeFin.Name = "metroDateTimeFin";
             this.metroDateTimeFin.Size = new System.Drawing.Size(101, 29);
             this.metroDateTimeFin.TabIndex = 76;
@@ -1660,7 +1653,7 @@
             // 
             this.metroDateTimeInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.metroDateTimeInicio.Location = new System.Drawing.Point(3, 22);
-            this.metroDateTimeInicio.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTimeInicio.MinimumSize = new System.Drawing.Size(4, 29);
             this.metroDateTimeInicio.Name = "metroDateTimeInicio";
             this.metroDateTimeInicio.Size = new System.Drawing.Size(101, 29);
             this.metroDateTimeInicio.TabIndex = 75;
@@ -1782,31 +1775,6 @@
             this.Nacionalidad.HeaderText = "Nacionalidad";
             this.Nacionalidad.Name = "Nacionalidad";
             // 
-            // metroTabPage3
-            // 
-            this.metroTabPage3.Controls.Add(this.webBrowser1);
-            this.metroTabPage3.HorizontalScrollbarBarColor = true;
-            this.metroTabPage3.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage3.HorizontalScrollbarSize = 3;
-            this.metroTabPage3.Location = new System.Drawing.Point(4, 38);
-            this.metroTabPage3.Name = "metroTabPage3";
-            this.metroTabPage3.Size = new System.Drawing.Size(1118, 463);
-            this.metroTabPage3.TabIndex = 2;
-            this.metroTabPage3.Text = "Geolocalizacion";
-            this.metroTabPage3.VerticalScrollbarBarColor = true;
-            this.metroTabPage3.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage3.VerticalScrollbarSize = 3;
-            // 
-            // webBrowser1
-            // 
-            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser1.Location = new System.Drawing.Point(0, 0);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(1118, 463);
-            this.webBrowser1.TabIndex = 2;
-            this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
-            // 
             // metroTabPage5
             // 
             this.metroTabPage5.Controls.Add(this.metroLabel12);
@@ -1890,7 +1858,7 @@
             // 
             this.metroDateTime3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.metroDateTime3.Location = new System.Drawing.Point(138, 23);
-            this.metroDateTime3.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTime3.MinimumSize = new System.Drawing.Size(4, 29);
             this.metroDateTime3.Name = "metroDateTime3";
             this.metroDateTime3.Size = new System.Drawing.Size(104, 29);
             this.metroDateTime3.TabIndex = 87;
@@ -1899,7 +1867,7 @@
             // 
             this.metroDateTime4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.metroDateTime4.Location = new System.Drawing.Point(4, 23);
-            this.metroDateTime4.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTime4.MinimumSize = new System.Drawing.Size(4, 29);
             this.metroDateTime4.Name = "metroDateTime4";
             this.metroDateTime4.Size = new System.Drawing.Size(112, 29);
             this.metroDateTime4.TabIndex = 86;
@@ -1936,8 +1904,8 @@
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(37, 22);
-            this.toolStripLabel1.Text = "de {0}";
+            this.toolStripLabel1.Size = new System.Drawing.Size(35, 22);
+            this.toolStripLabel1.Text = "of {0}";
             this.toolStripLabel1.ToolTipText = "Número total de elementos";
             // 
             // toolStripButton5
@@ -2150,7 +2118,7 @@
             // 
             this.metroDateTimeFechafin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.metroDateTimeFechafin.Location = new System.Drawing.Point(3, 19);
-            this.metroDateTimeFechafin.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTimeFechafin.MinimumSize = new System.Drawing.Size(4, 29);
             this.metroDateTimeFechafin.Name = "metroDateTimeFechafin";
             this.metroDateTimeFechafin.Size = new System.Drawing.Size(116, 29);
             this.metroDateTimeFechafin.TabIndex = 87;
@@ -2196,8 +2164,8 @@
             // bindingNavigatorCountItem1
             // 
             this.bindingNavigatorCountItem1.Name = "bindingNavigatorCountItem1";
-            this.bindingNavigatorCountItem1.Size = new System.Drawing.Size(37, 22);
-            this.bindingNavigatorCountItem1.Text = "de {0}";
+            this.bindingNavigatorCountItem1.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem1.Text = "of {0}";
             this.bindingNavigatorCountItem1.ToolTipText = "Número total de elementos";
             // 
             // bindingNavigatorMoveFirstItem1
@@ -2437,7 +2405,7 @@
             // 
             this.metroDateTime1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.metroDateTime1.Location = new System.Drawing.Point(110, 22);
-            this.metroDateTime1.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTime1.MinimumSize = new System.Drawing.Size(4, 29);
             this.metroDateTime1.Name = "metroDateTime1";
             this.metroDateTime1.Size = new System.Drawing.Size(101, 29);
             this.metroDateTime1.TabIndex = 83;
@@ -2446,7 +2414,7 @@
             // 
             this.metroDateTime2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.metroDateTime2.Location = new System.Drawing.Point(3, 22);
-            this.metroDateTime2.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTime2.MinimumSize = new System.Drawing.Size(4, 29);
             this.metroDateTime2.Name = "metroDateTime2";
             this.metroDateTime2.Size = new System.Drawing.Size(101, 29);
             this.metroDateTime2.TabIndex = 82;
@@ -2471,10 +2439,6 @@
             dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.metroGridHistorial.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.metroGridHistorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.metroGridHistorial.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Legajo,
-            this.Nombre,
-            this.Apellido});
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -2549,8 +2513,8 @@
             // toolStripLabel2
             // 
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(37, 22);
-            this.toolStripLabel2.Text = "de {0}";
+            this.toolStripLabel2.Size = new System.Drawing.Size(35, 22);
+            this.toolStripLabel2.Text = "of {0}";
             this.toolStripLabel2.ToolTipText = "Número total de elementos";
             // 
             // toolStripButton10
@@ -2644,21 +2608,6 @@
             this.toolStripButton16.Text = "toolStripButton11";
             this.toolStripButton16.Click += new System.EventHandler(this.toolStripButton16_Click);
             // 
-            // Legajo
-            // 
-            this.Legajo.HeaderText = "Legajo";
-            this.Legajo.Name = "Legajo";
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            // 
-            // Apellido
-            // 
-            this.Apellido.HeaderText = "Apellido";
-            this.Apellido.Name = "Apellido";
-            // 
             // EmpleadoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2687,7 +2636,6 @@
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGridEmpleadosActivos)).EndInit();
-            this.metroTabPage3.ResumeLayout(false);
             this.metroTabPage5.ResumeLayout(false);
             this.metroTabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorNominaCablevision)).EndInit();
@@ -2737,8 +2685,6 @@
         private MetroFramework.Controls.MetroTextBox metroTextBoxLegajo;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroTabPage metroTabPage2;
-        private MetroFramework.Controls.MetroTabPage metroTabPage3;
-        private System.Windows.Forms.WebBrowser webBrowser1;
         private MetroFramework.Controls.MetroCheckBox metroRegistro;
         private MetroFramework.Controls.MetroComboBox metroComboBoxSexo;
         private MetroFramework.Controls.MetroLabel metroLabel30;
@@ -2913,8 +2859,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Celular;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Legajo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
     }
 }

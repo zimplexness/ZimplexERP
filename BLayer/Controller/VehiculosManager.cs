@@ -233,5 +233,42 @@ namespace BLayer
 
         }
 
+        public List<ListaVehiculosActivos_Result> FiltrarVehiculosxMarca(string Marca)
+        {
+            using (Context = new Entities())
+            {
+                var query = (from v in Context.ListaVehiculosActivos()
+                             where v.Marcas.Contains(Marca.ToUpper())
+                             select v).ToList();
+                return query;
+            }
+
+
+
+        }
+
+        public List<ListaVehiculosActivos_Result> FiltrarVehiculosxYear(int year)
+        {
+            using (Context = new Entities())
+            {
+                var query = (from v in Context.ListaVehiculosActivos()
+                             where v.Year==year
+                             select v).ToList();
+                return query;
+            }
+
+
+
+        }
+
+        public List<ActividadMantenimiento> GetActividades() {
+            using (Context= new Entities())
+            {
+                var query = Context.ActividadMantenimiento.ToList();
+                return query;
+            }
+
+        }
+
     }
 }

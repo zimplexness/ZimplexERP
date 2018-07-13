@@ -4,14 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ERP_SITEMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="__EFMigrationsHistory">
-          <Key>
-            <PropertyRef Name="MigrationId" />
-          </Key>
-          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
-          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
-        </EntityType>
+    <Schema Namespace="ERP_SITEMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ActividadMantenimiento">
           <Key>
             <PropertyRef Name="IDActividadMantenimiento" />
@@ -51,84 +44,6 @@
           <Property Name="Codigo" Type="varchar" MaxLength="50" />
           <Property Name="Stock" Type="float" />
           <Property Name="Iva" Type="float" />
-        </EntityType>
-        <EntityType Name="AspNetRoleClaims">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ClaimType" Type="nvarchar(max)" />
-          <Property Name="ClaimValue" Type="nvarchar(max)" />
-          <Property Name="RoleId" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="AspNetRoles">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="ConcurrencyStamp" Type="nvarchar(max)" />
-          <Property Name="Name" Type="nvarchar" MaxLength="256" />
-          <Property Name="NormalizedName" Type="nvarchar" MaxLength="256" />
-        </EntityType>
-        <EntityType Name="AspNetUserClaims">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ClaimType" Type="nvarchar(max)" />
-          <Property Name="ClaimValue" Type="nvarchar(max)" />
-          <Property Name="UserId" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="AspNetUserLogins">
-          <Key>
-            <PropertyRef Name="LoginProvider" />
-            <PropertyRef Name="ProviderKey" />
-          </Key>
-          <Property Name="LoginProvider" Type="nvarchar" MaxLength="450" Nullable="false" />
-          <Property Name="ProviderKey" Type="nvarchar" MaxLength="450" Nullable="false" />
-          <Property Name="ProviderDisplayName" Type="nvarchar(max)" />
-          <Property Name="UserId" Type="int" Nullable="false" />
-        </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.AspNetUserRoles' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
-        <EntityType Name="AspNetUserRoles">
-          <Key>
-            <PropertyRef Name="UserId" />
-            <PropertyRef Name="RoleId" />
-          </Key>
-          <Property Name="UserId" Type="int" Nullable="false" />
-          <Property Name="RoleId" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="AspNetUsers">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="AccessFailedCount" Type="int" Nullable="false" />
-          <Property Name="ConcurrencyStamp" Type="nvarchar(max)" />
-          <Property Name="Email" Type="nvarchar" MaxLength="256" />
-          <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
-          <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
-          <Property Name="LockoutEnd" Type="datetimeoffset" Precision="7" />
-          <Property Name="NormalizedEmail" Type="nvarchar" MaxLength="256" />
-          <Property Name="NormalizedUserName" Type="nvarchar" MaxLength="256" />
-          <Property Name="PasswordHash" Type="nvarchar(max)" />
-          <Property Name="PhoneNumber" Type="nvarchar(max)" />
-          <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
-          <Property Name="SecurityStamp" Type="nvarchar(max)" />
-          <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
-          <Property Name="UserName" Type="nvarchar" MaxLength="256" />
-        </EntityType>
-        <EntityType Name="AspNetUserTokens">
-          <Key>
-            <PropertyRef Name="UserId" />
-            <PropertyRef Name="LoginProvider" />
-            <PropertyRef Name="Name" />
-          </Key>
-          <Property Name="UserId" Type="nvarchar" MaxLength="450" Nullable="false" />
-          <Property Name="LoginProvider" Type="nvarchar" MaxLength="450" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="450" Nullable="false" />
-          <Property Name="Value" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Bancos">
           <Key>
@@ -430,6 +345,56 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.AspNetUserRoles' no tiene defi
           </Key>
           <Property Name="IdNacionalidad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nacionalidad" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="NetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="ConcurrencyStamp" Type="nvarchar(max)" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" />
+          <Property Name="NormalizedName" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="NetUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+          <Property Name="ConcurrencyStamp" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+          <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+          <Property Name="LockoutEnd" Type="datetimeoffset" Precision="7" />
+          <Property Name="NormalizedEmail" Type="nvarchar" MaxLength="256" />
+          <Property Name="NormalizedUserName" Type="nvarchar" MaxLength="256" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="NetUserLogin">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="UserId" Type="nvarchar" MaxLength="450" Nullable="false" />
+          <Property Name="LoginProvider" Type="nvarchar" MaxLength="450" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="450" Nullable="false" />
+          <Property Name="Value" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.NetUsersRoles' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="NetUsersRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="ObraSocial">
           <Key>
@@ -825,31 +790,6 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.NominaTelecentro' no tiene def
           <Property Name="DNI" Type="nchar" MaxLength="8" Nullable="false" />
         </EntityType>
         <!--Errores durante la generación:
-advertencia 6013: La tabla o vista 'ERP_SITEM.dbo.Reporte_pagos' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
-        <EntityType Name="Reporte_pagos">
-          <Property Name="MediosPago" Type="varchar" MaxLength="50" />
-          <Property Name="Razon" Type="varchar" MaxLength="150" />
-          <Property Name="Fecha" Type="date" />
-          <Property Name="Concepto" Type="varchar" MaxLength="400" />
-          <Property Name="Importe" Type="float" />
-          <Property Name="NoCheque" Type="varchar" MaxLength="50" />
-          <Property Name="Nombre" Type="varchar" MaxLength="50" />
-          <Property Name="Expr1" Type="float" />
-          <Property Name="Expr2" Type="date" />
-          <Property Name="Sucursal" Type="varchar" MaxLength="4" />
-          <Property Name="NoFactura" Type="varchar" MaxLength="8" />
-        </EntityType>-->
-        <!--Errores durante la generación:
-advertencia 6013: La tabla o vista 'ERP_SITEM.dbo.ReportePagosxProveedores' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
-        <EntityType Name="ReportePagosxProveedores">
-          <Property Name="Razon" Type="varchar" MaxLength="150" />
-          <Property Name="PuntoV" Type="varchar" MaxLength="4" />
-          <Property Name="NoFactura" Type="varchar" MaxLength="8" />
-          <Property Name="Fecha" Type="date" />
-          <Property Name="MediosPago" Type="varchar" MaxLength="50" />
-          <Property Name="Importe" Type="float" />
-        </EntityType>-->
-        <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.Solicitudesempleos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="Solicitudesempleos">
           <Key>
@@ -858,18 +798,6 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.Solicitudesempleos' no tiene d
           <Property Name="IdPersona" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombrepersona" Type="varchar" MaxLength="100" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6013: La tabla o vista 'ERP_SITEM.dbo.View_1' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
-        <EntityType Name="View_1">
-          <Property Name="Fecha" Type="date" />
-          <Property Name="MediosPago" Type="varchar" MaxLength="50" />
-          <Property Name="Nombre" Type="varchar" MaxLength="50" />
-          <Property Name="NoCheque" Type="varchar" MaxLength="50" />
-          <Property Name="Importe" Type="float" />
-          <Property Name="Sucursal" Type="varchar" MaxLength="4" />
-          <Property Name="NoFactura" Type="varchar" MaxLength="8" />
-          <Property Name="Expr1" Type="float" />
-        </EntityType>-->
         <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_DetalleArticulo' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="View_DetalleArticulo">
@@ -950,72 +878,30 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_AspNetRoleClaims_AspNetRoles_RoleId">
-          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="AspNetRoleClaims" Type="Self.AspNetRoleClaims" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="AspNetRoles">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="AspNetRoleClaims">
-              <PropertyRef Name="RoleId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_AspNetUserClaims_AspNetUsers_UserId">
-          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="AspNetUsers">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="AspNetUserClaims">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_AspNetUserLogins_AspNetUsers_UserId">
-          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="AspNetUsers">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="AspNetUserLogins">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_AspNetUserRoles_AspNetRoles_RoleId">
-          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+          <End Role="NetRoles" Type="Self.NetRoles" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <End Role="NetUsersRoles" Type="Self.NetUsersRoles" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="AspNetRoles">
+            <Principal Role="NetRoles">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="AspNetUserRoles">
+            <Dependent Role="NetUsersRoles">
               <PropertyRef Name="RoleId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_AspNetUserRoles_AspNetUsers_UserId">
-          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+          <End Role="NetUser" Type="Self.NetUser" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <End Role="NetUsersRoles" Type="Self.NetUsersRoles" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="AspNetUsers">
+            <Principal Role="NetUser">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="AspNetUserRoles">
+            <Dependent Role="NetUsersRoles">
               <PropertyRef Name="UserId" />
             </Dependent>
           </ReferentialConstraint>
@@ -1029,18 +915,6 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </Principal>
             <Dependent Role="CategoriaEmpleado">
               <PropertyRef Name="IDSindicato" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_CuentaCorriente_Proveedores">
-          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="0..1" />
-          <End Role="CuentaCorriente" Type="Self.CuentaCorriente" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Proveedores">
-              <PropertyRef Name="IdProveedores" />
-            </Principal>
-            <Dependent Role="CuentaCorriente">
-              <PropertyRef Name="IDProveedor" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1200,23 +1074,11 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_PolizasSeguro_Proveedores">
-          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="0..1" />
-          <End Role="PolizasSeguro" Type="Self.PolizasSeguro" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Proveedores">
-              <PropertyRef Name="IdProveedores" />
-            </Principal>
-            <Dependent Role="PolizasSeguro">
-              <PropertyRef Name="IDCompania" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Proveedores_AspNetUsers">
-          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+          <End Role="NetUser" Type="Self.NetUser" Multiplicity="0..1" />
           <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="AspNetUsers">
+            <Principal Role="NetUser">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="Proveedores">
@@ -1224,15 +1086,27 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Proveedores_AspNetUsers1">
-          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+        <Association Name="FK_Proveedores_Proveedores">
+          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="1" />
+          <End Role="Proveedores1" Type="Self.Proveedores" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Proveedores">
+              <PropertyRef Name="IdProveedores" />
+            </Principal>
+            <Dependent Role="Proveedores1">
+              <PropertyRef Name="IdProveedores" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Proveedores_RubroProveedor">
+          <End Role="RubroProveedor" Type="Self.RubroProveedor" Multiplicity="0..1" />
           <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="AspNetUsers">
-              <PropertyRef Name="Id" />
+            <Principal Role="RubroProveedor">
+              <PropertyRef Name="IDRubroProveedor" />
             </Principal>
             <Dependent Role="Proveedores">
-              <PropertyRef Name="UserUltModificacion" />
+              <PropertyRef Name="IDRubro" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1353,18 +1227,6 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </Principal>
             <Dependent Role="Comprobantes">
               <PropertyRef Name="IdEstado" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Table_Comprobante_Table_Proveedores">
-          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="0..1" />
-          <End Role="Comprobantes" Type="Self.Comprobantes" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Proveedores">
-              <PropertyRef Name="IdProveedores" />
-            </Principal>
-            <Dependent Role="Comprobantes">
-              <PropertyRef Name="IdProveedor" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1742,6 +1604,12 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <Parameter Name="fechainicio" Type="datetime" Mode="In" />
           <Parameter Name="fechafin" Type="datetime" Mode="In" />
         </Function>
+        <Function Name="GastosXCentroCostos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="fechaini" Type="datetime" Mode="In" />
+          <Parameter Name="fechafin" Type="datetime" Mode="In" />
+          <Parameter Name="CentroCosto" Type="int" Mode="In" />
+          <Parameter Name="Contable" Type="int" Mode="In" />
+        </Function>
         <Function Name="HistorialEmpleadosSitem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="ListaEmpleadosActivos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="ListaVehiculosActivos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -1773,17 +1641,10 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <Parameter Name="responseMessage" Type="nvarchar" Mode="InOut" />
         </Function>
         <EntityContainer Name="ERP_SITEMModelStoreContainer">
-          <EntitySet Name="__EFMigrationsHistory" EntityType="Self.__EFMigrationsHistory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ActividadMantenimiento" EntityType="Self.ActividadMantenimiento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AfectadoEmpresaCliente" EntityType="Self.AfectadoEmpresaCliente" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Almacenes" EntityType="Self.Almacenes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Articulos" EntityType="Self.Articulos" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="AspNetRoleClaims" EntityType="Self.AspNetRoleClaims" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="AspNetUserTokens" EntityType="Self.AspNetUserTokens" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Bancos" EntityType="Self.Bancos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CategoriaEmpleado" EntityType="Self.CategoriaEmpleado" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Categorias" EntityType="Self.Categorias" Schema="dbo" store:Type="Tables" />
@@ -1814,6 +1675,9 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <EntitySet Name="Menus" EntityType="Self.Menus" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ModelosVehiculos" EntityType="Self.ModelosVehiculos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Nacionalidades" EntityType="Self.Nacionalidades" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NetRoles" EntityType="Self.NetRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NetUser" EntityType="Self.NetUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NetUserLogin" EntityType="Self.NetUserLogin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ObraSocial" EntityType="Self.ObraSocial" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Pagos" EntityType="Self.Pagos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PermissionMenus" EntityType="Self.PermissionMenus" Schema="dbo" store:Type="Tables" />
@@ -1840,11 +1704,11 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <EntitySet Name="Vehiculos" EntityType="Self.Vehiculos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Vencimientos" EntityType="Self.Vencimientos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Zonas" EntityType="Self.Zonas" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" store:Type="Tables" store:Schema="dbo">
+          <EntitySet Name="NetUsersRoles" EntityType="Self.NetUsersRoles" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [AspNetUserRoles].[UserId] AS [UserId], 
-    [AspNetUserRoles].[RoleId] AS [RoleId]
-    FROM [dbo].[AspNetUserRoles] AS [AspNetUserRoles]</DefiningQuery>
+    [NetUsersRoles].[UserId] AS [UserId], 
+    [NetUsersRoles].[RoleId] AS [RoleId]
+    FROM [dbo].[NetUsersRoles] AS [NetUsersRoles]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="Choferes" EntityType="Self.Choferes" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -2007,33 +1871,17 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             <End Role="EmpresasClientes" EntitySet="EmpresasClientes" />
             <End Role="AfectadoEmpresaCliente" EntitySet="AfectadoEmpresaCliente" />
           </AssociationSet>
-          <AssociationSet Name="FK_AspNetRoleClaims_AspNetRoles_RoleId" Association="Self.FK_AspNetRoleClaims_AspNetRoles_RoleId">
-            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
-            <End Role="AspNetRoleClaims" EntitySet="AspNetRoleClaims" />
-          </AssociationSet>
-          <AssociationSet Name="FK_AspNetUserClaims_AspNetUsers_UserId" Association="Self.FK_AspNetUserClaims_AspNetUsers_UserId">
-            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
-            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
-          </AssociationSet>
-          <AssociationSet Name="FK_AspNetUserLogins_AspNetUsers_UserId" Association="Self.FK_AspNetUserLogins_AspNetUsers_UserId">
-            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
-            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
-          </AssociationSet>
           <AssociationSet Name="FK_AspNetUserRoles_AspNetRoles_RoleId" Association="Self.FK_AspNetUserRoles_AspNetRoles_RoleId">
-            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
-            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+            <End Role="NetRoles" EntitySet="NetRoles" />
+            <End Role="NetUsersRoles" EntitySet="NetUsersRoles" />
           </AssociationSet>
           <AssociationSet Name="FK_AspNetUserRoles_AspNetUsers_UserId" Association="Self.FK_AspNetUserRoles_AspNetUsers_UserId">
-            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
-            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+            <End Role="NetUser" EntitySet="NetUser" />
+            <End Role="NetUsersRoles" EntitySet="NetUsersRoles" />
           </AssociationSet>
           <AssociationSet Name="FK_CategoriaEmpleado_Sindicatos" Association="Self.FK_CategoriaEmpleado_Sindicatos">
             <End Role="Sindicatos" EntitySet="Sindicatos" />
             <End Role="CategoriaEmpleado" EntitySet="CategoriaEmpleado" />
-          </AssociationSet>
-          <AssociationSet Name="FK_CuentaCorriente_Proveedores" Association="Self.FK_CuentaCorriente_Proveedores">
-            <End Role="Proveedores" EntitySet="Proveedores" />
-            <End Role="CuentaCorriente" EntitySet="CuentaCorriente" />
           </AssociationSet>
           <AssociationSet Name="FK_Empleados_EmpresasClientes" Association="Self.FK_Empleados_EmpresasClientes">
             <End Role="EmpresasClientes" EntitySet="EmpresasClientes" />
@@ -2087,16 +1935,16 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             <End Role="ObraSocial" EntitySet="ObraSocial" />
             <End Role="Personas" EntitySet="Personas" />
           </AssociationSet>
-          <AssociationSet Name="FK_PolizasSeguro_Proveedores" Association="Self.FK_PolizasSeguro_Proveedores">
-            <End Role="Proveedores" EntitySet="Proveedores" />
-            <End Role="PolizasSeguro" EntitySet="PolizasSeguro" />
-          </AssociationSet>
           <AssociationSet Name="FK_Proveedores_AspNetUsers" Association="Self.FK_Proveedores_AspNetUsers">
-            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="NetUser" EntitySet="NetUser" />
             <End Role="Proveedores" EntitySet="Proveedores" />
           </AssociationSet>
-          <AssociationSet Name="FK_Proveedores_AspNetUsers1" Association="Self.FK_Proveedores_AspNetUsers1">
-            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+          <AssociationSet Name="FK_Proveedores_Proveedores" Association="Self.FK_Proveedores_Proveedores">
+            <End Role="Proveedores" EntitySet="Proveedores" />
+            <End Role="Proveedores1" EntitySet="Proveedores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Proveedores_RubroProveedor" Association="Self.FK_Proveedores_RubroProveedor">
+            <End Role="RubroProveedor" EntitySet="RubroProveedor" />
             <End Role="Proveedores" EntitySet="Proveedores" />
           </AssociationSet>
           <AssociationSet Name="FK_Referencias_Personas" Association="Self.FK_Referencias_Personas">
@@ -2137,10 +1985,6 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           </AssociationSet>
           <AssociationSet Name="FK_Table_Comprobante_Table_Estados" Association="Self.FK_Table_Comprobante_Table_Estados">
             <End Role="Estados" EntitySet="Estados" />
-            <End Role="Comprobantes" EntitySet="Comprobantes" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Table_Comprobante_Table_Proveedores" Association="Self.FK_Table_Comprobante_Table_Proveedores">
-            <End Role="Proveedores" EntitySet="Proveedores" />
             <End Role="Comprobantes" EntitySet="Comprobantes" />
           </AssociationSet>
           <AssociationSet Name="FK_Table_Comprobante_Table_TipoComprobante" Association="Self.FK_Table_Comprobante_Table_TipoComprobante">
@@ -2256,18 +2100,10 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             <End Role="Vehiculos1" EntitySet="Vehiculos" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ERP_SITEMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="C__EFMigrationsHistory">
-          <Key>
-            <PropertyRef Name="MigrationId" />
-          </Key>
-          <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
-        </EntityType>
         <EntityType Name="ActividadMantenimiento">
           <Key>
             <PropertyRef Name="IDActividadMantenimiento" />
@@ -2316,84 +2152,6 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <NavigationProperty Name="Ubicacion" Relationship="Self.FK_Table_Articulos_Table_Ubicacion" FromRole="Articulos" ToRole="Ubicacion" />
           <NavigationProperty Name="DetallesComprobanteArticulos" Relationship="Self.FK_Table_DetallesComprobanteArticulos_Table_Articulos" FromRole="Articulos" ToRole="DetallesComprobanteArticulos" />
           <NavigationProperty Name="IngresoMateriales" Relationship="Self.FK_Table_IngresoMateriales_Table_Articulos" FromRole="Articulos" ToRole="IngresoMateriales" />
-        </EntityType>
-        <EntityType Name="AspNetRoleClaims">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="RoleId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="AspNetRoles" Relationship="Self.FK_AspNetRoleClaims_AspNetRoles_RoleId" FromRole="AspNetRoleClaims" ToRole="AspNetRoles" />
-        </EntityType>
-        <EntityType Name="AspNetRoles">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="ConcurrencyStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
-          <Property Name="NormalizedName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="AspNetRoleClaims" Relationship="Self.FK_AspNetRoleClaims_AspNetRoles_RoleId" FromRole="AspNetRoles" ToRole="AspNetRoleClaims" />
-          <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
-        </EntityType>
-        <EntityType Name="AspNetUserClaims">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="UserId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_AspNetUserClaims_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
-        </EntityType>
-        <EntityType Name="AspNetUserLogins">
-          <Key>
-            <PropertyRef Name="LoginProvider" />
-            <PropertyRef Name="ProviderKey" />
-          </Key>
-          <Property Name="LoginProvider" Type="String" MaxLength="450" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ProviderKey" Type="String" MaxLength="450" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ProviderDisplayName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="UserId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_AspNetUserLogins_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
-        </EntityType>
-        <EntityType Name="AspNetUsers">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
-          <Property Name="ConcurrencyStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
-          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
-          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
-          <Property Name="LockoutEnd" Type="DateTimeOffset" Precision="7" />
-          <Property Name="NormalizedEmail" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
-          <Property Name="NormalizedUserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
-          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
-          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
-          <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_AspNetUserClaims_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
-          <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_AspNetUserLogins_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
-          <NavigationProperty Name="Proveedores" Relationship="Self.FK_Proveedores_AspNetUsers" FromRole="AspNetUsers" ToRole="Proveedores" />
-          <NavigationProperty Name="Proveedores1" Relationship="Self.FK_Proveedores_AspNetUsers1" FromRole="AspNetUsers" ToRole="Proveedores" />
-          <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
-        </EntityType>
-        <EntityType Name="AspNetUserTokens">
-          <Key>
-            <PropertyRef Name="UserId" />
-            <PropertyRef Name="LoginProvider" />
-            <PropertyRef Name="Name" />
-          </Key>
-          <Property Name="UserId" Type="String" MaxLength="450" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="LoginProvider" Type="String" MaxLength="450" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="450" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Bancos">
           <Key>
@@ -2758,6 +2516,49 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <NavigationProperty Name="Empleados" Relationship="Self.FK_Empleados_Nacionalidades" FromRole="Nacionalidades" ToRole="Empleados" />
           <NavigationProperty Name="Personas" Relationship="Self.FK_Personas_Nacionalidades" FromRole="Nacionalidades" ToRole="Personas" />
         </EntityType>
+        <EntityType Name="NetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="ConcurrencyStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="NormalizedName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="NetUser" Relationship="Self.NetUsersRoles" FromRole="NetRoles" ToRole="NetUser" />
+        </EntityType>
+        <EntityType Name="NetUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+          <Property Name="ConcurrencyStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEnd" Type="DateTimeOffset" Precision="7" />
+          <Property Name="NormalizedEmail" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="NormalizedUserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Proveedores" Relationship="Self.FK_Proveedores_AspNetUsers" FromRole="NetUser" ToRole="Proveedores" />
+          <NavigationProperty Name="NetRoles" Relationship="Self.NetUsersRoles" FromRole="NetUser" ToRole="NetRoles" />
+        </EntityType>
+        <EntityType Name="NetUserLogin">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="UserId" Type="String" MaxLength="450" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LoginProvider" Type="String" MaxLength="450" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="450" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
         <EntityType Name="ObraSocial">
           <Key>
             <PropertyRef Name="idObraSocial" />
@@ -2867,14 +2668,16 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <Property Name="FechaAlta" Type="DateTime" Precision="0" />
           <Property Name="UserUltModificacion" Type="Int32" />
           <Property Name="FechaUltimaModificacion" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_Proveedores_AspNetUsers" FromRole="Proveedores" ToRole="AspNetUsers" />
-          <NavigationProperty Name="AspNetUsers1" Relationship="Self.FK_Proveedores_AspNetUsers1" FromRole="Proveedores" ToRole="AspNetUsers" />
           <NavigationProperty Name="Comprobantes" Relationship="Self.FK_Table_Comprobante_Table_Proveedores" FromRole="Proveedores" ToRole="Comprobantes" />
           <NavigationProperty Name="CuentaCorriente" Relationship="Self.FK_CuentaCorriente_Proveedores" FromRole="Proveedores" ToRole="CuentaCorriente" />
           <NavigationProperty Name="DetalleProveedor_ProductorSeguro" Relationship="Self.FK_Table_DetalleProveedor_ProductorSeguro_Table_Proveedores" FromRole="Proveedores" ToRole="DetalleProveedor_ProductorSeguro" />
           <NavigationProperty Name="Localidades" Relationship="Self.FK_Table_Proveedores_Table_Localidades" FromRole="Proveedores" ToRole="Localidades" />
+          <NavigationProperty Name="NetUser" Relationship="Self.FK_Proveedores_AspNetUsers" FromRole="Proveedores" ToRole="NetUser" />
           <NavigationProperty Name="PolizasSeguro" Relationship="Self.FK_PolizasSeguro_Proveedores" FromRole="Proveedores" ToRole="PolizasSeguro" />
           <NavigationProperty Name="Provincias" Relationship="Self.FK_Table_Proveedores_Table_Provincias" FromRole="Proveedores" ToRole="Provincias" />
+          <NavigationProperty Name="Proveedores1" Relationship="ERP_SITEMModel.FK_Proveedores_Proveedores" FromRole="Proveedores" ToRole="Proveedores1" />
+          <NavigationProperty Name="Proveedores2" Relationship="ERP_SITEMModel.FK_Proveedores_Proveedores" FromRole="Proveedores1" ToRole="Proveedores" />
+          <NavigationProperty Name="RubroProveedor" Relationship="ERP_SITEMModel.FK_Proveedores_RubroProveedor" FromRole="Proveedores" ToRole="RubroProveedor" />
         </EntityType>
         <EntityType Name="Provincias">
           <Key>
@@ -2907,6 +2710,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           </Key>
           <Property Name="IDRubroProveedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Proveedores" Relationship="ERP_SITEMModel.FK_Proveedores_RubroProveedor" FromRole="RubroProveedor" ToRole="Proveedores" />
         </EntityType>
         <EntityType Name="Sexos">
           <Key>
@@ -3345,72 +3149,6 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_AspNetRoleClaims_AspNetRoles_RoleId">
-          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="AspNetRoleClaims" Type="Self.AspNetRoleClaims" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="AspNetRoles">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="AspNetRoleClaims">
-              <PropertyRef Name="RoleId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_AspNetUserClaims_AspNetUsers_UserId">
-          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="AspNetUsers">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="AspNetUserClaims">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_AspNetUserLogins_AspNetUsers_UserId">
-          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="AspNetUsers">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="AspNetUserLogins">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Proveedores_AspNetUsers">
-          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
-          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="AspNetUsers">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Proveedores">
-              <PropertyRef Name="UserAltaID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Proveedores_AspNetUsers1">
-          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
-          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="AspNetUsers">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Proveedores">
-              <PropertyRef Name="UserUltModificacion" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Table_DetalleMediosPago_Table_Banco">
           <End Role="Bancos" Type="Self.Bancos" Multiplicity="0..1" />
           <End Role="DetalleMediosPagos" Type="Self.DetalleMediosPagos" Multiplicity="*" />
@@ -3887,6 +3625,18 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Proveedores_AspNetUsers">
+          <End Role="NetUser" Type="Self.NetUser" Multiplicity="0..1" />
+          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NetUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Proveedores">
+              <PropertyRef Name="UserAltaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Personas_ObraSocial">
           <End Role="ObraSocial" Type="Self.ObraSocial" Multiplicity="0..1" />
           <End Role="Personas" Type="Self.Personas" Multiplicity="*" />
@@ -3995,22 +3745,15 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="AspNetUserRoles">
-          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="*" />
-          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="*" />
+        <Association Name="NetUsersRoles">
+          <End Role="NetRoles" Type="Self.NetRoles" Multiplicity="*" />
+          <End Role="NetUser" Type="Self.NetUser" Multiplicity="*" />
         </Association>
         <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="C__EFMigrationsHistory" EntityType="Self.C__EFMigrationsHistory" />
           <EntitySet Name="ActividadMantenimiento" EntityType="Self.ActividadMantenimiento" />
           <EntitySet Name="AfectadoEmpresaCliente" EntityType="Self.AfectadoEmpresaCliente" />
           <EntitySet Name="Almacenes" EntityType="Self.Almacenes" />
           <EntitySet Name="Articulos" EntityType="Self.Articulos" />
-          <EntitySet Name="AspNetRoleClaims" EntityType="Self.AspNetRoleClaims" />
-          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" />
-          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" />
-          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" />
-          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" />
-          <EntitySet Name="AspNetUserTokens" EntityType="Self.AspNetUserTokens" />
           <EntitySet Name="Bancos" EntityType="Self.Bancos" />
           <EntitySet Name="CategoriaEmpleado" EntityType="Self.CategoriaEmpleado" />
           <EntitySet Name="Categorias" EntityType="Self.Categorias" />
@@ -4041,6 +3784,9 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <EntitySet Name="Menus" EntityType="Self.Menus" />
           <EntitySet Name="ModelosVehiculos" EntityType="Self.ModelosVehiculos" />
           <EntitySet Name="Nacionalidades" EntityType="Self.Nacionalidades" />
+          <EntitySet Name="NetRoles" EntityType="Self.NetRoles" />
+          <EntitySet Name="NetUser" EntityType="Self.NetUser" />
+          <EntitySet Name="NetUserLogin" EntityType="Self.NetUserLogin" />
           <EntitySet Name="ObraSocial" EntityType="Self.ObraSocial" />
           <EntitySet Name="Pagos" EntityType="Self.Pagos" />
           <EntitySet Name="PermissionMenus" EntityType="Self.PermissionMenus" />
@@ -4115,26 +3861,6 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <AssociationSet Name="FK_Table_IngresoMateriales_Table_Articulos" Association="Self.FK_Table_IngresoMateriales_Table_Articulos">
             <End Role="Articulos" EntitySet="Articulos" />
             <End Role="IngresoMateriales" EntitySet="IngresoMateriales" />
-          </AssociationSet>
-          <AssociationSet Name="FK_AspNetRoleClaims_AspNetRoles_RoleId" Association="Self.FK_AspNetRoleClaims_AspNetRoles_RoleId">
-            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
-            <End Role="AspNetRoleClaims" EntitySet="AspNetRoleClaims" />
-          </AssociationSet>
-          <AssociationSet Name="FK_AspNetUserClaims_AspNetUsers_UserId" Association="Self.FK_AspNetUserClaims_AspNetUsers_UserId">
-            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
-            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
-          </AssociationSet>
-          <AssociationSet Name="FK_AspNetUserLogins_AspNetUsers_UserId" Association="Self.FK_AspNetUserLogins_AspNetUsers_UserId">
-            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
-            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Proveedores_AspNetUsers" Association="Self.FK_Proveedores_AspNetUsers">
-            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
-            <End Role="Proveedores" EntitySet="Proveedores" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Proveedores_AspNetUsers1" Association="Self.FK_Proveedores_AspNetUsers1">
-            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
-            <End Role="Proveedores" EntitySet="Proveedores" />
           </AssociationSet>
           <AssociationSet Name="FK_Table_DetalleMediosPago_Table_Banco" Association="Self.FK_Table_DetalleMediosPago_Table_Banco">
             <End Role="Bancos" EntitySet="Bancos" />
@@ -4292,6 +4018,10 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             <End Role="Nacionalidades" EntitySet="Nacionalidades" />
             <End Role="Personas" EntitySet="Personas" />
           </AssociationSet>
+          <AssociationSet Name="FK_Proveedores_AspNetUsers" Association="Self.FK_Proveedores_AspNetUsers">
+            <End Role="NetUser" EntitySet="NetUser" />
+            <End Role="Proveedores" EntitySet="Proveedores" />
+          </AssociationSet>
           <AssociationSet Name="FK_Personas_ObraSocial" Association="Self.FK_Personas_ObraSocial">
             <End Role="ObraSocial" EntitySet="ObraSocial" />
             <End Role="Personas" EntitySet="Personas" />
@@ -4328,9 +4058,9 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             <End Role="Vehiculos" EntitySet="Vehiculos" />
             <End Role="Vehiculos1" EntitySet="Vehiculos" />
           </AssociationSet>
-          <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
-            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
-            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+          <AssociationSet Name="NetUsersRoles" Association="Self.NetUsersRoles">
+            <End Role="NetRoles" EntitySet="NetRoles" />
+            <End Role="NetUser" EntitySet="NetUser" />
           </AssociationSet>
           <FunctionImport Name="ComprobantesGastos_Compras" ReturnType="Collection(ERP_SITEMModel.ComprobantesGastos_Compras_Result)">
             <Parameter Name="fechainicio" Mode="In" Type="DateTime" />
@@ -4343,13 +4073,13 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <FunctionImport Name="CuentasxPagarProveedores" ReturnType="Collection(ERP_SITEMModel.CuentasxPagarProveedores_Result)" />
           <FunctionImport Name="DetalleSolicitudEmpleo" ReturnType="Collection(ERP_SITEMModel.DetalleSolicitudEmpleo_Result)" />
           <FunctionImport Name="EncabezadoDeuda" ReturnType="Collection(ERP_SITEMModel.EncabezadoDeuda_Result)">
-            <Parameter Name="idproveedor" Mode="In" Type="Int32" />
+          <Parameter Name="idproveedor" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="EncabezadoOrdenPago" ReturnType="Collection(ERP_SITEMModel.EncabezadoOrdenPago_Result)">
-            <Parameter Name="IdPago" Mode="In" Type="Int32" />
+          <Parameter Name="IdPago" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="FacturasPendientesPago" ReturnType="Collection(ERP_SITEMModel.FacturasPendientesPago_Result)">
-            <Parameter Name="idproveedor" Mode="In" Type="Int32" />
+          <Parameter Name="idproveedor" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="FACTURASXPROVEEDORES" ReturnType="Collection(ERP_SITEMModel.FACTURASXPROVEEDORES_Result)">
             <Parameter Name="FECHAINICIO" Mode="In" Type="DateTime" />
@@ -4364,20 +4094,20 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <FunctionImport Name="ListaEmpleadosActivos" ReturnType="Collection(ERP_SITEMModel.ListaEmpleadosActivos_Result)" />
           <FunctionImport Name="ListaVehiculosActivos" ReturnType="Collection(ERP_SITEMModel.ListaVehiculosActivos_Result)" />
           <FunctionImport Name="OrdenPago" ReturnType="Collection(ERP_SITEMModel.OrdenPago_Result)">
-            <Parameter Name="Idpago" Mode="In" Type="Int32" />
+          <Parameter Name="Idpago" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="ReporteNominaTelecentro" ReturnType="Collection(ERP_SITEMModel.ReporteNominaTelecentro_Result)">
-            <Parameter Name="fechafin" Mode="In" Type="DateTime" />
+          <Parameter Name="fechafin" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="ReportePagosProveedores" ReturnType="Collection(ERP_SITEMModel.ReportePagosProveedores_Result)">
             <Parameter Name="fechainicio" Mode="In" Type="DateTime" />
             <Parameter Name="fechafin" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="SeleccionarDetalleComprobantesArticulos" ReturnType="Collection(ERP_SITEMModel.SeleccionarDetalleComprobantesArticulos_Result)">
-            <Parameter Name="IDComprobante" Mode="In" Type="Int32" />
+          <Parameter Name="IDComprobante" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="SeleccionarMediosDePagos" ReturnType="Collection(ERP_SITEMModel.SeleccionarMediosDePagos_Result)">
-            <Parameter Name="idPago" Mode="In" Type="Int32" />
+          <Parameter Name="idPago" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="SP_DEUDASPROVEEDORES" ReturnType="Collection(ERP_SITEMModel.SP_DEUDASPROVEEDORES_Result)">
             <Parameter Name="fechainicio" Mode="In" Type="DateTime" />
@@ -4389,6 +4119,20 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             <Parameter Name="pPassword" Mode="In" Type="String" />
             <Parameter Name="profile" Mode="In" Type="Int32" />
             <Parameter Name="responseMessage" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <AssociationSet Name="FK_Proveedores_Proveedores" Association="ERP_SITEMModel.FK_Proveedores_Proveedores">
+            <End Role="Proveedores" EntitySet="Proveedores" />
+            <End Role="Proveedores1" EntitySet="Proveedores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Proveedores_RubroProveedor" Association="ERP_SITEMModel.FK_Proveedores_RubroProveedor">
+            <End Role="RubroProveedor" EntitySet="RubroProveedor" />
+            <End Role="Proveedores" EntitySet="Proveedores" />
+          </AssociationSet>
+          <FunctionImport Name="GastosXCentroCostos" ReturnType="Collection(ERP_SITEMModel.GastosXCentroCostos_Result)">
+            <Parameter Name="fechaini" Mode="In" Type="DateTime" />
+            <Parameter Name="fechafin" Mode="In" Type="DateTime" />
+            <Parameter Name="CentroCosto" Mode="In" Type="Int32" />
+            <Parameter Name="Contable" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="ComprobantesGastos_Compras_Result">
@@ -4629,20 +4373,53 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <Property Type="Double" Name="Total" Nullable="true" />
           <Property Type="String" Name="Estados" Nullable="true" MaxLength="50" />
         </ComplexType>
+        <Association Name="FK_Proveedores_Proveedores">
+          <End Type="ERP_SITEMModel.Proveedores" Role="Proveedores" Multiplicity="1" />
+          <End Type="ERP_SITEMModel.Proveedores" Role="Proveedores1" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Proveedores">
+              <PropertyRef Name="IdProveedores" />
+            </Principal>
+            <Dependent Role="Proveedores1">
+              <PropertyRef Name="IdProveedores" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Proveedores_RubroProveedor">
+          <End Type="ERP_SITEMModel.RubroProveedor" Role="RubroProveedor" Multiplicity="0..1" />
+          <End Type="ERP_SITEMModel.Proveedores" Role="Proveedores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RubroProveedor">
+              <PropertyRef Name="IDRubroProveedor" />
+            </Principal>
+            <Dependent Role="Proveedores">
+              <PropertyRef Name="IDRubro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="GastosXCentroCostos_Result">
+          <Property Type="Int32" Name="IdComprobante" Nullable="false" />
+          <Property Type="DateTime" Name="Fecha" Nullable="true" />
+          <Property Type="String" Name="NombreProveedor" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="RazonSocial" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="TipoComprobante" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TipoFactura" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Sucursal" Nullable="true" MaxLength="4" />
+          <Property Type="String" Name="NoFactura" Nullable="true" MaxLength="8" />
+          <Property Type="String" Name="Condiciondecompra" Nullable="true" MaxLength="50" />
+          <Property Type="Double" Name="Total" Nullable="true" />
+          <Property Type="String" Name="Estados" Nullable="true" MaxLength="50" />
+          <Property Type="Double" Name="IIBB" Nullable="true" />
+          <Property Type="Double" Name="Retenciones" Nullable="true" />
+          <Property Type="Double" Name="OtrosGastos" Nullable="true" />
+          <Property Type="Double" Name="IvaCalculado" Nullable="true" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="ERP_SITEMModelStoreContainer" CdmEntityContainer="Entities">
-          <EntitySetMapping Name="C__EFMigrationsHistory">
-            <EntityTypeMapping TypeName="ERP_SITEMModel.C__EFMigrationsHistory">
-              <MappingFragment StoreEntitySet="__EFMigrationsHistory">
-                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
-                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="ActividadMantenimiento">
             <EntityTypeMapping TypeName="ERP_SITEMModel.ActividadMantenimiento">
               <MappingFragment StoreEntitySet="ActividadMantenimiento">
@@ -4684,77 +4461,6 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
                 <ScalarProperty Name="Codigo" ColumnName="Codigo" />
                 <ScalarProperty Name="Stock" ColumnName="Stock" />
                 <ScalarProperty Name="Iva" ColumnName="Iva" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="AspNetRoleClaims">
-            <EntityTypeMapping TypeName="ERP_SITEMModel.AspNetRoleClaims">
-              <MappingFragment StoreEntitySet="AspNetRoleClaims">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
-                <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
-                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="AspNetRoles">
-            <EntityTypeMapping TypeName="ERP_SITEMModel.AspNetRoles">
-              <MappingFragment StoreEntitySet="AspNetRoles">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="ConcurrencyStamp" ColumnName="ConcurrencyStamp" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="NormalizedName" ColumnName="NormalizedName" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="AspNetUserClaims">
-            <EntityTypeMapping TypeName="ERP_SITEMModel.AspNetUserClaims">
-              <MappingFragment StoreEntitySet="AspNetUserClaims">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
-                <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="AspNetUserLogins">
-            <EntityTypeMapping TypeName="ERP_SITEMModel.AspNetUserLogins">
-              <MappingFragment StoreEntitySet="AspNetUserLogins">
-                <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
-                <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
-                <ScalarProperty Name="ProviderDisplayName" ColumnName="ProviderDisplayName" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="AspNetUsers">
-            <EntityTypeMapping TypeName="ERP_SITEMModel.AspNetUsers">
-              <MappingFragment StoreEntitySet="AspNetUsers">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
-                <ScalarProperty Name="ConcurrencyStamp" ColumnName="ConcurrencyStamp" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
-                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
-                <ScalarProperty Name="LockoutEnd" ColumnName="LockoutEnd" />
-                <ScalarProperty Name="NormalizedEmail" ColumnName="NormalizedEmail" />
-                <ScalarProperty Name="NormalizedUserName" ColumnName="NormalizedUserName" />
-                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
-                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
-                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="AspNetUserTokens">
-            <EntityTypeMapping TypeName="ERP_SITEMModel.AspNetUserTokens">
-              <MappingFragment StoreEntitySet="AspNetUserTokens">
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Value" ColumnName="Value" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -5086,6 +4792,47 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
               <MappingFragment StoreEntitySet="Nacionalidades">
                 <ScalarProperty Name="IdNacionalidad" ColumnName="IdNacionalidad" />
                 <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NetRoles">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.NetRoles">
+              <MappingFragment StoreEntitySet="NetRoles">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ConcurrencyStamp" ColumnName="ConcurrencyStamp" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="NormalizedName" ColumnName="NormalizedName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NetUser">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.NetUser">
+              <MappingFragment StoreEntitySet="NetUser">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="ConcurrencyStamp" ColumnName="ConcurrencyStamp" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="LockoutEnd" ColumnName="LockoutEnd" />
+                <ScalarProperty Name="NormalizedEmail" ColumnName="NormalizedEmail" />
+                <ScalarProperty Name="NormalizedUserName" ColumnName="NormalizedUserName" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NetUserLogin">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.NetUserLogin">
+              <MappingFragment StoreEntitySet="NetUserLogin">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -5550,11 +5297,11 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="AspNetUserRoles" TypeName="ERP_SITEMModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
-            <EndProperty Name="AspNetRoles">
+          <AssociationSetMapping Name="NetUsersRoles" TypeName="ERP_SITEMModel.NetUsersRoles" StoreEntitySet="NetUsersRoles">
+            <EndProperty Name="NetRoles">
               <ScalarProperty Name="Id" ColumnName="RoleId" />
             </EndProperty>
-            <EndProperty Name="AspNetUsers">
+            <EndProperty Name="NetUser">
               <ScalarProperty Name="Id" ColumnName="UserId" />
             </EndProperty>
           </AssociationSetMapping>
@@ -5866,6 +5613,27 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="uspAddUser" FunctionName="ERP_SITEMModel.Store.uspAddUser" />
+          <FunctionImportMapping FunctionImportName="GastosXCentroCostos" FunctionName="ERP_SITEMModel.Store.GastosXCentroCostos">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_SITEMModel.GastosXCentroCostos_Result">
+                <ScalarProperty Name="IdComprobante" ColumnName="IdComprobante" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="NombreProveedor" ColumnName="NombreProveedor" />
+                <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+                <ScalarProperty Name="TipoComprobante" ColumnName="TipoComprobante" />
+                <ScalarProperty Name="TipoFactura" ColumnName="TipoFactura" />
+                <ScalarProperty Name="Sucursal" ColumnName="Sucursal" />
+                <ScalarProperty Name="NoFactura" ColumnName="NoFactura" />
+                <ScalarProperty Name="Condiciondecompra" ColumnName="Condiciondecompra" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="Estados" ColumnName="Estados" />
+                <ScalarProperty Name="IIBB" ColumnName="IIBB" />
+                <ScalarProperty Name="Retenciones" ColumnName="Retenciones" />
+                <ScalarProperty Name="OtrosGastos" ColumnName="OtrosGastos" />
+                <ScalarProperty Name="IvaCalculado" ColumnName="IvaCalculado" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

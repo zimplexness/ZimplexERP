@@ -32,8 +32,6 @@
             this.Personal = new System.Windows.Forms.RibbonTab();
             this.ribbonPanelEmpleados = new System.Windows.Forms.RibbonPanel();
             this.ribbonButtonEmpleados = new System.Windows.Forms.RibbonButton();
-            this.ribbonSeparator7 = new System.Windows.Forms.RibbonSeparator();
-            this.ribbonButtonBuscarEmpleados = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel9 = new System.Windows.Forms.RibbonPanel();
             this.ribbonTextBox1 = new System.Windows.Forms.RibbonTextBox();
             this.ribbon1 = new System.Windows.Forms.Ribbon();
@@ -44,8 +42,6 @@
             this.Compras = new System.Windows.Forms.RibbonTab();
             this.ribbonPanelProveedores = new System.Windows.Forms.RibbonPanel();
             this.ribbonButtonInsertarProveedores = new System.Windows.Forms.RibbonButton();
-            this.ribbonSeparator1 = new System.Windows.Forms.RibbonSeparator();
-            this.ribbonButtonBuscar = new System.Windows.Forms.RibbonButton();
             this.ribbonSeparator2 = new System.Windows.Forms.RibbonSeparator();
             this.ribbonButtonRubros = new System.Windows.Forms.RibbonButton();
             this.ribbonPanelComprobante = new System.Windows.Forms.RibbonPanel();
@@ -91,7 +87,6 @@
             this.ribbonButton3 = new System.Windows.Forms.RibbonButton();
             this.ribbonButton4 = new System.Windows.Forms.RibbonButton();
             this.ribbonButton5 = new System.Windows.Forms.RibbonButton();
-            this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -103,22 +98,14 @@
             // ribbonPanelEmpleados
             // 
             this.ribbonPanelEmpleados.Items.Add(this.ribbonButtonEmpleados);
-            this.ribbonPanelEmpleados.Items.Add(this.ribbonSeparator7);
-            this.ribbonPanelEmpleados.Items.Add(this.ribbonButtonBuscarEmpleados);
             this.ribbonPanelEmpleados.Text = "Empleado";
             // 
             // ribbonButtonEmpleados
             // 
             this.ribbonButtonEmpleados.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButtonEmpleados.Image")));
             this.ribbonButtonEmpleados.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButtonEmpleados.SmallImage")));
-            this.ribbonButtonEmpleados.Text = "Agregar";
+            this.ribbonButtonEmpleados.Text = "Indice";
             this.ribbonButtonEmpleados.Click += new System.EventHandler(this.ribbonButtonEmpleados_Click);
-            // 
-            // ribbonButtonBuscarEmpleados
-            // 
-            this.ribbonButtonBuscarEmpleados.Image = global::ErpGestion.Properties.Resources.if_world_48738;
-            this.ribbonButtonBuscarEmpleados.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButtonBuscarEmpleados.SmallImage")));
-            this.ribbonButtonBuscarEmpleados.Text = "Filtrar";
             // 
             // ribbonPanel9
             // 
@@ -155,7 +142,7 @@
             this.ribbon1.QuickAcessToolbar.DropDownButtonVisible = false;
             this.ribbon1.QuickAcessToolbar.Visible = false;
             this.ribbon1.RibbonTabFont = new System.Drawing.Font("Trebuchet MS", 9F);
-            this.ribbon1.Size = new System.Drawing.Size(1264, 130);
+            this.ribbon1.Size = new System.Drawing.Size(1264, 134);
             this.ribbon1.TabIndex = 0;
             this.ribbon1.Tabs.Add(this.Compras);
             this.ribbon1.Tabs.Add(this.Personal);
@@ -163,7 +150,6 @@
             this.ribbon1.Tabs.Add(this.ribbonTabDatosPrincipales);
             this.ribbon1.Tabs.Add(this.ribbonTabReportes);
             this.ribbon1.Tabs.Add(this.ribbonTabAdmistracion);
-            this.ribbon1.Tabs.Add(this.ribbonTab1);
             this.ribbon1.TabsMargin = new System.Windows.Forms.Padding(12, 26, 20, 0);
             this.ribbon1.Text = "ribbon1";
             this.ribbon1.ThemeColor = System.Windows.Forms.RibbonTheme.Green;
@@ -209,8 +195,6 @@
             // 
             this.ribbonPanelProveedores.Image = global::ErpGestion.Properties.Resources.if_add_user_1902270__1_;
             this.ribbonPanelProveedores.Items.Add(this.ribbonButtonInsertarProveedores);
-            this.ribbonPanelProveedores.Items.Add(this.ribbonSeparator1);
-            this.ribbonPanelProveedores.Items.Add(this.ribbonButtonBuscar);
             this.ribbonPanelProveedores.Items.Add(this.ribbonSeparator2);
             this.ribbonPanelProveedores.Items.Add(this.ribbonButtonRubros);
             this.ribbonPanelProveedores.Text = "Proveedores";
@@ -220,23 +204,16 @@
             // 
             this.ribbonButtonInsertarProveedores.Image = global::ErpGestion.Properties.Resources.if_user_48737;
             this.ribbonButtonInsertarProveedores.SmallImage = global::ErpGestion.Properties.Resources._1497286033_user;
-            this.ribbonButtonInsertarProveedores.Text = "Alta";
+            this.ribbonButtonInsertarProveedores.Text = "Indice";
             this.ribbonButtonInsertarProveedores.ToolTip = "Insertar Comprobantes";
             this.ribbonButtonInsertarProveedores.Click += new System.EventHandler(this.ribbonButton6_Click);
-            // 
-            // ribbonButtonBuscar
-            // 
-            this.ribbonButtonBuscar.Image = global::ErpGestion.Properties.Resources.if_suppliers_487321;
-            this.ribbonButtonBuscar.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButtonBuscar.SmallImage")));
-            this.ribbonButtonBuscar.Text = "Buscar";
-            this.ribbonButtonBuscar.ToolTip = "Buscar Comprobantes";
-            this.ribbonButtonBuscar.Click += new System.EventHandler(this.ribbonButtonBuscar_Click);
             // 
             // ribbonButtonRubros
             // 
             this.ribbonButtonRubros.Image = global::ErpGestion.Properties.Resources.if_special_offer_54362;
             this.ribbonButtonRubros.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButtonRubros.SmallImage")));
             this.ribbonButtonRubros.Text = "Rubros";
+            this.ribbonButtonRubros.Click += new System.EventHandler(this.ribbonButtonRubros_Click);
             // 
             // ribbonPanelComprobante
             // 
@@ -366,6 +343,7 @@
             this.CategoriaMButton.Image = global::ErpGestion.Properties.Resources.if_comment_54290;
             this.CategoriaMButton.SmallImage = ((System.Drawing.Image)(resources.GetObject("CategoriaMButton.SmallImage")));
             this.CategoriaMButton.Text = "Agregar";
+            this.CategoriaMButton.Click += new System.EventHandler(this.CategoriaMButton_Click);
             // 
             // ribbonTabDatosPrincipales
             // 
@@ -483,10 +461,6 @@
             this.ribbonButton5.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton5.SmallImage")));
             this.ribbonButton5.Text = "ribbonButton5";
             // 
-            // ribbonTab1
-            // 
-            this.ribbonTab1.Text = "ribbonTab1";
-            // 
             // ZimplexHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -494,6 +468,7 @@
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.ribbon1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "ZimplexHome";
             this.Text = "Sistema de Gestion Integral V1.0";
@@ -552,8 +527,6 @@
         private System.Windows.Forms.RibbonButton IngresarLocalidad;
         private System.Windows.Forms.RibbonButton PolizaButton;
         private System.Windows.Forms.RibbonButton CategoriaMButton;
-        private System.Windows.Forms.RibbonSeparator ribbonSeparator1;
-        private System.Windows.Forms.RibbonButton ribbonButtonBuscar;
         private System.Windows.Forms.RibbonSeparator ribbonSeparator2;
         private System.Windows.Forms.RibbonButton ribbonButtonRubros;
         private System.Windows.Forms.RibbonSeparator ribbonSeparator3;
@@ -564,12 +537,9 @@
         private System.Windows.Forms.RibbonButton ribbonButtonBuscarPagos;
         private System.Windows.Forms.RibbonSeparator ribbonSeparator6;
         private System.Windows.Forms.RibbonButton ribbonButtonProvincia;
-        private System.Windows.Forms.RibbonSeparator ribbonSeparator7;
-        private System.Windows.Forms.RibbonButton ribbonButtonBuscarEmpleados;
         private System.Windows.Forms.RibbonTab ribbonTabAdmistracion;
         private System.Windows.Forms.RibbonPanel ribbonPanelUser;
         private System.Windows.Forms.RibbonButton ribbonButtonUser;
         private System.Windows.Forms.RibbonPanel ribbonPanelPerfiles;
-        private System.Windows.Forms.RibbonTab ribbonTab1;
     }
 }

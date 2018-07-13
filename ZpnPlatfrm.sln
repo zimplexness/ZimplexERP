@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZimplexnessWinform", "SISTEMAFACTURACIONV1.0\ZimplexnessWinform.csproj", "{67C9C3DD-A484-4589-A584-08DC6F5CCCA6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "SISTEMAFACTURACIONV1.0\UI.csproj", "{67C9C3DD-A484-4589-A584-08DC6F5CCCA6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DL", "DL\DL.csproj", "{740F931F-F732-4FD4-8CF1-B8D4BD513431}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLayer", "BLayer\BLayer.csproj", "{6041B55D-7CFD-4B5B-8D8C-0DFAF9F4225B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Entidades.csproj", "{C947AA29-C91E-450D-AD73-757A440984B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories", "Repositories\Repositories.csproj", "{19504A38-D4CF-43CF-AB39-E1FD44C7B7D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{C947AA29-C91E-450D-AD73-757A440984B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C947AA29-C91E-450D-AD73-757A440984B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C947AA29-C91E-450D-AD73-757A440984B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19504A38-D4CF-43CF-AB39-E1FD44C7B7D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19504A38-D4CF-43CF-AB39-E1FD44C7B7D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19504A38-D4CF-43CF-AB39-E1FD44C7B7D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19504A38-D4CF-43CF-AB39-E1FD44C7B7D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

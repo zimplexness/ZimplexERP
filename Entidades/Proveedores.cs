@@ -39,8 +39,6 @@ namespace Entidades
         public Nullable<int> UserUltModificacion { get; set; }
         public Nullable<System.DateTime> FechaUltimaModificacion { get; set; }
     
-        public virtual AspNetUsers AspNetUsers { get; set; }
-        public virtual AspNetUsers AspNetUsers1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Comprobantes> Comprobantes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -48,8 +46,12 @@ namespace Entidades
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DetalleProveedor_ProductorSeguro> DetalleProveedor_ProductorSeguro { get; set; }
         public virtual Localidades Localidades { get; set; }
+        public virtual NetUser NetUser { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PolizasSeguro> PolizasSeguro { get; set; }
         public virtual Provincias Provincias { get; set; }
+        public virtual Proveedores Proveedores1 { get; set; }
+        public virtual Proveedores Proveedores2 { get; set; }
+        public virtual RubroProveedor RubroProveedor { get; set; }
     }
 }

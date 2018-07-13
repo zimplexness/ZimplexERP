@@ -12,23 +12,34 @@ namespace Entidades
     using System;
     using System.Collections.Generic;
     
-    public partial class AspNetRoles
+    public partial class NetUser
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public AspNetRoles()
+        public NetUser()
         {
-            this.AspNetRoleClaims = new HashSet<AspNetRoleClaims>();
-            this.AspNetUsers = new HashSet<AspNetUsers>();
+            this.Proveedores = new HashSet<Proveedores>();
+            this.NetRoles = new HashSet<NetRoles>();
         }
     
         public int Id { get; set; }
+        public int AccessFailedCount { get; set; }
         public string ConcurrencyStamp { get; set; }
-        public string Name { get; set; }
-        public string NormalizedName { get; set; }
+        public string Email { get; set; }
+        public bool EmailConfirmed { get; set; }
+        public bool LockoutEnabled { get; set; }
+        public Nullable<System.DateTimeOffset> LockoutEnd { get; set; }
+        public string NormalizedEmail { get; set; }
+        public string NormalizedUserName { get; set; }
+        public string PasswordHash { get; set; }
+        public string PhoneNumber { get; set; }
+        public bool PhoneNumberConfirmed { get; set; }
+        public string SecurityStamp { get; set; }
+        public bool TwoFactorEnabled { get; set; }
+        public string UserName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AspNetRoleClaims> AspNetRoleClaims { get; set; }
+        public virtual ICollection<Proveedores> Proveedores { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AspNetUsers> AspNetUsers { get; set; }
+        public virtual ICollection<NetRoles> NetRoles { get; set; }
     }
 }

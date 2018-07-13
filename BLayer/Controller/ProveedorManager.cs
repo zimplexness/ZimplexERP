@@ -5,31 +5,62 @@ using System.Text;
 using System.Threading.Tasks;
 using Entidades;
 using DL.Model;
+using Repositories;
 
 namespace BLayer
 {
    public class ProveedorManager
     {
+
+
+
+
         //declaracion de DataContext y de la tabla proveedores
+        IProveedorRepository proveedorRepository;
+
+
+        
         public Entities Context;
         public Proveedores proveedor = new Proveedores();
         public CuentaCorriente cuentacorriente;
         public DetalleProveedor_ProductorSeguro Productor;
-        
 
-        public int insertar_proveedor(Proveedores proveedor)
+        public ProveedorManager()
         {
-            int result = 0;
-            using (Context=new Entities())
+            this.proveedorRepository = new ProveedorRepository();
+
+        }
+
+        public ProveedorManager(IProveedorRepository proveedorRepository)
+        {
+            this.proveedorRepository = proveedorRepository;
+        }
+
+
+
+
+        public void InsertarProveedor(string nombre,string razon,string cuit,string IIBB,
+            string direccion,int idprovincia,int idlocalidad, int idrubroproveedor,DateTime fechaingreso)
+        {
+
+            if (string.IsNullOrEmpty(nombre)||string.IsNullOrEmpty(razon)||string.IsNullOrEmpty(cuit))
             {
-                Context.Proveedores.Add(proveedor);
-                Context.SaveChanges();
-                result = proveedor.IdProveedores;
-                return result;
+                throw new Exception("Error, Debe Insertar los Datos");
+            }
+            else
+            {
+                proveedor.Nombre = nombre;
+                proveedor.Razon = razon;
+                proveedor.IngresosBrutos = IIBB;
+                proveedor.Cuit = cuit;
+                proveedor.Direccion = direccion;
+                proveedor.IDProvincia = idprovincia;
+                proveedor.IDLocalidad = idlocalidad;
+                proveedor.IDRubro = idrubroproveedor;
+                proveedor.FechaIngreso = fechaingreso;
+                proveedorRepository.AddorUpdateProveedores(proveedor);
 
             }
-
-
 
 
 
@@ -44,7 +75,6 @@ namespace BLayer
                 return query;
             }
         }
-
 
         public List<Proveedores> SeleccionarProveedores()
         {
@@ -143,22 +173,29 @@ namespace BLayer
 
         }
 
-        public void ActualizarProveedor(string nombre, string razon,string telefono,string direccion,string cuit)
+        public void ActualizarProveedor(string nombre, string razon, string cuit, string IIBB,
+            string direccion, int idprovincia, int idlocalidad, int idrubroproveedor, DateTime fechaingreso)
         {
+
             using (Context = new Entities())
             {
                 var prov = (from p in Context.Proveedores
                             where p.Cuit == cuit
                             select p).ToList();
 
-                foreach (var item in prov)
+                foreach (var proveedor in prov)
                 {
-                    Context.Proveedores.Attach(item);
-                    item.Nombre = nombre;
-                    item.Razon = razon;
-                    item.Telefono = telefono;
-                    item.Direccion = direccion;
-                    Context.Entry(item).State = System.Data.Entity.EntityState.Modified;
+                    Context.Proveedores.Attach(proveedor);
+                    proveedor.Nombre = nombre;
+                    proveedor.Razon = razon;
+                    proveedor.IngresosBrutos = IIBB;
+                    proveedor.Cuit = cuit;
+                    proveedor.Direccion = direccion;
+                    proveedor.IDProvincia = idprovincia;
+                    proveedor.IDLocalidad = idlocalidad;
+                    proveedor.IDRubro = idrubroproveedor;
+                    proveedor.FechaIngreso = fechaingreso;
+                    Context.Entry(proveedor).State = System.Data.Entity.EntityState.Modified;
                     Context.SaveChanges();
 
                 }     
@@ -340,6 +377,12 @@ namespace BLayer
             }
         }
 
-
+        public List<RubroProveedor> FilterRubros(string filter) {
+            using (Context = new Entities())
+            {
+                var filtro = (from p in Context.RubroProveedor where p.Descripcion.Contains(filter.ToUpper()) select p).ToList();
+                return filtro;
+            }
+        }
     }
 }

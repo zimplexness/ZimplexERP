@@ -933,6 +933,36 @@ namespace ErpGestion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap if_plus_48711 {
+            get {
+                object obj = ResourceManager.GetObject("if_plus_48711", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap if_plus_48711__1_ {
+            get {
+                object obj = ResourceManager.GetObject("if_plus_48711 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap if_plus_48711__2_ {
+            get {
+                object obj = ResourceManager.GetObject("if_plus_48711 (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap if_print_48713 {
             get {
                 object obj = ResourceManager.GetObject("if_print_48713", resourceCulture);

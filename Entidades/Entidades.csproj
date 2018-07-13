@@ -59,24 +59,6 @@
     <Compile Include="Articulos.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="AspNetRoleClaims.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AspNetRoles.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AspNetUserClaims.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AspNetUserLogins.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AspNetUsers.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AspNetUserTokens.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
     <Compile Include="Bancos.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -114,9 +96,6 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="CuentasxPagarProveedores_Result.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="C__EFMigrationsHistory.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DatosEmpleadosActivos.cs">
@@ -182,6 +161,9 @@
     <Compile Include="FACTURASXPROVEEDORES_Result.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="GastosXCentroCostos_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Gastos_ComprasxPeriodo_Result.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -223,7 +205,17 @@
     <Compile Include="ModelosVehiculos.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modelos\ProveedoresModel.cs" />
     <Compile Include="Nacionalidades.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NetRoles.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NetUser.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NetUserLogin.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="NominaCV.cs">

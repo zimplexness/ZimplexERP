@@ -59,6 +59,8 @@
             this.metroTextBoxFiltroProveedor = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
+            this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
+            this.metroComboBoxCentroCosto = new MetroFramework.Controls.MetroComboBox();
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
             this.metroTextBoxIIBB = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
@@ -96,10 +98,8 @@
             this.metroDateTimeFechaFinDeuda = new MetroFramework.Controls.MetroDateTime();
             this.metroDateTimeFechaInicioDeuda = new MetroFramework.Controls.MetroDateTime();
             this.metroGridDeudaProveedores = new MetroFramework.Controls.MetroGrid();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
-            this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel15 = new MetroFramework.Controls.MetroLabel();
-            this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
+            this.metroComboBoxContable = new MetroFramework.Controls.MetroComboBox();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGridCompProveedores)).BeginInit();
@@ -418,10 +418,10 @@
             // 
             // metroTabPage2
             // 
-            this.metroTabPage2.Controls.Add(this.metroComboBox2);
             this.metroTabPage2.Controls.Add(this.metroLabel15);
+            this.metroTabPage2.Controls.Add(this.metroComboBoxContable);
             this.metroTabPage2.Controls.Add(this.metroLabel14);
-            this.metroTabPage2.Controls.Add(this.metroComboBox1);
+            this.metroTabPage2.Controls.Add(this.metroComboBoxCentroCosto);
             this.metroTabPage2.Controls.Add(this.metroButton3);
             this.metroTabPage2.Controls.Add(this.metroTextBoxIIBB);
             this.metroTabPage2.Controls.Add(this.metroLabel12);
@@ -448,11 +448,30 @@
             this.metroTabPage2.VerticalScrollbarSize = 10;
             this.metroTabPage2.Click += new System.EventHandler(this.metroTabPage2_Click);
             // 
+            // metroLabel14
+            // 
+            this.metroLabel14.AutoSize = true;
+            this.metroLabel14.Location = new System.Drawing.Point(386, 11);
+            this.metroLabel14.Name = "metroLabel14";
+            this.metroLabel14.Size = new System.Drawing.Size(87, 19);
+            this.metroLabel14.TabIndex = 25;
+            this.metroLabel14.Text = "Centro Costo";
+            // 
+            // metroComboBoxCentroCosto
+            // 
+            this.metroComboBoxCentroCosto.FormattingEnabled = true;
+            this.metroComboBoxCentroCosto.ItemHeight = 23;
+            this.metroComboBoxCentroCosto.Location = new System.Drawing.Point(386, 33);
+            this.metroComboBoxCentroCosto.Name = "metroComboBoxCentroCosto";
+            this.metroComboBoxCentroCosto.Size = new System.Drawing.Size(237, 29);
+            this.metroComboBoxCentroCosto.TabIndex = 24;
+            this.metroComboBoxCentroCosto.UseSelectable = true;
+            // 
             // metroButton3
             // 
             this.metroButton3.BackgroundImage = global::ErpGestion.Properties.Resources.if_Bag_877010;
             this.metroButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.metroButton3.Location = new System.Drawing.Point(339, 23);
+            this.metroButton3.Location = new System.Drawing.Point(679, 23);
             this.metroButton3.Name = "metroButton3";
             this.metroButton3.Size = new System.Drawing.Size(44, 39);
             this.metroButton3.TabIndex = 23;
@@ -645,6 +664,7 @@
             this.metroGridTodosComprobantes.Size = new System.Drawing.Size(1007, 276);
             this.metroGridTodosComprobantes.Style = MetroFramework.MetroColorStyle.Orange;
             this.metroGridTodosComprobantes.TabIndex = 14;
+            this.metroGridTodosComprobantes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.metroGridTodosComprobantes_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -778,7 +798,7 @@
             // 
             this.metroButton2.BackgroundImage = global::ErpGestion.Properties.Resources._1498842292_Citycons_magnify;
             this.metroButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.metroButton2.Location = new System.Drawing.Point(289, 23);
+            this.metroButton2.Location = new System.Drawing.Point(629, 23);
             this.metroButton2.Name = "metroButton2";
             this.metroButton2.Size = new System.Drawing.Size(44, 39);
             this.metroButton2.TabIndex = 13;
@@ -954,43 +974,24 @@
             this.metroGridDeudaProveedores.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroGridDeudaProveedores.UseStyleColors = true;
             // 
-            // metroComboBox1
-            // 
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 23;
-            this.metroComboBox1.Location = new System.Drawing.Point(413, 33);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(123, 29);
-            this.metroComboBox1.TabIndex = 24;
-            this.metroComboBox1.UseSelectable = true;
-            // 
-            // metroLabel14
-            // 
-            this.metroLabel14.AutoSize = true;
-            this.metroLabel14.Location = new System.Drawing.Point(413, 11);
-            this.metroLabel14.Name = "metroLabel14";
-            this.metroLabel14.Size = new System.Drawing.Size(100, 19);
-            this.metroLabel14.TabIndex = 25;
-            this.metroLabel14.Text = "Tipo de Factura";
-            // 
             // metroLabel15
             // 
             this.metroLabel15.AutoSize = true;
-            this.metroLabel15.Location = new System.Drawing.Point(565, 11);
+            this.metroLabel15.Location = new System.Drawing.Point(274, 11);
             this.metroLabel15.Name = "metroLabel15";
-            this.metroLabel15.Size = new System.Drawing.Size(100, 19);
-            this.metroLabel15.TabIndex = 26;
-            this.metroLabel15.Text = "Tipo de Factura";
+            this.metroLabel15.Size = new System.Drawing.Size(62, 19);
+            this.metroLabel15.TabIndex = 27;
+            this.metroLabel15.Text = "Contable";
             // 
-            // metroComboBox2
+            // metroComboBoxContable
             // 
-            this.metroComboBox2.FormattingEnabled = true;
-            this.metroComboBox2.ItemHeight = 23;
-            this.metroComboBox2.Location = new System.Drawing.Point(565, 33);
-            this.metroComboBox2.Name = "metroComboBox2";
-            this.metroComboBox2.Size = new System.Drawing.Size(170, 29);
-            this.metroComboBox2.TabIndex = 27;
-            this.metroComboBox2.UseSelectable = true;
+            this.metroComboBoxContable.FormattingEnabled = true;
+            this.metroComboBoxContable.ItemHeight = 23;
+            this.metroComboBoxContable.Location = new System.Drawing.Point(274, 33);
+            this.metroComboBoxContable.Name = "metroComboBoxContable";
+            this.metroComboBoxContable.Size = new System.Drawing.Size(104, 29);
+            this.metroComboBoxContable.TabIndex = 26;
+            this.metroComboBoxContable.UseSelectable = true;
             // 
             // ConsultasComprobantesFrm
             // 
@@ -1077,9 +1078,9 @@
         private MetroFramework.Controls.MetroDateTime metroDateTimeFechaFinDeuda;
         private MetroFramework.Controls.MetroDateTime metroDateTimeFechaInicioDeuda;
         private MetroFramework.Controls.MetroGrid metroGridDeudaProveedores;
-        private MetroFramework.Controls.MetroComboBox metroComboBox2;
-        private MetroFramework.Controls.MetroLabel metroLabel15;
         private MetroFramework.Controls.MetroLabel metroLabel14;
-        private MetroFramework.Controls.MetroComboBox metroComboBox1;
+        private MetroFramework.Controls.MetroComboBox metroComboBoxCentroCosto;
+        private MetroFramework.Controls.MetroLabel metroLabel15;
+        private MetroFramework.Controls.MetroComboBox metroComboBoxContable;
     }
 }

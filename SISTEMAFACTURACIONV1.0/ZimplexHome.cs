@@ -40,13 +40,13 @@ namespace ErpGestion
 
             foreach (Form f in this.MdiChildren)
             {
-                if (f.GetType() == typeof(ProveedoresFrm))
+                if (f.GetType() == typeof(AdminProveedorFrm))
                 {
                     f.Activate();
                     return;
                 }
             }
-            Form proveedorfrm = new ProveedoresFrm();
+            Form proveedorfrm = new AdminProveedorFrm();
             proveedorfrm.MdiParent = this;
             proveedorfrm.Show();
 
@@ -238,13 +238,13 @@ namespace ErpGestion
         {
             foreach (Form f in this.MdiChildren)
             {
-                if (f.GetType() == typeof(ProveedoresFrm))
+                if (f.GetType() == typeof(AdminProveedorFrm))
                 {
                     f.Activate();
                     return;
                 }
             }
-            Form proveedorfrm = new ProveedoresFrm();
+            Form proveedorfrm = new AdminProveedorFrm();
             proveedorfrm.MdiParent = this;
             proveedorfrm.Show();
 
@@ -278,6 +278,41 @@ namespace ErpGestion
         private void ZimplexHome_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void ribbonButtonRubros_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.GetType() == typeof(AdminRubrosFrm))
+                {
+                    f.Activate();
+                    return;
+                }
+            }
+            Form rubrofrm = new AdminRubrosFrm();
+            rubrofrm.MdiParent = this;
+            rubrofrm.Show();
+        }
+
+        private void CategoriaMButton_Click(object sender, EventArgs e)
+        {
+            while (this.ActiveMdiChild != null)
+            {
+                this.ActiveMdiChild.Close();
+            }
+            //abrir formulario de comprobantes
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.GetType() == typeof(ActividadVehiculoForm))
+                {
+                    f.Activate();
+                    return;
+                }
+            }
+            Form vehiculoform = new ActividadVehiculoForm();
+            vehiculoform.MdiParent = this;
+            vehiculoform.Show();
         }
     }
 }

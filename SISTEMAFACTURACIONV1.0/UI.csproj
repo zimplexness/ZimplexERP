@@ -14,6 +14,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -28,8 +30,6 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -55,8 +55,10 @@
     </StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>if_home_48688.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
@@ -198,6 +200,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActividadVehiculoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActividadVehiculoForm.Designer.cs">
+      <DependentUpon>ActividadVehiculoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminRubrosFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminRubrosFrm.Designer.cs">
+      <DependentUpon>AdminRubrosFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ComprobantesFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -240,6 +254,13 @@
     <Compile Include="FindDetallesComprobantesArticulosFrm.Designer.cs">
       <DependentUpon>FindDetallesComprobantesArticulosFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FindProvinciasFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FindProvinciasFrm.Designer.cs">
+      <DependentUpon>FindProvinciasFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IFindProvincia.cs" />
     <Compile Include="LocalidadesFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -278,11 +299,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ProveedoresFrm.cs">
+    <Compile Include="AdminProveedorFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProveedoresFrm.Designer.cs">
-      <DependentUpon>ProveedoresFrm.cs</DependentUpon>
+    <Compile Include="AdminProveedorFrm.Designer.cs">
+      <DependentUpon>AdminProveedorFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProveedorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProveedorForm.Designer.cs">
+      <DependentUpon>ProveedorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ProvinciaFrm.cs">
       <SubType>Form</SubType>
@@ -307,6 +334,12 @@
     </Compile>
     <Compile Include="ReportesForm.Designer.cs">
       <DependentUpon>ReportesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RubroFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RubroFrm.Designer.cs">
+      <DependentUpon>RubroFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="TalleresForm.cs">
@@ -333,6 +366,12 @@
     <Compile Include="ZimplexHome.Designer.cs">
       <DependentUpon>ZimplexHome.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ActividadVehiculoForm.resx">
+      <DependentUpon>ActividadVehiculoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminRubrosFrm.resx">
+      <DependentUpon>AdminRubrosFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ComprobantesFrm.resx">
       <DependentUpon>ComprobantesFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -353,6 +392,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FindDetallesComprobantesArticulosFrm.resx">
       <DependentUpon>FindDetallesComprobantesArticulosFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FindProvinciasFrm.resx">
+      <DependentUpon>FindProvinciasFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LocalidadesFrm.resx">
       <DependentUpon>LocalidadesFrm.cs</DependentUpon>
@@ -392,8 +434,11 @@
     <EmbeddedResource Include="InformeComprobantesCompra.rdlc">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProveedoresFrm.resx">
-      <DependentUpon>ProveedoresFrm.cs</DependentUpon>
+    <EmbeddedResource Include="AdminProveedorFrm.resx">
+      <DependentUpon>AdminProveedorFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProveedorForm.resx">
+      <DependentUpon>ProveedorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProvinciaFrm.resx">
       <DependentUpon>ProvinciaFrm.cs</DependentUpon>
@@ -410,6 +455,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteTelecentro.rdlc">
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RubroFrm.resx">
+      <DependentUpon>RubroFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TalleresForm.resx">
       <DependentUpon>TalleresForm.cs</DependentUpon>
@@ -558,6 +606,10 @@
     <None Include="Resources\if_special-offer_54362.png" />
     <None Include="Resources\if_comment_54290.png" />
     <None Include="Resources\if_settings_54355.png" />
+    <Content Include="if_home_48688.ico" />
+    <None Include="Resources\if_plus_48711.png" />
+    <None Include="Resources\if_plus_48711 %282%29.png" />
+    <None Include="Resources\if_plus_48711 %281%29.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-2.2.4.intellisense.js" />
@@ -625,6 +677,10 @@
     <ProjectReference Include="..\Entidades\Entidades.csproj">
       <Project>{c947aa29-c91e-450d-ad73-757a440984b1}</Project>
       <Name>Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repositories\Repositories.csproj">
+      <Project>{19504a38-d4cf-43cf-ab39-e1fd44c7b7d7}</Project>
+      <Name>Repositories</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

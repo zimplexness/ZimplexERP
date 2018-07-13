@@ -384,19 +384,7 @@ namespace ErpGestion
 
         private void metroTabControl1_Selected(object sender, TabControlEventArgs e)
         {
-            try
-            {
-                StringBuilder queryadress = new StringBuilder();
-                queryadress.Append("http://maps.google.com/maps?q=");
-                queryadress.Append(metroTextBoxDireccion.Text + "");
-                webBrowser1.Navigate(queryadress.ToString());
-
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
+           
         }
 
         private void metroGridEmpleadosActivos_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -12,9 +12,11 @@ namespace Entidades
     using System;
     using System.Collections.Generic;
     
-    public partial class C__EFMigrationsHistory
+    public partial class NetUserLogin
     {
-        public string MigrationId { get; set; }
-        public string ProductVersion { get; set; }
+        public string UserId { get; set; }
+        public string LoginProvider { get; set; }
+        public string Name { get; set; }
+        public string Value { get; set; }
     }
 }
