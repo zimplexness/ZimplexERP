@@ -206,6 +206,7 @@
             this.metroTextBoxProveedor.UseSelectable = true;
             this.metroTextBoxProveedor.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBoxProveedor.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.metroTextBoxProveedor.TextChanged += new System.EventHandler(this.metroTextBoxProveedor_TextChanged);
             // 
             // metroPanelPago
             // 

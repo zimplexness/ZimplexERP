@@ -113,5 +113,10 @@ namespace ErpGestion
 
             
         }
+
+        private void metroTabPageNuevoTaller_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entidades;
-using DL.Model;
+using DL;
 using Repositories;
+using System.Data.Entity;
 
 namespace BLayer
 {
@@ -24,6 +25,7 @@ namespace BLayer
         public Proveedores proveedor = new Proveedores();
         public CuentaCorriente cuentacorriente;
         public DetalleProveedor_ProductorSeguro Productor;
+        RubroProveedor rubRubro=new RubroProveedor();
 
         public ProveedorManager()
         {
@@ -40,7 +42,7 @@ namespace BLayer
 
 
         public void InsertarProveedor(string nombre,string razon,string cuit,string IIBB,
-            string direccion,int idprovincia,int idlocalidad, int idrubroproveedor,DateTime fechaingreso)
+            string direccion,int idprovincia,int idlocalidad, int idrubroproveedor,DateTime fechaingreso,string telefono)
         {
 
             if (string.IsNullOrEmpty(nombre)||string.IsNullOrEmpty(razon)||string.IsNullOrEmpty(cuit))
@@ -49,16 +51,23 @@ namespace BLayer
             }
             else
             {
-                proveedor.Nombre = nombre;
-                proveedor.Razon = razon;
-                proveedor.IngresosBrutos = IIBB;
-                proveedor.Cuit = cuit;
-                proveedor.Direccion = direccion;
-                proveedor.IDProvincia = idprovincia;
-                proveedor.IDLocalidad = idlocalidad;
-                proveedor.IDRubro = idrubroproveedor;
-                proveedor.FechaIngreso = fechaingreso;
-                proveedorRepository.AddorUpdateProveedores(proveedor);
+                using (Context = new Entities())
+                {
+                    proveedor.Nombre = nombre;
+                    proveedor.Razon = razon;
+                    proveedor.IngresosBrutos = IIBB;
+                    proveedor.Cuit = cuit;
+                    proveedor.Direccion = direccion;
+                    proveedor.IDProvincia = idprovincia;
+                    proveedor.IDLocalidad = idlocalidad;
+                    proveedor.IDRubro = idrubroproveedor;
+                    proveedor.FechaIngreso = fechaingreso;
+                    proveedor.Telefono = telefono;
+                    Context.Proveedores.Add(proveedor);
+                    
+                    Context.SaveChanges();
+                   
+                }
 
             }
 
@@ -174,7 +183,7 @@ namespace BLayer
         }
 
         public void ActualizarProveedor(string nombre, string razon, string cuit, string IIBB,
-            string direccion, int idprovincia, int idlocalidad, int idrubroproveedor, DateTime fechaingreso)
+            string direccion, int idprovincia, int idlocalidad, int idrubroproveedor, DateTime fechaingreso,string telefono)
         {
 
             using (Context = new Entities())
@@ -185,7 +194,7 @@ namespace BLayer
 
                 foreach (var proveedor in prov)
                 {
-                    Context.Proveedores.Attach(proveedor);
+                    
                     proveedor.Nombre = nombre;
                     proveedor.Razon = razon;
                     proveedor.IngresosBrutos = IIBB;
@@ -195,6 +204,8 @@ namespace BLayer
                     proveedor.IDLocalidad = idlocalidad;
                     proveedor.IDRubro = idrubroproveedor;
                     proveedor.FechaIngreso = fechaingreso;
+                    proveedor.Telefono = telefono;
+                    Context.Proveedores.Attach(proveedor);
                     Context.Entry(proveedor).State = System.Data.Entity.EntityState.Modified;
                     Context.SaveChanges();
 
@@ -228,6 +239,31 @@ namespace BLayer
 
 
             }
+
+
+
+        }
+
+        public List<CuentasCorrientes> GetCuentasCorrientes() {
+            using (Context=new Entities())
+            {
+                return Context.CuentasCorrientes.ToList();
+
+            }
+
+
+
+
+        }
+
+        public List<CuentasCorrientes> filtroCuentasCorrientes(string nombre)
+        {
+            using (Context = new Entities())
+            {
+                return Context.CuentasCorrientes.Where(x=>x.Nombre.Contains(nombre.ToUpper())).ToList();
+
+            }
+
 
 
 
@@ -344,6 +380,15 @@ namespace BLayer
 
         }
 
+        public CuentasCorrientes GetCuentaCorrienteByCuit(string cuit) {
+            using (Context=new Entities())
+            {
+
+                return Context.CuentasCorrientes.Where(x => x.Cuit == cuit).FirstOrDefault();
+            }
+
+
+        } 
 
         public List<View_Proveedores> filtrarproveedoresRazon(string filtroRazon)
         {
@@ -383,6 +428,78 @@ namespace BLayer
                 var filtro = (from p in Context.RubroProveedor where p.Descripcion.Contains(filter.ToUpper()) select p).ToList();
                 return filtro;
             }
+        }
+
+        public void InsertarorUpdateCuentaCorriente(CuentaCorriente cuentaCorriente) {
+
+            using (Context=new Entities())
+            {
+                var cc = Context.CuentaCorriente.Where(x => x.IDProveedor == cuentaCorriente.IDProveedor).ToList();
+                if (cc !=null)
+                    foreach (var item in cc)
+                    {
+                        item.IDProveedor = cuentaCorriente.IDProveedor;
+                        item.Nombre = cuentaCorriente.Nombre;
+                        item.Vencimiento = cuentaCorriente.Vencimiento;
+                        item.Comentario = cuentaCorriente.Comentario;
+                        Context.CuentaCorriente.Attach(item);
+                        Context.Entry(item).State = System.Data.Entity.EntityState.Modified;
+                        Context.SaveChanges();
+                    }
+                    if (cc.FirstOrDefault()==null)
+                        Context.CuentaCorriente.Add(cuentaCorriente);
+                        Context.SaveChanges();
+
+                    
+                   
+                    
+                
+            }
+
+
+
+
+        }
+
+        public void InsertarorUpdateRubro(int id,string rubro) {
+            
+            using (Context=new Entities())
+            {
+                var result = Context.RubroProveedor.Where(x => x.IDRubroProveedor == id).ToList();
+                if (result != null)
+                
+                    foreach (var item in result )
+                    {
+
+                        item.Descripcion = rubro;
+                        Context.RubroProveedor.Attach(item);
+                       
+                        Context.Entry(item).State =System.Data.Entity.EntityState.Modified;
+                        Context.SaveChanges();
+
+                    }
+
+                if (result == null)
+                    
+                    rubRubro.Descripcion = rubro;
+                    Context.RubroProveedor.Add(rubRubro);
+                    Context.SaveChanges();
+                
+               
+                
+
+            }
+
+        }
+
+
+        public RubroProveedor GetRubroByID(int id) {
+
+            using (Context=new Entities() )
+            {
+                return Context.RubroProveedor.Where(x => x.IDRubroProveedor == id).FirstOrDefault();
+            }
+
         }
     }
 }

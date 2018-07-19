@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlTypes;
 using Entidades;
-using DL.Model;
+using DL;
 
 namespace BLayer
 {

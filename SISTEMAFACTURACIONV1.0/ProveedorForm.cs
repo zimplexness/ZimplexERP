@@ -65,19 +65,24 @@ namespace ErpGestion
             metroComboBoxRubros.DisplayMember = "Descripcion";
             metroComboBoxRubros.ValueMember = "IDRubroProveedor";
 
+            if (_proveedores!=null)
+            {
+                bindingSourceProveedor.DataSource = _proveedores;
 
-            bindingSourceProveedor.DataSource = _proveedores;
 
-                metroTextBoxNOMBRE.DataBindings.Add("Text",bindingSourceProveedor,"Nombre") ;
-                metroTextBoxRAZON.DataBindings.Add("Text",bindingSourceProveedor,"Razon");
+                metroTextBoxNOMBRE.DataBindings.Add("Text", bindingSourceProveedor, "Nombre");
+                metroTextBoxRAZON.DataBindings.Add("Text", bindingSourceProveedor, "Razon");
                 metroTextBoxCUIT.DataBindings.Add("Text", bindingSourceProveedor, "Cuit");
                 metroDateTimeFECHA.DataBindings.Add("Text", bindingSourceProveedor, "FechaIngreso");
                 metroTextBoxIIBB.DataBindings.Add("Text", bindingSourceProveedor, "IngresosBrutos");
                 metroTextBoxDIRECCION.DataBindings.Add("Text", bindingSourceProveedor, "Direccion");
-                metroComboBoxProvincia.DataBindings.Add("Text",bindingSourceProveedor,"Provincias",true);
-                metroComboBoxLocalidades.DataBindings.Add("Text", bindingSourceProveedor, "Localidades",true);
+                metroComboBoxProvincia.DataBindings.Add("Text", bindingSourceProveedor, "Provincias", true);
+                metroComboBoxLocalidades.DataBindings.Add("Text", bindingSourceProveedor, "Localidades", true);
                 metroTextBoxTELEFONO.DataBindings.Add("Text", bindingSourceProveedor, "Telefono");
-                metroComboBoxRubros.DataBindings.Add("Text",bindingSourceProveedor,"RubroProveedor",true);
+                metroComboBoxRubros.DataBindings.Add("Text", bindingSourceProveedor, "RubroProveedor", true);
+
+
+            }
 
 
 
@@ -104,18 +109,20 @@ namespace ErpGestion
                     if (new ProveedorManager().ValidateProveedor(metroTextBoxCUIT.Text)==1) {
                         new ProveedorManager().ActualizarProveedor(metroTextBoxNOMBRE.Text,metroTextBoxRAZON.Text,
                             metroTextBoxCUIT.Text,metroTextBoxIIBB.Text,metroTextBoxDIRECCION.Text,(int)metroComboBoxProvincia.SelectedValue
-                            ,(int)metroComboBoxLocalidades.SelectedValue,(int)metroComboBoxRubros.SelectedValue,metroDateTimeFECHA.Value);
+                            ,(int)metroComboBoxLocalidades.SelectedValue,(int)metroComboBoxRubros.SelectedValue,metroDateTimeFECHA.Value,metroTextBoxTELEFONO.Text);
 
-
+                        MessageBox.Show("Proveedor Actualizado con Exito", "Sistema de Gestion Integral");
+                        this.Close();
 
                     }
                     else
                     {
                         new ProveedorManager().InsertarProveedor(metroTextBoxNOMBRE.Text, metroTextBoxRAZON.Text,
                            metroTextBoxCUIT.Text, metroTextBoxIIBB.Text, metroTextBoxDIRECCION.Text, (int)metroComboBoxProvincia.SelectedValue
-                           , (int)metroComboBoxLocalidades.SelectedValue, (int)metroComboBoxRubros.SelectedValue, metroDateTimeFECHA.Value);
+                           , (int)metroComboBoxLocalidades.SelectedValue, (int)metroComboBoxRubros.SelectedValue, metroDateTimeFECHA.Value,metroTextBoxTELEFONO.Text);
 
-
+                        MessageBox.Show("Proveedor Ingresado con Exito","Sistema de Gestion Integral");
+                        this.Close();
                     }
 
 

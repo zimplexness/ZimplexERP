@@ -230,6 +230,9 @@
     <Compile Include="OrdenPago_Result.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="PadronRgsRet.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Pagos.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>

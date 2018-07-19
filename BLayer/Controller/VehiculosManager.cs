@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entidades;
-using DL.Model;
+using DL;
 
 
 namespace BLayer
@@ -14,6 +14,8 @@ namespace BLayer
 
         private Entities Context;
         private Vehiculos vehiculo;
+        private Mantenimiento mantenimiento;
+        private ActividadMantenimiento actividadMantenimiento;
 
         public List<MarcasVehiculos> MarcasVehiculos() {
 
@@ -269,6 +271,45 @@ namespace BLayer
             }
 
         }
+
+        public List<ActividadMantenimiento> GetActividadMantenimientos() {
+
+            using (Context=new Entities())
+            {
+                return Context.ActividadMantenimiento.ToList();
+            }
+
+        }
+
+        public void InsertarMantenimiento(DateTime fecha,int idvehiculo,int km, int idempleado,
+            int idtaller, int idactividad, string comentario) {
+
+            using (Context=new Entities())
+            {
+                mantenimiento = new Mantenimiento();
+                mantenimiento.Fecha = fecha;
+                mantenimiento.IdVehiculo = idvehiculo;
+                mantenimiento.Km = km;
+                mantenimiento.IDEmpleado = idempleado;
+                mantenimiento.IDTaller = idtaller;
+                mantenimiento.IDActividadMantenimiento = idactividad;
+                mantenimiento.Comentario = comentario;
+                Context.Mantenimiento.Add(mantenimiento);
+                Context.SaveChanges();
+                
+            }
+
+
+
+
+
+
+        }
+
+
+
+
+    
 
     }
 }

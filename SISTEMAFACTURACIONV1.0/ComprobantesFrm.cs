@@ -828,5 +828,10 @@ namespace ErpGestion
         {
 
         }
+
+        private void metroTextBoxProveedor_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

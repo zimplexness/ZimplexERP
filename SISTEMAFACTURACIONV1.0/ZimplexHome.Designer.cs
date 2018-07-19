@@ -31,62 +31,63 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ZimplexHome));
             this.Personal = new System.Windows.Forms.RibbonTab();
             this.ribbonPanelEmpleados = new System.Windows.Forms.RibbonPanel();
-            this.ribbonButtonEmpleados = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel9 = new System.Windows.Forms.RibbonPanel();
             this.ribbonTextBox1 = new System.Windows.Forms.RibbonTextBox();
             this.ribbon1 = new System.Windows.Forms.Ribbon();
-            this.ribbonOrbMenuItemLocalidad = new System.Windows.Forms.RibbonOrbMenuItem();
-            this.ribbonOrbMenuItemProvincia = new System.Windows.Forms.RibbonOrbMenuItem();
-            this.ribbonOrbMenuItem4 = new System.Windows.Forms.RibbonOrbMenuItem();
-            this.ribbonOrbMenuItem5 = new System.Windows.Forms.RibbonOrbMenuItem();
             this.Compras = new System.Windows.Forms.RibbonTab();
-            this.ribbonPanelProveedores = new System.Windows.Forms.RibbonPanel();
-            this.ribbonButtonInsertarProveedores = new System.Windows.Forms.RibbonButton();
-            this.ribbonSeparator2 = new System.Windows.Forms.RibbonSeparator();
-            this.ribbonButtonRubros = new System.Windows.Forms.RibbonButton();
             this.ribbonPanelComprobante = new System.Windows.Forms.RibbonPanel();
-            this.ribbonButtonComprobantes = new System.Windows.Forms.RibbonButton();
             this.ribbonSeparator3 = new System.Windows.Forms.RibbonSeparator();
-            this.ribbonButtonConsultaComprobantes = new System.Windows.Forms.RibbonButton();
             this.ribbonSeparator4 = new System.Windows.Forms.RibbonSeparator();
-            this.ribbonButton6 = new System.Windows.Forms.RibbonButton();
             this.ribbonPanelPagos = new System.Windows.Forms.RibbonPanel();
-            this.ribbonButtonPagos = new System.Windows.Forms.RibbonButton();
             this.ribbonSeparator5 = new System.Windows.Forms.RibbonSeparator();
-            this.ribbonButtonBuscarPagos = new System.Windows.Forms.RibbonButton();
             this.ribbonPanelStock = new System.Windows.Forms.RibbonPanel();
-            this.ribbonButtonProductos = new System.Windows.Forms.RibbonButton();
             this.ribbonTabVehiculos = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel1 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonButtonVechiculo = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel2 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonButtonTaller = new System.Windows.Forms.RibbonButton();
             this.ribbonPanelMantenimientos = new System.Windows.Forms.RibbonPanel();
-            this.ribbonButtonMantenimiento = new System.Windows.Forms.RibbonButton();
             this.ribbonPanelPolizaVehiculo = new System.Windows.Forms.RibbonPanel();
-            this.PolizaButton = new System.Windows.Forms.RibbonButton();
             this.ribbonPanelCategoriaReparacion = new System.Windows.Forms.RibbonPanel();
-            this.CategoriaMButton = new System.Windows.Forms.RibbonButton();
             this.ribbonTabDatosPrincipales = new System.Windows.Forms.RibbonTab();
             this.ribbonPanelLocalidad = new System.Windows.Forms.RibbonPanel();
-            this.IngresarLocalidad = new System.Windows.Forms.RibbonButton();
             this.ribbonSeparator6 = new System.Windows.Forms.RibbonSeparator();
-            this.ribbonButtonProvincia = new System.Windows.Forms.RibbonButton();
-            this.ribbonPanelCuentaCorriente = new System.Windows.Forms.RibbonPanel();
-            this.ribbonTabReportes = new System.Windows.Forms.RibbonTab();
             this.ribbonTabAdmistracion = new System.Windows.Forms.RibbonTab();
             this.ribbonPanelUser = new System.Windows.Forms.RibbonPanel();
-            this.ribbonButtonUser = new System.Windows.Forms.RibbonButton();
             this.ribbonPanelPerfiles = new System.Windows.Forms.RibbonPanel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.ribbonOrbMenuItemLocalidad = new System.Windows.Forms.RibbonOrbMenuItem();
+            this.ribbonOrbMenuItemProvincia = new System.Windows.Forms.RibbonOrbMenuItem();
+            this.ribbonOrbMenuItem4 = new System.Windows.Forms.RibbonOrbMenuItem();
+            this.ribbonOrbMenuItem5 = new System.Windows.Forms.RibbonOrbMenuItem();
+            this.ribbonPanelProveedores = new System.Windows.Forms.RibbonPanel();
+            this.ribbonButtonInsertarProveedores = new System.Windows.Forms.RibbonButton();
+            this.ribbonSeparator2 = new System.Windows.Forms.RibbonSeparator();
+            this.ribbonButtonRubros = new System.Windows.Forms.RibbonButton();
+            this.ribbonSeparator1 = new System.Windows.Forms.RibbonSeparator();
+            this.ribbonButton7 = new System.Windows.Forms.RibbonButton();
+            this.ribbonButtonComprobantes = new System.Windows.Forms.RibbonButton();
+            this.ribbonButtonConsultaComprobantes = new System.Windows.Forms.RibbonButton();
+            this.ribbonButtonPagos = new System.Windows.Forms.RibbonButton();
+            this.ribbonButtonBuscarPagos = new System.Windows.Forms.RibbonButton();
+            this.ribbonButtonProductos = new System.Windows.Forms.RibbonButton();
+            this.ribbonButtonEmpleados = new System.Windows.Forms.RibbonButton();
+            this.ribbonButtonVechiculo = new System.Windows.Forms.RibbonButton();
+            this.ribbonButtonTaller = new System.Windows.Forms.RibbonButton();
+            this.ribbonButtonMantenimiento = new System.Windows.Forms.RibbonButton();
+            this.PolizaButton = new System.Windows.Forms.RibbonButton();
+            this.CategoriaMButton = new System.Windows.Forms.RibbonButton();
+            this.IngresarLocalidad = new System.Windows.Forms.RibbonButton();
+            this.ribbonButtonProvincia = new System.Windows.Forms.RibbonButton();
+            this.ribbonButtonUser = new System.Windows.Forms.RibbonButton();
             this.ribbonDescriptionMenuItem1 = new System.Windows.Forms.RibbonDescriptionMenuItem();
             this.ribbonButton1 = new System.Windows.Forms.RibbonButton();
             this.ribbonButton2 = new System.Windows.Forms.RibbonButton();
             this.ribbonButton3 = new System.Windows.Forms.RibbonButton();
             this.ribbonButton4 = new System.Windows.Forms.RibbonButton();
             this.ribbonButton5 = new System.Windows.Forms.RibbonButton();
+            this.ribbonPanelPadron = new System.Windows.Forms.RibbonPanel();
+            this.ribbonButtonImportar = new System.Windows.Forms.RibbonButton();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,13 +100,6 @@
             // 
             this.ribbonPanelEmpleados.Items.Add(this.ribbonButtonEmpleados);
             this.ribbonPanelEmpleados.Text = "Empleado";
-            // 
-            // ribbonButtonEmpleados
-            // 
-            this.ribbonButtonEmpleados.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButtonEmpleados.Image")));
-            this.ribbonButtonEmpleados.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButtonEmpleados.SmallImage")));
-            this.ribbonButtonEmpleados.Text = "Indice";
-            this.ribbonButtonEmpleados.Click += new System.EventHandler(this.ribbonButtonEmpleados_Click);
             // 
             // ribbonPanel9
             // 
@@ -148,12 +142,126 @@
             this.ribbon1.Tabs.Add(this.Personal);
             this.ribbon1.Tabs.Add(this.ribbonTabVehiculos);
             this.ribbon1.Tabs.Add(this.ribbonTabDatosPrincipales);
-            this.ribbon1.Tabs.Add(this.ribbonTabReportes);
             this.ribbon1.Tabs.Add(this.ribbonTabAdmistracion);
             this.ribbon1.TabsMargin = new System.Windows.Forms.Padding(12, 26, 20, 0);
             this.ribbon1.Text = "ribbon1";
             this.ribbon1.ThemeColor = System.Windows.Forms.RibbonTheme.Green;
             this.ribbon1.Click += new System.EventHandler(this.ribbon1_Click);
+            // 
+            // Compras
+            // 
+            this.Compras.Panels.Add(this.ribbonPanelProveedores);
+            this.Compras.Panels.Add(this.ribbonPanelComprobante);
+            this.Compras.Panels.Add(this.ribbonPanelPagos);
+            this.Compras.Panels.Add(this.ribbonPanelStock);
+            this.Compras.Panels.Add(this.ribbonPanelPadron);
+            this.Compras.Text = "Compras";
+            // 
+            // ribbonPanelComprobante
+            // 
+            this.ribbonPanelComprobante.Items.Add(this.ribbonButtonComprobantes);
+            this.ribbonPanelComprobante.Items.Add(this.ribbonSeparator3);
+            this.ribbonPanelComprobante.Items.Add(this.ribbonButtonConsultaComprobantes);
+            this.ribbonPanelComprobante.Items.Add(this.ribbonSeparator4);
+            this.ribbonPanelComprobante.Text = "Comprobantes";
+            this.ribbonPanelComprobante.Click += new System.EventHandler(this.ribbonPanel5_Click);
+            // 
+            // ribbonPanelPagos
+            // 
+            this.ribbonPanelPagos.Items.Add(this.ribbonButtonPagos);
+            this.ribbonPanelPagos.Items.Add(this.ribbonSeparator5);
+            this.ribbonPanelPagos.Items.Add(this.ribbonButtonBuscarPagos);
+            this.ribbonPanelPagos.Text = "Pagos";
+            // 
+            // ribbonPanelStock
+            // 
+            this.ribbonPanelStock.Items.Add(this.ribbonButtonProductos);
+            this.ribbonPanelStock.Text = "Stock";
+            // 
+            // ribbonTabVehiculos
+            // 
+            this.ribbonTabVehiculos.Panels.Add(this.ribbonPanel1);
+            this.ribbonTabVehiculos.Panels.Add(this.ribbonPanel2);
+            this.ribbonTabVehiculos.Panels.Add(this.ribbonPanelMantenimientos);
+            this.ribbonTabVehiculos.Panels.Add(this.ribbonPanelPolizaVehiculo);
+            this.ribbonTabVehiculos.Panels.Add(this.ribbonPanelCategoriaReparacion);
+            this.ribbonTabVehiculos.Text = " Mantenimiento de Vehiculos";
+            // 
+            // ribbonPanel1
+            // 
+            this.ribbonPanel1.Items.Add(this.ribbonButtonVechiculo);
+            this.ribbonPanel1.Text = "Vehiculos";
+            // 
+            // ribbonPanel2
+            // 
+            this.ribbonPanel2.Items.Add(this.ribbonButtonTaller);
+            this.ribbonPanel2.Text = "Talleres";
+            // 
+            // ribbonPanelMantenimientos
+            // 
+            this.ribbonPanelMantenimientos.Items.Add(this.ribbonButtonMantenimiento);
+            this.ribbonPanelMantenimientos.Text = "Mantenimientos";
+            // 
+            // ribbonPanelPolizaVehiculo
+            // 
+            this.ribbonPanelPolizaVehiculo.Items.Add(this.PolizaButton);
+            this.ribbonPanelPolizaVehiculo.Text = "Vehiculos";
+            // 
+            // ribbonPanelCategoriaReparacion
+            // 
+            this.ribbonPanelCategoriaReparacion.Items.Add(this.CategoriaMButton);
+            this.ribbonPanelCategoriaReparacion.Text = "Mantenimiento ";
+            // 
+            // ribbonTabDatosPrincipales
+            // 
+            this.ribbonTabDatosPrincipales.Panels.Add(this.ribbonPanelLocalidad);
+            this.ribbonTabDatosPrincipales.Text = "Datos Principales";
+            // 
+            // ribbonPanelLocalidad
+            // 
+            this.ribbonPanelLocalidad.Items.Add(this.IngresarLocalidad);
+            this.ribbonPanelLocalidad.Items.Add(this.ribbonSeparator6);
+            this.ribbonPanelLocalidad.Items.Add(this.ribbonButtonProvincia);
+            this.ribbonPanelLocalidad.Text = "";
+            // 
+            // ribbonTabAdmistracion
+            // 
+            this.ribbonTabAdmistracion.Panels.Add(this.ribbonPanelUser);
+            this.ribbonTabAdmistracion.Panels.Add(this.ribbonPanelPerfiles);
+            this.ribbonTabAdmistracion.Text = "Adminstración";
+            // 
+            // ribbonPanelUser
+            // 
+            this.ribbonPanelUser.Items.Add(this.ribbonButtonUser);
+            this.ribbonPanelUser.Text = "Usuarios";
+            // 
+            // ribbonPanelPerfiles
+            // 
+            this.ribbonPanelPerfiles.Text = "Perfiles";
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.toolStripStatusLabel2});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 659);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1264, 22);
+            this.statusStrip1.TabIndex = 2;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.ActiveLinkColor = System.Drawing.Color.SandyBrown;
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(47, 17);
+            this.toolStripStatusLabel1.Text = "Usuario";
+            // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(51, 17);
+            this.toolStripStatusLabel2.Text = "Nombre";
             // 
             // ribbonOrbMenuItemLocalidad
             // 
@@ -183,20 +291,14 @@
             this.ribbonOrbMenuItem5.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbMenuItem5.SmallImage")));
             this.ribbonOrbMenuItem5.Text = "Salir";
             // 
-            // Compras
-            // 
-            this.Compras.Panels.Add(this.ribbonPanelProveedores);
-            this.Compras.Panels.Add(this.ribbonPanelComprobante);
-            this.Compras.Panels.Add(this.ribbonPanelPagos);
-            this.Compras.Panels.Add(this.ribbonPanelStock);
-            this.Compras.Text = "Compras";
-            // 
             // ribbonPanelProveedores
             // 
             this.ribbonPanelProveedores.Image = global::ErpGestion.Properties.Resources.if_add_user_1902270__1_;
             this.ribbonPanelProveedores.Items.Add(this.ribbonButtonInsertarProveedores);
             this.ribbonPanelProveedores.Items.Add(this.ribbonSeparator2);
             this.ribbonPanelProveedores.Items.Add(this.ribbonButtonRubros);
+            this.ribbonPanelProveedores.Items.Add(this.ribbonSeparator1);
+            this.ribbonPanelProveedores.Items.Add(this.ribbonButton7);
             this.ribbonPanelProveedores.Text = "Proveedores";
             this.ribbonPanelProveedores.Click += new System.EventHandler(this.ribbonPanel1_Click);
             // 
@@ -215,15 +317,12 @@
             this.ribbonButtonRubros.Text = "Rubros";
             this.ribbonButtonRubros.Click += new System.EventHandler(this.ribbonButtonRubros_Click);
             // 
-            // ribbonPanelComprobante
+            // ribbonButton7
             // 
-            this.ribbonPanelComprobante.Items.Add(this.ribbonButtonComprobantes);
-            this.ribbonPanelComprobante.Items.Add(this.ribbonSeparator3);
-            this.ribbonPanelComprobante.Items.Add(this.ribbonButtonConsultaComprobantes);
-            this.ribbonPanelComprobante.Items.Add(this.ribbonSeparator4);
-            this.ribbonPanelComprobante.Items.Add(this.ribbonButton6);
-            this.ribbonPanelComprobante.Text = "Comprobantes";
-            this.ribbonPanelComprobante.Click += new System.EventHandler(this.ribbonPanel5_Click);
+            this.ribbonButton7.Image = global::ErpGestion.Properties.Resources.if_statistics_48731;
+            this.ribbonButton7.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton7.SmallImage")));
+            this.ribbonButton7.Text = "C.Corriente";
+            this.ribbonButton7.Click += new System.EventHandler(this.ribbonButton7_Click);
             // 
             // ribbonButtonComprobantes
             // 
@@ -239,19 +338,6 @@
             this.ribbonButtonConsultaComprobantes.Text = "Buscar";
             this.ribbonButtonConsultaComprobantes.Click += new System.EventHandler(this.ribbonButtonConsultaComprobantes_Click);
             // 
-            // ribbonButton6
-            // 
-            this.ribbonButton6.Image = global::ErpGestion.Properties.Resources.if_statistics_48731;
-            this.ribbonButton6.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton6.SmallImage")));
-            this.ribbonButton6.Text = "Cuenta ";
-            // 
-            // ribbonPanelPagos
-            // 
-            this.ribbonPanelPagos.Items.Add(this.ribbonButtonPagos);
-            this.ribbonPanelPagos.Items.Add(this.ribbonSeparator5);
-            this.ribbonPanelPagos.Items.Add(this.ribbonButtonBuscarPagos);
-            this.ribbonPanelPagos.Text = "Pagos";
-            // 
             // ribbonButtonPagos
             // 
             this.ribbonButtonPagos.Image = global::ErpGestion.Properties.Resources.if_billing_48648;
@@ -265,11 +351,6 @@
             this.ribbonButtonBuscarPagos.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButtonBuscarPagos.SmallImage")));
             this.ribbonButtonBuscarPagos.Text = "Listar";
             // 
-            // ribbonPanelStock
-            // 
-            this.ribbonPanelStock.Items.Add(this.ribbonButtonProductos);
-            this.ribbonPanelStock.Text = "Stock";
-            // 
             // ribbonButtonProductos
             // 
             this.ribbonButtonProductos.Image = global::ErpGestion.Properties.Resources.if_phone_48709;
@@ -277,19 +358,12 @@
             this.ribbonButtonProductos.Text = "Agregar";
             this.ribbonButtonProductos.Click += new System.EventHandler(this.ribbonButtonProductos_Click);
             // 
-            // ribbonTabVehiculos
+            // ribbonButtonEmpleados
             // 
-            this.ribbonTabVehiculos.Panels.Add(this.ribbonPanel1);
-            this.ribbonTabVehiculos.Panels.Add(this.ribbonPanel2);
-            this.ribbonTabVehiculos.Panels.Add(this.ribbonPanelMantenimientos);
-            this.ribbonTabVehiculos.Panels.Add(this.ribbonPanelPolizaVehiculo);
-            this.ribbonTabVehiculos.Panels.Add(this.ribbonPanelCategoriaReparacion);
-            this.ribbonTabVehiculos.Text = " Mantenimiento de Vehiculos";
-            // 
-            // ribbonPanel1
-            // 
-            this.ribbonPanel1.Items.Add(this.ribbonButtonVechiculo);
-            this.ribbonPanel1.Text = "Vehiculos";
+            this.ribbonButtonEmpleados.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButtonEmpleados.Image")));
+            this.ribbonButtonEmpleados.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButtonEmpleados.SmallImage")));
+            this.ribbonButtonEmpleados.Text = "Indice";
+            this.ribbonButtonEmpleados.Click += new System.EventHandler(this.ribbonButtonEmpleados_Click);
             // 
             // ribbonButtonVechiculo
             // 
@@ -298,11 +372,6 @@
             this.ribbonButtonVechiculo.Text = "Agregar";
             this.ribbonButtonVechiculo.Click += new System.EventHandler(this.ribbonButtonVechiculo_Click);
             // 
-            // ribbonPanel2
-            // 
-            this.ribbonPanel2.Items.Add(this.ribbonButtonTaller);
-            this.ribbonPanel2.Text = "Talleres";
-            // 
             // ribbonButtonTaller
             // 
             this.ribbonButtonTaller.Image = global::ErpGestion.Properties.Resources.if_config_48659;
@@ -310,53 +379,26 @@
             this.ribbonButtonTaller.Text = "Agregar";
             this.ribbonButtonTaller.Click += new System.EventHandler(this.ribbonButtonTaller_Click);
             // 
-            // ribbonPanelMantenimientos
-            // 
-            this.ribbonPanelMantenimientos.Items.Add(this.ribbonButtonMantenimiento);
-            this.ribbonPanelMantenimientos.Text = "Mantenimientos";
-            // 
             // ribbonButtonMantenimiento
             // 
             this.ribbonButtonMantenimiento.Image = global::ErpGestion.Properties.Resources.if_settings_54355;
             this.ribbonButtonMantenimiento.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButtonMantenimiento.SmallImage")));
             this.ribbonButtonMantenimiento.Text = "Agregar";
-            // 
-            // ribbonPanelPolizaVehiculo
-            // 
-            this.ribbonPanelPolizaVehiculo.Items.Add(this.PolizaButton);
-            this.ribbonPanelPolizaVehiculo.Text = "Poliza Vehiculos";
+            this.ribbonButtonMantenimiento.Click += new System.EventHandler(this.ribbonButtonMantenimiento_Click);
             // 
             // PolizaButton
             // 
             this.PolizaButton.Image = global::ErpGestion.Properties.Resources.if_special_offer_54362;
             this.PolizaButton.SmallImage = ((System.Drawing.Image)(resources.GetObject("PolizaButton.SmallImage")));
-            this.PolizaButton.Text = "Agregar";
+            this.PolizaButton.Text = "Poliza";
             this.PolizaButton.Click += new System.EventHandler(this.PolizaButton_Click);
-            // 
-            // ribbonPanelCategoriaReparacion
-            // 
-            this.ribbonPanelCategoriaReparacion.Items.Add(this.CategoriaMButton);
-            this.ribbonPanelCategoriaReparacion.Text = "Descripcion de Mantenimiento ";
             // 
             // CategoriaMButton
             // 
             this.CategoriaMButton.Image = global::ErpGestion.Properties.Resources.if_comment_54290;
             this.CategoriaMButton.SmallImage = ((System.Drawing.Image)(resources.GetObject("CategoriaMButton.SmallImage")));
-            this.CategoriaMButton.Text = "Agregar";
+            this.CategoriaMButton.Text = "Actividad";
             this.CategoriaMButton.Click += new System.EventHandler(this.CategoriaMButton_Click);
-            // 
-            // ribbonTabDatosPrincipales
-            // 
-            this.ribbonTabDatosPrincipales.Panels.Add(this.ribbonPanelLocalidad);
-            this.ribbonTabDatosPrincipales.Panels.Add(this.ribbonPanelCuentaCorriente);
-            this.ribbonTabDatosPrincipales.Text = "Datos Principales";
-            // 
-            // ribbonPanelLocalidad
-            // 
-            this.ribbonPanelLocalidad.Items.Add(this.IngresarLocalidad);
-            this.ribbonPanelLocalidad.Items.Add(this.ribbonSeparator6);
-            this.ribbonPanelLocalidad.Items.Add(this.ribbonButtonProvincia);
-            this.ribbonPanelLocalidad.Text = "";
             // 
             // IngresarLocalidad
             // 
@@ -373,57 +415,10 @@
             this.ribbonButtonProvincia.Text = "Provincia";
             this.ribbonButtonProvincia.Click += new System.EventHandler(this.ribbonButtonProvincia_Click);
             // 
-            // ribbonPanelCuentaCorriente
-            // 
-            this.ribbonPanelCuentaCorriente.Text = "Cuentas Corrientes";
-            // 
-            // ribbonTabReportes
-            // 
-            this.ribbonTabReportes.Text = "Reportes";
-            // 
-            // ribbonTabAdmistracion
-            // 
-            this.ribbonTabAdmistracion.Panels.Add(this.ribbonPanelUser);
-            this.ribbonTabAdmistracion.Panels.Add(this.ribbonPanelPerfiles);
-            this.ribbonTabAdmistracion.Text = "Adminstración";
-            // 
-            // ribbonPanelUser
-            // 
-            this.ribbonPanelUser.Items.Add(this.ribbonButtonUser);
-            this.ribbonPanelUser.Text = "Usuarios";
-            // 
             // ribbonButtonUser
             // 
             this.ribbonButtonUser.Image = global::ErpGestion.Properties.Resources.if_user_48737__1_;
             this.ribbonButtonUser.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButtonUser.SmallImage")));
-            // 
-            // ribbonPanelPerfiles
-            // 
-            this.ribbonPanelPerfiles.Text = "Perfiles";
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
-            this.toolStripStatusLabel2});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 659);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1264, 22);
-            this.statusStrip1.TabIndex = 2;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.ActiveLinkColor = System.Drawing.Color.SandyBrown;
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(47, 17);
-            this.toolStripStatusLabel1.Text = "Usuario";
-            // 
-            // toolStripStatusLabel2
-            // 
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(51, 17);
-            this.toolStripStatusLabel2.Text = "Nombre";
             // 
             // ribbonDescriptionMenuItem1
             // 
@@ -460,6 +455,18 @@
             this.ribbonButton5.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
             this.ribbonButton5.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton5.SmallImage")));
             this.ribbonButton5.Text = "ribbonButton5";
+            // 
+            // ribbonPanelPadron
+            // 
+            this.ribbonPanelPadron.Items.Add(this.ribbonButtonImportar);
+            this.ribbonPanelPadron.Text = "Padrón";
+            // 
+            // ribbonButtonImportar
+            // 
+            this.ribbonButtonImportar.Image = global::ErpGestion.Properties.Resources.if_plus_48711;
+            this.ribbonButtonImportar.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButtonImportar.SmallImage")));
+            this.ribbonButtonImportar.Text = "Importar";
+            this.ribbonButtonImportar.Click += new System.EventHandler(this.ribbonButtonImportar_Click);
             // 
             // ZimplexHome
             // 
@@ -522,8 +529,6 @@
         private System.Windows.Forms.RibbonPanel ribbonPanelCategoriaReparacion;
         private System.Windows.Forms.RibbonTab ribbonTabDatosPrincipales;
         private System.Windows.Forms.RibbonPanel ribbonPanelLocalidad;
-        private System.Windows.Forms.RibbonPanel ribbonPanelCuentaCorriente;
-        private System.Windows.Forms.RibbonTab ribbonTabReportes;
         private System.Windows.Forms.RibbonButton IngresarLocalidad;
         private System.Windows.Forms.RibbonButton PolizaButton;
         private System.Windows.Forms.RibbonButton CategoriaMButton;
@@ -532,7 +537,6 @@
         private System.Windows.Forms.RibbonSeparator ribbonSeparator3;
         private System.Windows.Forms.RibbonButton ribbonButtonConsultaComprobantes;
         private System.Windows.Forms.RibbonSeparator ribbonSeparator4;
-        private System.Windows.Forms.RibbonButton ribbonButton6;
         private System.Windows.Forms.RibbonSeparator ribbonSeparator5;
         private System.Windows.Forms.RibbonButton ribbonButtonBuscarPagos;
         private System.Windows.Forms.RibbonSeparator ribbonSeparator6;
@@ -541,5 +545,9 @@
         private System.Windows.Forms.RibbonPanel ribbonPanelUser;
         private System.Windows.Forms.RibbonButton ribbonButtonUser;
         private System.Windows.Forms.RibbonPanel ribbonPanelPerfiles;
+        private System.Windows.Forms.RibbonSeparator ribbonSeparator1;
+        private System.Windows.Forms.RibbonButton ribbonButton7;
+        private System.Windows.Forms.RibbonPanel ribbonPanelPadron;
+        private System.Windows.Forms.RibbonButton ribbonButtonImportar;
     }
 }

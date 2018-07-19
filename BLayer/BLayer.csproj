@@ -55,6 +55,7 @@
     <Compile Include="Controller\EmpleadosManager.cs" />
     <Compile Include="Controller\EstadoCivilController.cs" />
     <Compile Include="Controller\Estudios.cs" />
+    <Compile Include="Controller\ImportarPadron.cs" />
     <Compile Include="Controller\NacionalidadesController.cs" />
     <Compile Include="Controller\ObraSocialController.cs" />
     <Compile Include="Controller\PagosManager.cs" />

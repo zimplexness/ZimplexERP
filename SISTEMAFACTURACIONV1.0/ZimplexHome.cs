@@ -304,15 +304,66 @@ namespace ErpGestion
             //abrir formulario de comprobantes
             foreach (Form f in this.MdiChildren)
             {
-                if (f.GetType() == typeof(ActividadVehiculoForm))
+                if (f.GetType() == typeof(AdminActividadesMantenimientoForm))
                 {
                     f.Activate();
                     return;
                 }
             }
-            Form vehiculoform = new ActividadVehiculoForm();
+            Form vehiculoform = new AdminActividadesMantenimientoForm();
             vehiculoform.MdiParent = this;
             vehiculoform.Show();
+        }
+
+        private void ribbonButton7_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.GetType() == typeof(AdminCuentaCorrienteForm))
+                {
+                    f.Activate();
+                    return;
+                }
+            }
+            Form rubrofrm = new AdminCuentaCorrienteForm();
+            rubrofrm.MdiParent = this;
+            rubrofrm.Show();
+        }
+
+        private void ribbonButton6_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ribbonButtonMantenimiento_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.GetType() == typeof(MantenimientoForm))
+                {
+                    f.Activate();
+                    return;
+                }
+            }
+            Form mantenimientofrm = new MantenimientoForm();
+            mantenimientofrm.MdiParent = this;
+            mantenimientofrm.Show();
+
+        }
+
+        private void ribbonButtonImportar_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.GetType() == typeof(PadronForm))
+                {
+                    f.Activate();
+                    return;
+                }
+            }
+            Form padronfrm = new PadronForm();
+            padronfrm.MdiParent = this;
+            padronfrm.Show();
         }
     }
 }

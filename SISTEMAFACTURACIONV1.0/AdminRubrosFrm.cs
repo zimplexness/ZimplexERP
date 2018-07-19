@@ -45,5 +45,44 @@ namespace ErpGestion
            
 
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            RubroForm rubroForm = new RubroForm();
+            rubroForm.FormClosed += rubroForm_Form_Closed;
+            rubroForm.ShowDialog();
+        }
+
+        private void rubroForm_Form_Closed(Object sender,FormClosedEventArgs e) {
+            Form form = sender as Form;
+            if (form.DialogResult==DialogResult.OK)
+            {
+                IEnumerable<RubroProveedor> RUBRO = new ProveedorManager().ListarRubros();
+
+
+                metroGridRubro.AutoGenerateColumns = false;
+                metroGridRubro.DataSource = RUBRO;
+                metroGridRubro.AutoSize = false;
+
+                foreach (var item in RUBRO)
+                {
+                    IdRubro.DataPropertyName = "IDRubroProveedor";
+                    Rubros.DataPropertyName = "Descripcion";
+
+                }
+
+            }
+
+        }
+
+
+        private void metroGridRubro_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            RubroForm frmrubro = new RubroForm();
+            frmrubro.Rubro =int.Parse( metroGridRubro.CurrentRow.Cells["IdRubro"].Value.ToString());
+            // frmcuenta.FormClosed += frmcuenta_FormClosed;
+            frmrubro.FormClosed += rubroForm_Form_Closed;
+            frmrubro.Show();
+        }
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 using System.Data;
 using System.Data.Entity;
 using Entidades;
-using DL.Model;
+using DL;
 
 namespace Repositories
 {

@@ -386,8 +386,8 @@
           <Property Name="Name" Type="nvarchar" MaxLength="450" Nullable="false" />
           <Property Name="Value" Type="nvarchar(max)" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.NetUsersRoles' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ERP_SITEM.dbo.NetUsersRoles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="NetUsersRoles">
           <Key>
             <PropertyRef Name="UserId" />
@@ -402,6 +402,22 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.NetUsersRoles' no tiene defini
           </Key>
           <Property Name="idObraSocial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Descripcion" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="PadronRgsRet">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Regimen" Type="nchar" MaxLength="2" Nullable="false" />
+          <Property Name="FechaPublicacion" Type="date" Nullable="false" />
+          <Property Name="FechaDesde" Type="date" Nullable="false" />
+          <Property Name="FechaHasta" Type="date" Nullable="false" />
+          <Property Name="Cuit" Type="nchar" MaxLength="11" Nullable="false" />
+          <Property Name="TipoContribuyenteInsc" Type="nchar" MaxLength="2" Nullable="false" />
+          <Property Name="MarcaAltaBaja" Type="nchar" MaxLength="2" Nullable="false" />
+          <Property Name="MarcaCambioAlicuota" Type="nchar" MaxLength="2" Nullable="false" />
+          <Property Name="Alicuota" Type="float" Nullable="false" />
+          <Property Name="Grupo" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Pagos">
           <Key>
@@ -652,8 +668,8 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.NetUsersRoles' no tiene defini
           <Property Name="IdZona" Type="int" Nullable="false" />
           <Property Name="Zonas" Type="varchar" MaxLength="50" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.Choferes' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ERP_SITEM.dbo.Choferes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Choferes">
           <Key>
             <PropertyRef Name="IDEmpleado" />
@@ -662,8 +678,8 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.Choferes' no tiene definida ni
           <Property Name="IDEmpleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Chofer" Type="varchar" MaxLength="171" Nullable="false" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.CuentasCorrientes' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ERP_SITEM.dbo.CuentasCorrientes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="CuentasCorrientes">
           <Key>
             <PropertyRef Name="Cuit" />
@@ -675,8 +691,8 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.CuentasCorrientes' no tiene de
           <Property Name="Vencimiento" Type="int" />
           <Property Name="Comentario" Type="varchar" MaxLength="50" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.DatosEmpleadosActivos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ERP_SITEM.dbo.DatosEmpleadosActivos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="DatosEmpleadosActivos">
           <Key>
             <PropertyRef Name="IDEmpleado" />
@@ -701,8 +717,8 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.DatosEmpleadosActivos' no tien
           <Property Name="CategoriaEmpleado1" Type="varchar" MaxLength="50" />
           <Property Name="Activo" Type="bit" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.DetallePago' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ERP_SITEM.dbo.DetallePago' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="DetallePago">
           <Key>
             <PropertyRef Name="Idpago" />
@@ -719,8 +735,8 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.DetallePago' no tiene definida
           <Property Name="FechaVencimientoCheque" Type="datetime" />
           <Property Name="Expr2" Type="float" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.DetallesSolicitudesEmpleo' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ERP_SITEM.dbo.DetallesSolicitudesEmpleo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="DetallesSolicitudesEmpleo">
           <Key>
             <PropertyRef Name="IdPersona" />
@@ -747,8 +763,8 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.DetallesSolicitudesEmpleo' no 
           <Property Name="AntecedentesLaborales" Type="varchar" MaxLength="300" />
           <Property Name="PretencionRemunerativa" Type="float" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.ListaTalleresMecanicos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ERP_SITEM.dbo.ListaTalleresMecanicos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ListaTalleresMecanicos">
           <Key>
             <PropertyRef Name="IDTalleres" />
@@ -761,8 +777,8 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.ListaTalleresMecanicos' no tie
           <Property Name="NombreEncargado" Type="varchar" MaxLength="150" />
           <Property Name="TelefonoCotacto" Type="varchar" MaxLength="150" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.NominaCV' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ERP_SITEM.dbo.NominaCV' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="NominaCV">
           <Key>
             <PropertyRef Name="IDEmpleado" />
@@ -775,8 +791,8 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.NominaCV' no tiene definida ni
           <Property Name="Apellidos" Type="varchar" MaxLength="70" Nullable="false" />
           <Property Name="DNI" Type="nchar" MaxLength="8" Nullable="false" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.NominaTelecentro' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ERP_SITEM.dbo.NominaTelecentro' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="NominaTelecentro">
           <Key>
             <PropertyRef Name="IDEmpleado" />
@@ -789,8 +805,8 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.NominaTelecentro' no tiene def
           <Property Name="Apellidos" Type="varchar" MaxLength="70" Nullable="false" />
           <Property Name="DNI" Type="nchar" MaxLength="8" Nullable="false" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.Solicitudesempleos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ERP_SITEM.dbo.Solicitudesempleos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Solicitudesempleos">
           <Key>
             <PropertyRef Name="IdPersona" />
@@ -798,8 +814,8 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.Solicitudesempleos' no tiene d
           <Property Name="IdPersona" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombrepersona" Type="varchar" MaxLength="100" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_DetalleArticulo' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ERP_SITEM.dbo.View_DetalleArticulo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="View_DetalleArticulo">
           <Key>
             <PropertyRef Name="IDArticulo" />
@@ -812,8 +828,8 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_DetalleArticulo' no tiene
           <Property Name="Categoria" Type="varchar" MaxLength="50" />
           <Property Name="Ubicacion" Type="varchar" MaxLength="50" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_DetalleArticuloComprobante' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ERP_SITEM.dbo.View_DetalleArticuloComprobante' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="View_DetalleArticuloComprobante">
           <Key>
             <PropertyRef Name="IdComprobante" />
@@ -828,8 +844,8 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_DetalleArticuloComprobant
           <Property Name="idTable_DetallesComprobanteArticulos" Type="int" Nullable="false" />
           <Property Name="Iva" Type="float" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_ListaEmpleados' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ERP_SITEM.dbo.View_ListaEmpleados' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="View_ListaEmpleados">
           <Key>
             <PropertyRef Name="IDEmpleado" />
@@ -837,8 +853,8 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_ListaEmpleados' no tiene 
           <Property Name="IDEmpleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nombres" Type="varchar" MaxLength="151" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ERP_SITEM.dbo.View_Proveedores' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="View_Proveedores">
           <Key>
             <PropertyRef Name="Cuit" />
@@ -1011,6 +1027,42 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </Principal>
             <Dependent Role="Mantenimiento">
               <PropertyRef Name="IDActividadMantenimiento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mantenimiento_Empleados">
+          <End Role="Empleados" Type="Self.Empleados" Multiplicity="0..1" />
+          <End Role="Mantenimiento" Type="Self.Mantenimiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleados">
+              <PropertyRef Name="IDEmpleado" />
+            </Principal>
+            <Dependent Role="Mantenimiento">
+              <PropertyRef Name="IDEmpleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mantenimiento_Talleres">
+          <End Role="Talleres" Type="Self.Talleres" Multiplicity="0..1" />
+          <End Role="Mantenimiento" Type="Self.Mantenimiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Talleres">
+              <PropertyRef Name="IDTalleres" />
+            </Principal>
+            <Dependent Role="Mantenimiento">
+              <PropertyRef Name="IDTaller" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mantenimiento_Vehiculos">
+          <End Role="Vehiculos" Type="Self.Vehiculos" Multiplicity="0..1" />
+          <End Role="Mantenimiento" Type="Self.Mantenimiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vehiculos">
+              <PropertyRef Name="IDVehiculo" />
+            </Principal>
+            <Dependent Role="Mantenimiento">
+              <PropertyRef Name="IdVehiculo" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1679,6 +1731,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <EntitySet Name="NetUser" EntityType="Self.NetUser" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NetUserLogin" EntityType="Self.NetUserLogin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ObraSocial" EntityType="Self.ObraSocial" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PadronRgsRet" EntityType="Self.PadronRgsRet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Pagos" EntityType="Self.Pagos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PermissionMenus" EntityType="Self.PermissionMenus" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Personas" EntityType="Self.Personas" Schema="dbo" store:Type="Tables" />
@@ -1913,6 +1966,18 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           </AssociationSet>
           <AssociationSet Name="FK_Mantenimiento_ActividadMantenimiento" Association="Self.FK_Mantenimiento_ActividadMantenimiento">
             <End Role="ActividadMantenimiento" EntitySet="ActividadMantenimiento" />
+            <End Role="Mantenimiento" EntitySet="Mantenimiento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mantenimiento_Empleados" Association="Self.FK_Mantenimiento_Empleados">
+            <End Role="Empleados" EntitySet="Empleados" />
+            <End Role="Mantenimiento" EntitySet="Mantenimiento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mantenimiento_Talleres" Association="Self.FK_Mantenimiento_Talleres">
+            <End Role="Talleres" EntitySet="Talleres" />
+            <End Role="Mantenimiento" EntitySet="Mantenimiento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mantenimiento_Vehiculos" Association="Self.FK_Mantenimiento_Vehiculos">
+            <End Role="Vehiculos" EntitySet="Vehiculos" />
             <End Role="Mantenimiento" EntitySet="Mantenimiento" />
           </AssociationSet>
           <AssociationSet Name="FK_ModelosVehiculos_MarcasVehiculos" Association="Self.FK_ModelosVehiculos_MarcasVehiculos">
@@ -2224,7 +2289,6 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <NavigationProperty Name="CondicionesCompra" Relationship="Self.FK_Table_Comprobante_Table_CondicionCompra" FromRole="Comprobantes" ToRole="CondicionesCompra" />
           <NavigationProperty Name="Contable1" Relationship="Self.FK_Table_Comprobante_Table_Contable" FromRole="Comprobantes" ToRole="Contable" />
           <NavigationProperty Name="Estados" Relationship="Self.FK_Table_Comprobante_Table_Estados" FromRole="Comprobantes" ToRole="Estados" />
-          <NavigationProperty Name="Proveedores" Relationship="Self.FK_Table_Comprobante_Table_Proveedores" FromRole="Comprobantes" ToRole="Proveedores" />
           <NavigationProperty Name="TiposComprobante" Relationship="Self.FK_Table_Comprobante_Table_TipoComprobante" FromRole="Comprobantes" ToRole="TiposComprobante" />
           <NavigationProperty Name="TiposFactura" Relationship="Self.FK_Table_Comprobante_Table_TipoFactura" FromRole="Comprobantes" ToRole="TiposFactura" />
           <NavigationProperty Name="DetallesPago" Relationship="Self.FK_Table_DetallePago_Table_Comprobante" FromRole="Comprobantes" ToRole="DetallesPago" />
@@ -2255,7 +2319,6 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <Property Name="Nombre" Type="String" MaxLength="11" FixedLength="true" Unicode="true" />
           <Property Name="Vencimiento" Type="Int32" />
           <Property Name="Comentario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Proveedores" Relationship="Self.FK_CuentaCorriente_Proveedores" FromRole="CuentaCorriente" ToRole="Proveedores" />
         </EntityType>
         <EntityType Name="Departamentos">
           <Key>
@@ -2373,6 +2436,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <NavigationProperty Name="ObraSocial" Relationship="Self.FK_Empleados_ObraSocial" FromRole="Empleados" ToRole="ObraSocial" />
           <NavigationProperty Name="Sexos" Relationship="Self.FK_Empleados_Sexos" FromRole="Empleados" ToRole="Sexos" />
           <NavigationProperty Name="Zonas" Relationship="Self.FK_Empleados_Zonas" FromRole="Empleados" ToRole="Zonas" />
+          <NavigationProperty Name="Mantenimiento" Relationship="Self.FK_Mantenimiento_Empleados" FromRole="Empleados" ToRole="Mantenimiento" />
           <NavigationProperty Name="Especialidades" Relationship="Self.FK_Table_Empleado_Table_Especialidad" FromRole="Empleados" ToRole="Especialidades" />
           <NavigationProperty Name="Sindicatos" Relationship="Self.FK_Table_Empleado_Table_Sindicato" FromRole="Empleados" ToRole="Sindicatos" />
           <NavigationProperty Name="Vehiculos" Relationship="Self.FK_Vehiculos_Empleados" FromRole="Empleados" ToRole="Vehiculos" />
@@ -2471,6 +2535,9 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <Property Name="Comentario" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
           <Property Name="IDUserTransac" Type="Int32" />
           <NavigationProperty Name="ActividadMantenimiento" Relationship="Self.FK_Mantenimiento_ActividadMantenimiento" FromRole="Mantenimiento" ToRole="ActividadMantenimiento" />
+          <NavigationProperty Name="Empleados" Relationship="Self.FK_Mantenimiento_Empleados" FromRole="Mantenimiento" ToRole="Empleados" />
+          <NavigationProperty Name="Talleres" Relationship="Self.FK_Mantenimiento_Talleres" FromRole="Mantenimiento" ToRole="Talleres" />
+          <NavigationProperty Name="Vehiculos" Relationship="Self.FK_Mantenimiento_Vehiculos" FromRole="Mantenimiento" ToRole="Vehiculos" />
         </EntityType>
         <EntityType Name="MarcasVehiculos">
           <Key>
@@ -2627,7 +2694,6 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <Property Name="FechaEmision" Type="DateTime" Precision="0" />
           <Property Name="FechaFin" Type="DateTime" Precision="0" />
           <Property Name="IDCompania" Type="Int32" />
-          <NavigationProperty Name="Proveedores" Relationship="Self.FK_PolizasSeguro_Proveedores" FromRole="PolizasSeguro" ToRole="Proveedores" />
           <NavigationProperty Name="Vehiculos" Relationship="Self.FK_Vehiculos_PolizasSeguro" FromRole="PolizasSeguro" ToRole="Vehiculos" />
         </EntityType>
         <EntityType Name="ProductoresSeguro">
@@ -2668,16 +2734,13 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <Property Name="FechaAlta" Type="DateTime" Precision="0" />
           <Property Name="UserUltModificacion" Type="Int32" />
           <Property Name="FechaUltimaModificacion" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="Comprobantes" Relationship="Self.FK_Table_Comprobante_Table_Proveedores" FromRole="Proveedores" ToRole="Comprobantes" />
-          <NavigationProperty Name="CuentaCorriente" Relationship="Self.FK_CuentaCorriente_Proveedores" FromRole="Proveedores" ToRole="CuentaCorriente" />
           <NavigationProperty Name="DetalleProveedor_ProductorSeguro" Relationship="Self.FK_Table_DetalleProveedor_ProductorSeguro_Table_Proveedores" FromRole="Proveedores" ToRole="DetalleProveedor_ProductorSeguro" />
           <NavigationProperty Name="Localidades" Relationship="Self.FK_Table_Proveedores_Table_Localidades" FromRole="Proveedores" ToRole="Localidades" />
           <NavigationProperty Name="NetUser" Relationship="Self.FK_Proveedores_AspNetUsers" FromRole="Proveedores" ToRole="NetUser" />
-          <NavigationProperty Name="PolizasSeguro" Relationship="Self.FK_PolizasSeguro_Proveedores" FromRole="Proveedores" ToRole="PolizasSeguro" />
+          <NavigationProperty Name="Proveedores1" Relationship="Self.FK_Proveedores_Proveedores" FromRole="Proveedores" ToRole="Proveedores1" />
+          <NavigationProperty Name="Proveedores2" Relationship="Self.FK_Proveedores_Proveedores" FromRole="Proveedores1" ToRole="Proveedores" />
+          <NavigationProperty Name="RubroProveedor" Relationship="Self.FK_Proveedores_RubroProveedor" FromRole="Proveedores" ToRole="RubroProveedor" />
           <NavigationProperty Name="Provincias" Relationship="Self.FK_Table_Proveedores_Table_Provincias" FromRole="Proveedores" ToRole="Provincias" />
-          <NavigationProperty Name="Proveedores1" Relationship="ERP_SITEMModel.FK_Proveedores_Proveedores" FromRole="Proveedores" ToRole="Proveedores1" />
-          <NavigationProperty Name="Proveedores2" Relationship="ERP_SITEMModel.FK_Proveedores_Proveedores" FromRole="Proveedores1" ToRole="Proveedores" />
-          <NavigationProperty Name="RubroProveedor" Relationship="ERP_SITEMModel.FK_Proveedores_RubroProveedor" FromRole="Proveedores" ToRole="RubroProveedor" />
         </EntityType>
         <EntityType Name="Provincias">
           <Key>
@@ -2710,7 +2773,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           </Key>
           <Property Name="IDRubroProveedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Proveedores" Relationship="ERP_SITEMModel.FK_Proveedores_RubroProveedor" FromRole="RubroProveedor" ToRole="Proveedores" />
+          <NavigationProperty Name="Proveedores" Relationship="Self.FK_Proveedores_RubroProveedor" FromRole="RubroProveedor" ToRole="Proveedores" />
         </EntityType>
         <EntityType Name="Sexos">
           <Key>
@@ -2770,6 +2833,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <Property Name="NombreEncargado" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="IdTipoTaller" Type="Int32" />
           <NavigationProperty Name="Localidades" Relationship="Self.FK_Talleres_Localidades" FromRole="Talleres" ToRole="Localidades" />
+          <NavigationProperty Name="Mantenimiento" Relationship="Self.FK_Mantenimiento_Talleres" FromRole="Talleres" ToRole="Mantenimiento" />
           <NavigationProperty Name="TipoTaller" Relationship="Self.FK_Talleres_TipoTaller" FromRole="Talleres" ToRole="TipoTaller" />
         </EntityType>
         <EntityType Name="TiposComprobante">
@@ -2841,6 +2905,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <Property Name="UserTransac" Type="Int32" />
           <NavigationProperty Name="Combustibles" Relationship="Self.FK_Vehiculos_Combustibles" FromRole="Vehiculos" ToRole="Combustibles" />
           <NavigationProperty Name="Empleados" Relationship="Self.FK_Vehiculos_Empleados" FromRole="Vehiculos" ToRole="Empleados" />
+          <NavigationProperty Name="Mantenimiento" Relationship="Self.FK_Mantenimiento_Vehiculos" FromRole="Vehiculos" ToRole="Mantenimiento" />
           <NavigationProperty Name="MarcasVehiculos" Relationship="Self.FK_Vehiculos_MarcasVehiculos" FromRole="Vehiculos" ToRole="MarcasVehiculos" />
           <NavigationProperty Name="ModelosVehiculos" Relationship="Self.FK_Vehiculos_ModelosVehiculos" FromRole="Vehiculos" ToRole="ModelosVehiculos" />
           <NavigationProperty Name="PolizasSeguro" Relationship="Self.FK_Vehiculos_PolizasSeguro" FromRole="Vehiculos" ToRole="PolizasSeguro" />
@@ -3245,18 +3310,6 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Table_Comprobante_Table_Proveedores">
-          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="0..1" />
-          <End Role="Comprobantes" Type="Self.Comprobantes" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Proveedores">
-              <PropertyRef Name="IdProveedores" />
-            </Principal>
-            <Dependent Role="Comprobantes">
-              <PropertyRef Name="IdProveedor" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Table_Comprobante_Table_TipoComprobante">
           <End Role="TiposComprobante" Type="Self.TiposComprobante" Multiplicity="0..1" />
           <End Role="Comprobantes" Type="Self.Comprobantes" Multiplicity="*" />
@@ -3306,18 +3359,6 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </Principal>
             <Dependent Role="DetallesComprobanteArticulos">
               <PropertyRef Name="IdComprobante" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_CuentaCorriente_Proveedores">
-          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="0..1" />
-          <End Role="CuentaCorriente" Type="Self.CuentaCorriente" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Proveedores">
-              <PropertyRef Name="IdProveedores" />
-            </Principal>
-            <Dependent Role="CuentaCorriente">
-              <PropertyRef Name="IDProveedor" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -3481,6 +3522,18 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Mantenimiento_Empleados">
+          <End Role="Empleados" Type="Self.Empleados" Multiplicity="0..1" />
+          <End Role="Mantenimiento" Type="Self.Mantenimiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleados">
+              <PropertyRef Name="IDEmpleado" />
+            </Principal>
+            <Dependent Role="Mantenimiento">
+              <PropertyRef Name="IDEmpleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Table_Empleado_Table_Especialidad">
           <End Role="Especialidades" Type="Self.Especialidades" Multiplicity="0..1" />
           <End Role="Empleados" Type="Self.Empleados" Multiplicity="*" />
@@ -3562,6 +3615,30 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </Principal>
             <Dependent Role="Talleres">
               <PropertyRef Name="IDLocalidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mantenimiento_Talleres">
+          <End Role="Talleres" Type="Self.Talleres" Multiplicity="0..1" />
+          <End Role="Mantenimiento" Type="Self.Mantenimiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Talleres">
+              <PropertyRef Name="IDTalleres" />
+            </Principal>
+            <Dependent Role="Mantenimiento">
+              <PropertyRef Name="IDTaller" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mantenimiento_Vehiculos">
+          <End Role="Vehiculos" Type="Self.Vehiculos" Multiplicity="0..1" />
+          <End Role="Mantenimiento" Type="Self.Mantenimiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vehiculos">
+              <PropertyRef Name="IDVehiculo" />
+            </Principal>
+            <Dependent Role="Mantenimiento">
+              <PropertyRef Name="IdVehiculo" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -3673,18 +3750,6 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_PolizasSeguro_Proveedores">
-          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="0..1" />
-          <End Role="PolizasSeguro" Type="Self.PolizasSeguro" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Proveedores">
-              <PropertyRef Name="IdProveedores" />
-            </Principal>
-            <Dependent Role="PolizasSeguro">
-              <PropertyRef Name="IDCompania" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Vehiculos_PolizasSeguro">
           <End Role="PolizasSeguro" Type="Self.PolizasSeguro" Multiplicity="0..1" />
           <End Role="Vehiculos" Type="Self.Vehiculos" Multiplicity="*" />
@@ -3706,6 +3771,30 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </Principal>
             <Dependent Role="Users">
               <PropertyRef Name="IDProfile" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Proveedores_Proveedores">
+          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="1" />
+          <End Role="Proveedores1" Type="Self.Proveedores" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Proveedores">
+              <PropertyRef Name="IdProveedores" />
+            </Principal>
+            <Dependent Role="Proveedores1">
+              <PropertyRef Name="IdProveedores" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Proveedores_RubroProveedor">
+          <End Role="RubroProveedor" Type="Self.RubroProveedor" Multiplicity="0..1" />
+          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RubroProveedor">
+              <PropertyRef Name="IDRubroProveedor" />
+            </Principal>
+            <Dependent Role="Proveedores">
+              <PropertyRef Name="IDRubro" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -3894,10 +3983,6 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             <End Role="Estados" EntitySet="Estados" />
             <End Role="Comprobantes" EntitySet="Comprobantes" />
           </AssociationSet>
-          <AssociationSet Name="FK_Table_Comprobante_Table_Proveedores" Association="Self.FK_Table_Comprobante_Table_Proveedores">
-            <End Role="Proveedores" EntitySet="Proveedores" />
-            <End Role="Comprobantes" EntitySet="Comprobantes" />
-          </AssociationSet>
           <AssociationSet Name="FK_Table_Comprobante_Table_TipoComprobante" Association="Self.FK_Table_Comprobante_Table_TipoComprobante">
             <End Role="TiposComprobante" EntitySet="TiposComprobante" />
             <End Role="Comprobantes" EntitySet="Comprobantes" />
@@ -3913,10 +3998,6 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <AssociationSet Name="FK_Table_DetallesComprobanteArticulos_Table_Comprobante" Association="Self.FK_Table_DetallesComprobanteArticulos_Table_Comprobante">
             <End Role="Comprobantes" EntitySet="Comprobantes" />
             <End Role="DetallesComprobanteArticulos" EntitySet="DetallesComprobanteArticulos" />
-          </AssociationSet>
-          <AssociationSet Name="FK_CuentaCorriente_Proveedores" Association="Self.FK_CuentaCorriente_Proveedores">
-            <End Role="Proveedores" EntitySet="Proveedores" />
-            <End Role="CuentaCorriente" EntitySet="CuentaCorriente" />
           </AssociationSet>
           <AssociationSet Name="FK_Table_Empleado_Table_Departamento" Association="Self.FK_Table_Empleado_Table_Departamento">
             <End Role="Departamentos" EntitySet="Departamentos" />
@@ -3970,6 +4051,10 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             <End Role="Zonas" EntitySet="Zonas" />
             <End Role="Empleados" EntitySet="Empleados" />
           </AssociationSet>
+          <AssociationSet Name="FK_Mantenimiento_Empleados" Association="Self.FK_Mantenimiento_Empleados">
+            <End Role="Empleados" EntitySet="Empleados" />
+            <End Role="Mantenimiento" EntitySet="Mantenimiento" />
+          </AssociationSet>
           <AssociationSet Name="FK_Table_Empleado_Table_Especialidad" Association="Self.FK_Table_Empleado_Table_Especialidad">
             <End Role="Especialidades" EntitySet="Especialidades" />
             <End Role="Empleados" EntitySet="Empleados" />
@@ -3997,6 +4082,14 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <AssociationSet Name="FK_Talleres_Localidades" Association="Self.FK_Talleres_Localidades">
             <End Role="Localidades" EntitySet="Localidades" />
             <End Role="Talleres" EntitySet="Talleres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mantenimiento_Talleres" Association="Self.FK_Mantenimiento_Talleres">
+            <End Role="Talleres" EntitySet="Talleres" />
+            <End Role="Mantenimiento" EntitySet="Mantenimiento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mantenimiento_Vehiculos" Association="Self.FK_Mantenimiento_Vehiculos">
+            <End Role="Vehiculos" EntitySet="Vehiculos" />
+            <End Role="Mantenimiento" EntitySet="Mantenimiento" />
           </AssociationSet>
           <AssociationSet Name="FK_ModelosVehiculos_MarcasVehiculos" Association="Self.FK_ModelosVehiculos_MarcasVehiculos">
             <End Role="MarcasVehiculos" EntitySet="MarcasVehiculos" />
@@ -4034,10 +4127,6 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             <End Role="Personas" EntitySet="Personas" />
             <End Role="SolicitudesEmpleo" EntitySet="SolicitudesEmpleo" />
           </AssociationSet>
-          <AssociationSet Name="FK_PolizasSeguro_Proveedores" Association="Self.FK_PolizasSeguro_Proveedores">
-            <End Role="Proveedores" EntitySet="Proveedores" />
-            <End Role="PolizasSeguro" EntitySet="PolizasSeguro" />
-          </AssociationSet>
           <AssociationSet Name="FK_Vehiculos_PolizasSeguro" Association="Self.FK_Vehiculos_PolizasSeguro">
             <End Role="PolizasSeguro" EntitySet="PolizasSeguro" />
             <End Role="Vehiculos" EntitySet="Vehiculos" />
@@ -4045,6 +4134,14 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <AssociationSet Name="FK_Users_Profiles" Association="Self.FK_Users_Profiles">
             <End Role="Profiles" EntitySet="Profiles" />
             <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Proveedores_Proveedores" Association="Self.FK_Proveedores_Proveedores">
+            <End Role="Proveedores" EntitySet="Proveedores" />
+            <End Role="Proveedores1" EntitySet="Proveedores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Proveedores_RubroProveedor" Association="Self.FK_Proveedores_RubroProveedor">
+            <End Role="RubroProveedor" EntitySet="RubroProveedor" />
+            <End Role="Proveedores" EntitySet="Proveedores" />
           </AssociationSet>
           <AssociationSet Name="FK_Table_Proveedores_Table_Provincias" Association="Self.FK_Table_Proveedores_Table_Provincias">
             <End Role="Provincias" EntitySet="Provincias" />
@@ -4090,6 +4187,12 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             <Parameter Name="fechainicio" Mode="In" Type="DateTime" />
             <Parameter Name="fechafin" Mode="In" Type="DateTime" />
           </FunctionImport>
+          <FunctionImport Name="GastosXCentroCostos" ReturnType="Collection(ERP_SITEMModel.GastosXCentroCostos_Result)">
+            <Parameter Name="fechaini" Mode="In" Type="DateTime" />
+            <Parameter Name="fechafin" Mode="In" Type="DateTime" />
+            <Parameter Name="CentroCosto" Mode="In" Type="Int32" />
+            <Parameter Name="Contable" Mode="In" Type="Int32" />
+          </FunctionImport>
           <FunctionImport Name="HistorialEmpleadosSitem" ReturnType="Collection(ERP_SITEMModel.HistorialEmpleadosSitem_Result)" />
           <FunctionImport Name="ListaEmpleadosActivos" ReturnType="Collection(ERP_SITEMModel.ListaEmpleadosActivos_Result)" />
           <FunctionImport Name="ListaVehiculosActivos" ReturnType="Collection(ERP_SITEMModel.ListaVehiculosActivos_Result)" />
@@ -4120,20 +4223,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             <Parameter Name="profile" Mode="In" Type="Int32" />
             <Parameter Name="responseMessage" Mode="InOut" Type="String" />
           </FunctionImport>
-          <AssociationSet Name="FK_Proveedores_Proveedores" Association="ERP_SITEMModel.FK_Proveedores_Proveedores">
-            <End Role="Proveedores" EntitySet="Proveedores" />
-            <End Role="Proveedores1" EntitySet="Proveedores" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Proveedores_RubroProveedor" Association="ERP_SITEMModel.FK_Proveedores_RubroProveedor">
-            <End Role="RubroProveedor" EntitySet="RubroProveedor" />
-            <End Role="Proveedores" EntitySet="Proveedores" />
-          </AssociationSet>
-          <FunctionImport Name="GastosXCentroCostos" ReturnType="Collection(ERP_SITEMModel.GastosXCentroCostos_Result)">
-            <Parameter Name="fechaini" Mode="In" Type="DateTime" />
-            <Parameter Name="fechafin" Mode="In" Type="DateTime" />
-            <Parameter Name="CentroCosto" Mode="In" Type="Int32" />
-            <Parameter Name="Contable" Mode="In" Type="Int32" />
-          </FunctionImport>
+          <EntitySet Name="PadronRgsRet" EntityType="ERP_SITEMModel.PadronRgsRet" />
         </EntityContainer>
         <ComplexType Name="ComprobantesGastos_Compras_Result">
           <Property Type="String" Name="NombreProveedor" Nullable="true" MaxLength="150" />
@@ -4212,6 +4302,23 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <Property Type="String" Name="Estados" Nullable="true" MaxLength="50" />
         </ComplexType>
         <ComplexType Name="Gastos_ComprasxPeriodo_Result">
+          <Property Type="Int32" Name="IdComprobante" Nullable="false" />
+          <Property Type="DateTime" Name="Fecha" Nullable="true" />
+          <Property Type="String" Name="NombreProveedor" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="RazonSocial" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="TipoComprobante" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TipoFactura" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Sucursal" Nullable="true" MaxLength="4" />
+          <Property Type="String" Name="NoFactura" Nullable="true" MaxLength="8" />
+          <Property Type="String" Name="Condiciondecompra" Nullable="true" MaxLength="50" />
+          <Property Type="Double" Name="Total" Nullable="true" />
+          <Property Type="String" Name="Estados" Nullable="true" MaxLength="50" />
+          <Property Type="Double" Name="IIBB" Nullable="true" />
+          <Property Type="Double" Name="Retenciones" Nullable="true" />
+          <Property Type="Double" Name="OtrosGastos" Nullable="true" />
+          <Property Type="Double" Name="IvaCalculado" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="GastosXCentroCostos_Result">
           <Property Type="Int32" Name="IdComprobante" Nullable="false" />
           <Property Type="DateTime" Name="Fecha" Nullable="true" />
           <Property Type="String" Name="NombreProveedor" Nullable="true" MaxLength="150" />
@@ -4373,47 +4480,22 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
           <Property Type="Double" Name="Total" Nullable="true" />
           <Property Type="String" Name="Estados" Nullable="true" MaxLength="50" />
         </ComplexType>
-        <Association Name="FK_Proveedores_Proveedores">
-          <End Type="ERP_SITEMModel.Proveedores" Role="Proveedores" Multiplicity="1" />
-          <End Type="ERP_SITEMModel.Proveedores" Role="Proveedores1" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Proveedores">
-              <PropertyRef Name="IdProveedores" />
-            </Principal>
-            <Dependent Role="Proveedores1">
-              <PropertyRef Name="IdProveedores" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Proveedores_RubroProveedor">
-          <End Type="ERP_SITEMModel.RubroProveedor" Role="RubroProveedor" Multiplicity="0..1" />
-          <End Type="ERP_SITEMModel.Proveedores" Role="Proveedores" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="RubroProveedor">
-              <PropertyRef Name="IDRubroProveedor" />
-            </Principal>
-            <Dependent Role="Proveedores">
-              <PropertyRef Name="IDRubro" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <ComplexType Name="GastosXCentroCostos_Result">
-          <Property Type="Int32" Name="IdComprobante" Nullable="false" />
-          <Property Type="DateTime" Name="Fecha" Nullable="true" />
-          <Property Type="String" Name="NombreProveedor" Nullable="true" MaxLength="150" />
-          <Property Type="String" Name="RazonSocial" Nullable="true" MaxLength="150" />
-          <Property Type="String" Name="TipoComprobante" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="TipoFactura" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="Sucursal" Nullable="true" MaxLength="4" />
-          <Property Type="String" Name="NoFactura" Nullable="true" MaxLength="8" />
-          <Property Type="String" Name="Condiciondecompra" Nullable="true" MaxLength="50" />
-          <Property Type="Double" Name="Total" Nullable="true" />
-          <Property Type="String" Name="Estados" Nullable="true" MaxLength="50" />
-          <Property Type="Double" Name="IIBB" Nullable="true" />
-          <Property Type="Double" Name="Retenciones" Nullable="true" />
-          <Property Type="Double" Name="OtrosGastos" Nullable="true" />
-          <Property Type="Double" Name="IvaCalculado" Nullable="true" />
-        </ComplexType>
+        <EntityType Name="PadronRgsRet">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Regimen" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="true" />
+          <Property Name="FechaPublicacion" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="FechaDesde" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="FechaHasta" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Cuit" Type="String" Nullable="false" MaxLength="11" FixedLength="true" Unicode="true" />
+          <Property Name="TipoContribuyenteInsc" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="true" />
+          <Property Name="MarcaAltaBaja" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="true" />
+          <Property Name="MarcaCambioAlicuota" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="true" />
+          <Property Name="Alicuota" Type="Double" Nullable="false" />
+          <Property Name="Grupo" Type="Int32" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -5431,6 +5513,27 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GastosXCentroCostos" FunctionName="ERP_SITEMModel.Store.GastosXCentroCostos">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_SITEMModel.GastosXCentroCostos_Result">
+                <ScalarProperty Name="IdComprobante" ColumnName="IdComprobante" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="NombreProveedor" ColumnName="NombreProveedor" />
+                <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+                <ScalarProperty Name="TipoComprobante" ColumnName="TipoComprobante" />
+                <ScalarProperty Name="TipoFactura" ColumnName="TipoFactura" />
+                <ScalarProperty Name="Sucursal" ColumnName="Sucursal" />
+                <ScalarProperty Name="NoFactura" ColumnName="NoFactura" />
+                <ScalarProperty Name="Condiciondecompra" ColumnName="Condiciondecompra" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="Estados" ColumnName="Estados" />
+                <ScalarProperty Name="IIBB" ColumnName="IIBB" />
+                <ScalarProperty Name="Retenciones" ColumnName="Retenciones" />
+                <ScalarProperty Name="OtrosGastos" ColumnName="OtrosGastos" />
+                <ScalarProperty Name="IvaCalculado" ColumnName="IvaCalculado" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="HistorialEmpleadosSitem" FunctionName="ERP_SITEMModel.Store.HistorialEmpleadosSitem">
             <ResultMapping>
               <ComplexTypeMapping TypeName="ERP_SITEMModel.HistorialEmpleadosSitem_Result">
@@ -5613,27 +5716,23 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="uspAddUser" FunctionName="ERP_SITEMModel.Store.uspAddUser" />
-          <FunctionImportMapping FunctionImportName="GastosXCentroCostos" FunctionName="ERP_SITEMModel.Store.GastosXCentroCostos">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="ERP_SITEMModel.GastosXCentroCostos_Result">
-                <ScalarProperty Name="IdComprobante" ColumnName="IdComprobante" />
-                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
-                <ScalarProperty Name="NombreProveedor" ColumnName="NombreProveedor" />
-                <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
-                <ScalarProperty Name="TipoComprobante" ColumnName="TipoComprobante" />
-                <ScalarProperty Name="TipoFactura" ColumnName="TipoFactura" />
-                <ScalarProperty Name="Sucursal" ColumnName="Sucursal" />
-                <ScalarProperty Name="NoFactura" ColumnName="NoFactura" />
-                <ScalarProperty Name="Condiciondecompra" ColumnName="Condiciondecompra" />
-                <ScalarProperty Name="Total" ColumnName="Total" />
-                <ScalarProperty Name="Estados" ColumnName="Estados" />
-                <ScalarProperty Name="IIBB" ColumnName="IIBB" />
-                <ScalarProperty Name="Retenciones" ColumnName="Retenciones" />
-                <ScalarProperty Name="OtrosGastos" ColumnName="OtrosGastos" />
-                <ScalarProperty Name="IvaCalculado" ColumnName="IvaCalculado" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
+          <EntitySetMapping Name="PadronRgsRet">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.PadronRgsRet">
+              <MappingFragment StoreEntitySet="PadronRgsRet">
+                <ScalarProperty Name="Grupo" ColumnName="Grupo" />
+                <ScalarProperty Name="Alicuota" ColumnName="Alicuota" />
+                <ScalarProperty Name="MarcaCambioAlicuota" ColumnName="MarcaCambioAlicuota" />
+                <ScalarProperty Name="MarcaAltaBaja" ColumnName="MarcaAltaBaja" />
+                <ScalarProperty Name="TipoContribuyenteInsc" ColumnName="TipoContribuyenteInsc" />
+                <ScalarProperty Name="Cuit" ColumnName="Cuit" />
+                <ScalarProperty Name="FechaHasta" ColumnName="FechaHasta" />
+                <ScalarProperty Name="FechaDesde" ColumnName="FechaDesde" />
+                <ScalarProperty Name="FechaPublicacion" ColumnName="FechaPublicacion" />
+                <ScalarProperty Name="Regimen" ColumnName="Regimen" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -5651,7 +5750,7 @@ advertencia 6002: La tabla o vista 'ERP_SITEM.dbo.View_Proveedores' no tiene def
         <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
-        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->

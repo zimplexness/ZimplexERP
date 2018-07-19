@@ -7,23 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLayer;
 
 namespace ErpGestion
 {
-    public partial class RubroFrm : MetroFramework.Forms.MetroForm
+    public partial class ActividadMantenimientoForm : MetroFramework.Forms.MetroForm
     {
-        public RubroFrm()
+        public ActividadMantenimientoForm()
         {
             InitializeComponent();
         }
 
-        private void RubroFrm_Load(object sender, EventArgs e)
+        private void ActividadVehiculoForm_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void metroButtonAgregarPago_Click(object sender, EventArgs e)
-        {
+           
+            
 
         }
     }
