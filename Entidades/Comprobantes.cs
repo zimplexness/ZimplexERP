@@ -38,6 +38,7 @@ namespace Entidades
         public Nullable<double> Retenciones { get; set; }
         public Nullable<double> ConceptosNograbado { get; set; }
         public Nullable<double> PercepcionIva { get; set; }
+        public Nullable<double> ImporteNeto { get; set; }
     
         public virtual CentroCostos CentroCostos { get; set; }
         public virtual CondicionesCompra CondicionesCompra { get; set; }

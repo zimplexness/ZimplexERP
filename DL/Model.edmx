@@ -106,6 +106,7 @@
           <Property Name="Retenciones" Type="float" />
           <Property Name="ConceptosNograbado" Type="float" />
           <Property Name="PercepcionIva" Type="float" />
+          <Property Name="ImporteNeto" Type="float" />
         </EntityType>
         <EntityType Name="CondicionesCompra">
           <Key>
@@ -427,6 +428,7 @@ warning 6002: The table/view 'ERP_SITEM.dbo.NetUsersRoles' does not have a prima
           <Property Name="Fecha" Type="date" />
           <Property Name="Importe" Type="float" />
           <Property Name="Concepto" Type="varchar" MaxLength="400" />
+          <Property Name="RetencionID" Type="int" />
         </EntityType>
         <EntityType Name="PermissionMenus">
           <Key>
@@ -530,6 +532,16 @@ warning 6002: The table/view 'ERP_SITEM.dbo.NetUsersRoles' does not have a prima
           </Key>
           <Property Name="IDRegistroConducir" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Retenciones">
+          <Key>
+            <PropertyRef Name="IDRetencion" />
+          </Key>
+          <Property Name="IDRetencion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fecha" Type="date" />
+          <Property Name="Alicuota" Type="float" />
+          <Property Name="Importe" Type="float" />
+          <Property Name="EmpresaID" Type="int" />
         </EntityType>
         <EntityType Name="RubroProveedor">
           <Key>
@@ -1075,6 +1087,18 @@ warning 6002: The table/view 'ERP_SITEM.dbo.View_Proveedores' does not have a pr
             </Principal>
             <Dependent Role="ModelosVehiculos">
               <PropertyRef Name="MarcaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pagos_Retenciones">
+          <End Role="Retenciones" Type="Self.Retenciones" Multiplicity="0..1" />
+          <End Role="Pagos" Type="Self.Pagos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Retenciones">
+              <PropertyRef Name="IDRetencion" />
+            </Principal>
+            <Dependent Role="Pagos">
+              <PropertyRef Name="RetencionID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1742,6 +1766,7 @@ warning 6002: The table/view 'ERP_SITEM.dbo.View_Proveedores' does not have a pr
           <EntitySet Name="Provincias" EntityType="Self.Provincias" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Referencias" EntityType="Self.Referencias" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RegistroConducirBool" EntityType="Self.RegistroConducirBool" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Retenciones" EntityType="Self.Retenciones" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RubroProveedor" EntityType="Self.RubroProveedor" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sexos" EntityType="Self.Sexos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sindicatos" EntityType="Self.Sindicatos" Schema="dbo" store:Type="Tables" />
@@ -1983,6 +2008,10 @@ warning 6002: The table/view 'ERP_SITEM.dbo.View_Proveedores' does not have a pr
           <AssociationSet Name="FK_ModelosVehiculos_MarcasVehiculos" Association="Self.FK_ModelosVehiculos_MarcasVehiculos">
             <End Role="MarcasVehiculos" EntitySet="MarcasVehiculos" />
             <End Role="ModelosVehiculos" EntitySet="ModelosVehiculos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pagos_Retenciones" Association="Self.FK_Pagos_Retenciones">
+            <End Role="Retenciones" EntitySet="Retenciones" />
+            <End Role="Pagos" EntitySet="Pagos" />
           </AssociationSet>
           <AssociationSet Name="FK_Personas_EstadoCivil" Association="Self.FK_Personas_EstadoCivil">
             <End Role="EstadoCivil" EntitySet="EstadoCivil" />
@@ -2293,6 +2322,7 @@ warning 6002: The table/view 'ERP_SITEM.dbo.View_Proveedores' does not have a pr
           <NavigationProperty Name="TiposFactura" Relationship="Self.FK_Table_Comprobante_Table_TipoFactura" FromRole="Comprobantes" ToRole="TiposFactura" />
           <NavigationProperty Name="DetallesPago" Relationship="Self.FK_Table_DetallePago_Table_Comprobante" FromRole="Comprobantes" ToRole="DetallesPago" />
           <NavigationProperty Name="DetallesComprobanteArticulos" Relationship="Self.FK_Table_DetallesComprobanteArticulos_Table_Comprobante" FromRole="Comprobantes" ToRole="DetallesComprobanteArticulos" />
+          <Property Name="ImporteNeto" Type="Double" />
         </EntityType>
         <EntityType Name="CondicionesCompra">
           <Key>
@@ -2645,6 +2675,8 @@ warning 6002: The table/view 'ERP_SITEM.dbo.View_Proveedores' does not have a pr
           <Property Name="Concepto" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="DetalleMediosPagos" Relationship="Self.FK_Table_DetalleMediosPago_Table_Pagos" FromRole="Pagos" ToRole="DetalleMediosPagos" />
           <NavigationProperty Name="DetallesPago" Relationship="Self.FK_Table_DetallePago_Table_Pagos" FromRole="Pagos" ToRole="DetallesPago" />
+          <Property Name="RetencionID" Type="Int32" />
+          <NavigationProperty Name="Retenciones" Relationship="ERP_SITEMModel.FK_Pagos_Retenciones" FromRole="Pagos" ToRole="Retenciones" />
         </EntityType>
         <EntityType Name="PermissionMenus">
           <Key>
@@ -4224,6 +4256,11 @@ warning 6002: The table/view 'ERP_SITEM.dbo.View_Proveedores' does not have a pr
             <Parameter Name="responseMessage" Mode="InOut" Type="String" />
           </FunctionImport>
           <EntitySet Name="PadronRgsRet" EntityType="ERP_SITEMModel.PadronRgsRet" />
+          <EntitySet Name="Retenciones" EntityType="ERP_SITEMModel.Retenciones" />
+          <AssociationSet Name="FK_Pagos_Retenciones" Association="ERP_SITEMModel.FK_Pagos_Retenciones">
+            <End Role="Retenciones" EntitySet="Retenciones" />
+            <End Role="Pagos" EntitySet="Pagos" />
+          </AssociationSet>
         </EntityContainer>
         <ComplexType Name="ComprobantesGastos_Compras_Result">
           <Property Type="String" Name="NombreProveedor" Nullable="true" MaxLength="150" />
@@ -4291,6 +4328,7 @@ warning 6002: The table/view 'ERP_SITEM.dbo.View_Proveedores' does not have a pr
           <Property Type="String" Name="NoFactura" Nullable="true" MaxLength="8" />
           <Property Type="Double" Name="Total" Nullable="true" />
           <Property Type="Int32" Name="IdEstado" Nullable="true" />
+          <Property Type="Double" Name="ImporteNeto" Nullable="true" />
         </ComplexType>
         <ComplexType Name="FACTURASXPROVEEDORES_Result">
           <Property Type="DateTime" Name="Fecha" Nullable="true" />
@@ -4496,6 +4534,29 @@ warning 6002: The table/view 'ERP_SITEM.dbo.View_Proveedores' does not have a pr
           <Property Name="Alicuota" Type="Double" Nullable="false" />
           <Property Name="Grupo" Type="Int32" Nullable="false" />
         </EntityType>
+        <EntityType Name="Retenciones">
+          <Key>
+            <PropertyRef Name="IDRetencion" />
+          </Key>
+          <Property Name="IDRetencion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fecha" Type="DateTime" Precision="0" />
+          <Property Name="Alicuota" Type="Double" />
+          <Property Name="Importe" Type="Double" />
+          <Property Name="EmpresaID" Type="Int32" />
+          <NavigationProperty Name="Pagos" Relationship="ERP_SITEMModel.FK_Pagos_Retenciones" FromRole="Retenciones" ToRole="Pagos" />
+        </EntityType>
+        <Association Name="FK_Pagos_Retenciones">
+          <End Type="ERP_SITEMModel.Retenciones" Role="Retenciones" Multiplicity="0..1" />
+          <End Type="ERP_SITEMModel.Pagos" Role="Pagos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Retenciones">
+              <PropertyRef Name="IDRetencion" />
+            </Principal>
+            <Dependent Role="Pagos">
+              <PropertyRef Name="RetencionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -4594,6 +4655,7 @@ warning 6002: The table/view 'ERP_SITEM.dbo.View_Proveedores' does not have a pr
           <EntitySetMapping Name="Comprobantes">
             <EntityTypeMapping TypeName="ERP_SITEMModel.Comprobantes">
               <MappingFragment StoreEntitySet="Comprobantes">
+                <ScalarProperty Name="ImporteNeto" ColumnName="ImporteNeto" />
                 <ScalarProperty Name="IdComprobante" ColumnName="IdComprobante" />
                 <ScalarProperty Name="Sucursal" ColumnName="Sucursal" />
                 <ScalarProperty Name="NoFactura" ColumnName="NoFactura" />
@@ -4929,6 +4991,7 @@ warning 6002: The table/view 'ERP_SITEM.dbo.View_Proveedores' does not have a pr
           <EntitySetMapping Name="Pagos">
             <EntityTypeMapping TypeName="ERP_SITEMModel.Pagos">
               <MappingFragment StoreEntitySet="Pagos">
+                <ScalarProperty Name="RetencionID" ColumnName="RetencionID" />
                 <ScalarProperty Name="Idpago" ColumnName="Idpago" />
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
                 <ScalarProperty Name="Importe" ColumnName="Importe" />
@@ -5476,6 +5539,7 @@ warning 6002: The table/view 'ERP_SITEM.dbo.View_Proveedores' does not have a pr
                 <ScalarProperty Name="NoFactura" ColumnName="NoFactura" />
                 <ScalarProperty Name="Total" ColumnName="Total" />
                 <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+                <ScalarProperty Name="ImporteNeto" ColumnName="ImporteNeto" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -5730,6 +5794,17 @@ warning 6002: The table/view 'ERP_SITEM.dbo.View_Proveedores' does not have a pr
                 <ScalarProperty Name="FechaPublicacion" ColumnName="FechaPublicacion" />
                 <ScalarProperty Name="Regimen" ColumnName="Regimen" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Retenciones">
+            <EntityTypeMapping TypeName="ERP_SITEMModel.Retenciones">
+              <MappingFragment StoreEntitySet="Retenciones">
+                <ScalarProperty Name="EmpresaID" ColumnName="EmpresaID" />
+                <ScalarProperty Name="Importe" ColumnName="Importe" />
+                <ScalarProperty Name="Alicuota" ColumnName="Alicuota" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="IDRetencion" ColumnName="IDRetencion" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

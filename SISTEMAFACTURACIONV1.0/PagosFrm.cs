@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLayer;
+using BLayer.Controller;
+using Entidades;
 
 namespace ErpGestion
 {
@@ -162,6 +164,7 @@ namespace ErpGestion
                     column5.DataPropertyName = "Total";
                     column6.DataPropertyName = "IdEstado";
                     IdProveedor.DataPropertyName = "IDproveedor";
+                    ImporteNeto.DataPropertyName = "ImporteNeto";
                 }
 
 
@@ -298,7 +301,7 @@ namespace ErpGestion
 
                             //INSERTAR EN LA TABLE PAGOS
                             //INSERTO EN LA TABLA PAGOS Y OBTENGO EL ULTIMO IDPAGO INSERTADO
-                            idpago = p.InsertarPagos(metroDateTimeFechaPago.Value, totalmediospago, metroTextBoxConcepto.Text);
+                            idpago = p.InsertarPagos(metroDateTimeFechaPago.Value, totalmediospago, metroTextBoxConcepto.Text, int.Parse(metroTextBoxIDRet.Text));
 
                             //APLICO LOS PAGOS A CADA COMPROBANTE
                             //INSERTO EN LA TABLA DETALLE DE PAGOS Y ACTUALIZO EL ESTADO DE LOS COMPROBANTES A 1
@@ -311,10 +314,11 @@ namespace ErpGestion
                                     DataGridViewCheckBoxCell ck3 = row2.Cells["Column7"] as DataGridViewCheckBoxCell;
                                     if (Convert.ToBoolean(ck3.Value) == true)
                                     {
-                                        p.InsertarDetallePago(idpago, c.DevolverIDporNoFactura2(row2.Cells["column3"].Value.ToString(), row2.Cells["column4"].Value.ToString()));
+                                        int idProveedor = new ProveedorManager().DevolverIdPRoveedorporNombre(metroTextBoxNOMBRE.Text);
+                                        p.InsertarDetallePago(idpago, c.DevolverIDporNoFactura2(row2.Cells["column3"].Value.ToString(), row2.Cells["column4"].Value.ToString(),idProveedor));
 
                                         //Actualizar EStado de Comprobante
-                                        c.ActualizarEstado(c.DevolverIDporNoFactura2(row2.Cells["column3"].Value.ToString(), row2.Cells["column4"].Value.ToString()), 1);
+                                        c.ActualizarEstado(c.DevolverIDporNoFactura2(row2.Cells["column3"].Value.ToString(), row2.Cells["column4"].Value.ToString(),idProveedor), 1);
 
                                     }
                                 }
@@ -362,7 +366,7 @@ namespace ErpGestion
                         {
                             //INSERTAR EN LA TABLE PAGOS
                             //INSERTO EN LA TABLA PAGOS Y OBTENGO EL ULTIMO IDPAGO INSERTADO
-                            idpago = p.InsertarPagos(metroDateTimeFechaPago.Value, totalmediospago, metroTextBoxConcepto.Text);
+                            idpago = p.InsertarPagos(metroDateTimeFechaPago.Value, totalmediospago, metroTextBoxConcepto.Text, int.Parse( metroTextBoxIDRet.Text));
 
                             //APLICO LOS PAGOS A CADA COMPROBANTE
                             //INSERTO EN LA TABLA DETALLE DE PAGOS Y ACTUALIZO EL ESTADO DE LOS COMPROBANTES A 1
@@ -452,12 +456,90 @@ namespace ErpGestion
 
         private void metroGridComprobantes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+           
 
         }
 
         private void metroButton6_Click(object sender, EventArgs e)
         {
             metroGridPagosProveedores.DataSource = new PagosManager().ReportePagos(metroDateTimeInicio.Value,metroDateTimeFin.Value);
+        }
+
+        private void metroLabel9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTextBoxTotalFact_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroGridComprobantes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+        }
+
+        private void metroGridComprobantes_SelectionChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void metroGridComprobantes_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+          
+        }
+
+        private void metroTabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroButton7_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                double total = 0;
+                Retenciones retencion = new Retenciones();
+                foreach (DataGridViewRow row1 in metroGridComprobantes.Rows)
+                {
+                    DataGridViewCheckBoxCell ck = row1.Cells["column7"] as DataGridViewCheckBoxCell;
+                    if (Convert.ToBoolean(ck.Value) == true)
+                    {
+                        total += Math.Round(Convert.ToDouble(row1.Cells["column5"].Value.ToString()), 2);
+                    }
+                }
+
+                if (metroGridComprobantes.Rows.Count >= 1 && total > 2000)
+                   retencion = new ImportarPadron().CalcularRetenciones(metroTextBoxNOMBRE.Text,float.Parse(total.ToString()));
+                double totalPAgar = total - Convert.ToDouble( retencion.Importe);
+                metroTextBoxIDRet.Text = retencion.IDRetencion.ToString();
+                metroTextBoxALi.Text =Math.Round((double) retencion.Alicuota,2).ToString();
+                metroTextBoxImporteRet.Text =Math.Round((double) retencion.Importe,2).ToString();
+                metroTextBoxTotalPagar.Text = Math.Round(totalPAgar,2).ToString();
+                metroTextBoxiMPORTE.Text = Math.Round(totalPAgar, 2).ToString();
+                metroTextBoxTotalFact.Text = total.ToString();
+                
+
+
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void metroButton8_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(metroTextBoxIDRet.Text) == true)
+                MessageBox.Show("Error, No tienes Retencion para Eliminar","Sistema de Gestion",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            new ImportarPadron().DeleteRetencion(int.Parse(metroTextBoxIDRet.Text));
+            metroTextBoxIDRet.Clear();
+            metroTextBoxALi.Clear();
+            metroTextBoxImporteRet.Clear();
         }
     }
 }

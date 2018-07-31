@@ -99,8 +99,10 @@ namespace ErpGestion
             metroTextBoxApellidos.DataBindings.Add("Text", bindingSourceEmpleado, "Apellidos", true);
             metroTextBoxDNI.DataBindings.Add("Text", bindingSourceEmpleado, "DNI", true);
             metroTextBoxCUIL.DataBindings.Add("Text", bindingSourceEmpleado, "CUIL", true);
-            maskedTextBoxFechaAlta.DataBindings.Add("Text", bindingSourceEmpleado, "FechaIngreso", true);
-            maskedTextBoxFechaNacimiento.DataBindings.Add("Text", bindingSourceEmpleado, "FechaNacimiento", true);
+            //maskedTextBoxFechaAlta.DataBindings.Add("Text", bindingSourceEmpleado, "FechaIngreso", true);
+            //maskedTextBoxFechaNacimiento.DataBindings.Add("Text", bindingSourceEmpleado, "FechaNacimiento", true);
+            metroDateTimeFechaNacimiento.DataBindings.Add("Text", bindingSourceEmpleado, "FechaNacimiento", true);
+            metroDateTimeFechaALta.DataBindings.Add("Text", bindingSourceEmpleado, "FechaIngreso", true);
             metroComboBoxSexo.DataBindings.Add("Text", bindingSourceEmpleado, "Sexo", true);
             metroComboBoxEstadoCivil.DataBindings.Add("Text", bindingSourceEmpleado, "EstadoCivil", true);
             metroTextBoxDireccion.DataBindings.Add("Text", bindingSourceEmpleado, "Domicilio", true);
@@ -242,7 +244,7 @@ namespace ErpGestion
                         //solicitud.ImagenPerfil = ms.GetBuffer();
                        
                         empleado.UpdateEmpleado(idemp,ms.GetBuffer(), metroCheckBoxActivo.Checked,int.Parse( metroTextBoxLegajo.Text),metroTextBoxNombre.Text, metroTextBoxApellidos.Text, metroTextBoxDNI.Text, metroTextBoxCUIL.Text,
-                            DateTime.Parse( maskedTextBoxFechaNacimiento.Text), metroTextBoxTelefono.Text, metroTextBoxCelular.Text, metroTextBoxDireccion.Text,DateTime.Parse( maskedTextBoxFechaAlta.Text),
+                            metroDateTimeFechaNacimiento.Value, metroTextBoxTelefono.Text, metroTextBoxCelular.Text, metroTextBoxDireccion.Text,metroDateTimeFechaALta.Value,
                             int.Parse(metroTextBoxHijos.Text),(int)metroComboBoxDepartamento.SelectedValue, (int)metroComboBoxObraSocial.SelectedValue, (int)metroComboBoxSindicato.SelectedValue,
                             (int)metroComboBoxEspecialidad.SelectedValue, (int)metroComboBoxCategoria.SelectedValue,metroTextBoxCuentaFD.Text,metroCheckIEric.Checked,
                             metroTextBoxComentario.Text, (int)metroComboBoxLocalidades.SelectedValue, (int)metroComboBoxEstadoCivil.SelectedValue, (int)metroComboBoxNacionalidades.SelectedValue,metroCheckBoxLIBRETA.Checked,
@@ -274,7 +276,7 @@ namespace ErpGestion
                         //solicitud.ImagenPerfil = ms.GetBuffer();
 
                             empleado.InsertarEmpleado(ms.GetBuffer(), metroCheckBoxActivo.Checked,int.Parse( metroTextBoxLegajo.Text), metroTextBoxNombre.Text, metroTextBoxApellidos.Text, metroTextBoxDNI.Text, metroTextBoxCUIL.Text,
-                            DateTime.Parse(maskedTextBoxFechaNacimiento.Text), metroTextBoxTelefono.Text, metroTextBoxCelular.Text, metroTextBoxDireccion.Text, DateTime.Parse(maskedTextBoxFechaAlta.Text),
+                            metroDateTimeFechaNacimiento.Value, metroTextBoxTelefono.Text, metroTextBoxCelular.Text, metroTextBoxDireccion.Text, metroDateTimeFechaALta.Value,
                             int.Parse(metroTextBoxHijos.Text), (int)metroComboBoxDepartamento.SelectedValue, (int)metroComboBoxObraSocial.SelectedValue, (int)metroComboBoxSindicato.SelectedValue,
                             (int)metroComboBoxEspecialidad.SelectedValue, (int)metroComboBoxCategoria.SelectedValue, metroTextBoxCuentaFD.Text, metroCheckIEric.Checked, 
                             metroTextBoxComentario.Text, (int)metroComboBoxLocalidades.SelectedValue, (int)metroComboBoxEstadoCivil.SelectedValue, (int)metroComboBoxNacionalidades.SelectedValue, metroCheckBoxLIBRETA.Checked,

@@ -95,7 +95,6 @@
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroComboBoxTipoComprobante = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroPanelPago.SuspendLayout();
@@ -107,7 +106,6 @@
             // metroTabControl1
             // 
             this.metroTabControl1.Controls.Add(this.metroTabPage1);
-            this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTabControl1.Location = new System.Drawing.Point(20, 60);
             this.metroTabControl1.Name = "metroTabControl1";
@@ -720,7 +718,7 @@
             // metroLabel13
             // 
             this.metroLabel13.AutoSize = true;
-            this.metroLabel13.Location = new System.Drawing.Point(461, 17);
+            this.metroLabel13.Location = new System.Drawing.Point(517, 17);
             this.metroLabel13.Name = "metroLabel13";
             this.metroLabel13.Size = new System.Drawing.Size(25, 19);
             this.metroLabel13.TabIndex = 31;
@@ -738,12 +736,12 @@
             // metroCheckBoxIvaExento
             // 
             this.metroCheckBoxIvaExento.AutoSize = true;
-            this.metroCheckBoxIvaExento.Location = new System.Drawing.Point(503, 17);
+            this.metroCheckBoxIvaExento.Location = new System.Drawing.Point(453, 22);
             this.metroCheckBoxIvaExento.Name = "metroCheckBoxIvaExento";
-            this.metroCheckBoxIvaExento.Size = new System.Drawing.Size(76, 15);
+            this.metroCheckBoxIvaExento.Size = new System.Drawing.Size(58, 15);
             this.metroCheckBoxIvaExento.Style = MetroFramework.MetroColorStyle.Brown;
             this.metroCheckBoxIvaExento.TabIndex = 29;
-            this.metroCheckBoxIvaExento.Text = "Iva Exento";
+            this.metroCheckBoxIvaExento.Text = "Exento";
             this.metroCheckBoxIvaExento.UseSelectable = true;
             this.metroCheckBoxIvaExento.UseStyleColors = true;
             // 
@@ -793,7 +791,7 @@
             this.metroTextBoxIva.CustomButton.UseSelectable = true;
             this.metroTextBoxIva.CustomButton.Visible = false;
             this.metroTextBoxIva.Lines = new string[0];
-            this.metroTextBoxIva.Location = new System.Drawing.Point(461, 39);
+            this.metroTextBoxIva.Location = new System.Drawing.Point(517, 39);
             this.metroTextBoxIva.MaxLength = 32767;
             this.metroTextBoxIva.Name = "metroTextBoxIva";
             this.metroTextBoxIva.PasswordChar = '\0';
@@ -1094,20 +1092,6 @@
             this.metroLabel1.TabIndex = 2;
             this.metroLabel1.Text = "Tipo Comprobante";
             // 
-            // metroTabPage2
-            // 
-            this.metroTabPage2.HorizontalScrollbarBarColor = true;
-            this.metroTabPage2.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage2.HorizontalScrollbarSize = 10;
-            this.metroTabPage2.Location = new System.Drawing.Point(4, 38);
-            this.metroTabPage2.Name = "metroTabPage2";
-            this.metroTabPage2.Size = new System.Drawing.Size(990, 445);
-            this.metroTabPage2.TabIndex = 1;
-            this.metroTabPage2.Text = "Caja Chica";
-            this.metroTabPage2.VerticalScrollbarBarColor = true;
-            this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage2.VerticalScrollbarSize = 10;
-            // 
             // ComprobantesFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1198,6 +1182,5 @@
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroComboBox metroComboBoxTipoComprobante;
         private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroTabPage metroTabPage2;
     }
 }

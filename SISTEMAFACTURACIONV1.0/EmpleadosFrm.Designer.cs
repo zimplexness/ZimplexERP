@@ -44,6 +44,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+            this.metroDateTimeFechaALta = new MetroFramework.Controls.MetroDateTime();
+            this.metroDateTimeFechaNacimiento = new MetroFramework.Controls.MetroDateTime();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.metroDateTimeFechaBaja = new MetroFramework.Controls.MetroDateTime();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
@@ -52,8 +54,6 @@
             this.metroLabel18 = new MetroFramework.Controls.MetroLabel();
             this.CodigoPtextbox = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel15 = new MetroFramework.Controls.MetroLabel();
-            this.maskedTextBoxFechaAlta = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBoxFechaNacimiento = new System.Windows.Forms.MaskedTextBox();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.metroTextBoxCuentaFD = new MetroFramework.Controls.MetroTextBox();
             this.bindingNavigatorEmpleado = new System.Windows.Forms.BindingNavigator(this.components);
@@ -285,11 +285,11 @@
             // 
             // metroTabPage1
             // 
+            this.metroTabPage1.Controls.Add(this.metroDateTimeFechaALta);
+            this.metroTabPage1.Controls.Add(this.metroDateTimeFechaNacimiento);
             this.metroTabPage1.Controls.Add(this.groupBox1);
             this.metroTabPage1.Controls.Add(this.CodigoPtextbox);
             this.metroTabPage1.Controls.Add(this.metroLabel15);
-            this.metroTabPage1.Controls.Add(this.maskedTextBoxFechaAlta);
-            this.metroTabPage1.Controls.Add(this.maskedTextBoxFechaNacimiento);
             this.metroTabPage1.Controls.Add(this.metroLabel7);
             this.metroTabPage1.Controls.Add(this.metroTextBoxCuentaFD);
             this.metroTabPage1.Controls.Add(this.bindingNavigatorEmpleado);
@@ -357,6 +357,24 @@
             this.metroTabPage1.VerticalScrollbarSize = 3;
             this.metroTabPage1.Click += new System.EventHandler(this.metroTabPage1_Click);
             // 
+            // metroDateTimeFechaALta
+            // 
+            this.metroDateTimeFechaALta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.metroDateTimeFechaALta.Location = new System.Drawing.Point(949, 70);
+            this.metroDateTimeFechaALta.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTimeFechaALta.Name = "metroDateTimeFechaALta";
+            this.metroDateTimeFechaALta.Size = new System.Drawing.Size(108, 29);
+            this.metroDateTimeFechaALta.TabIndex = 136;
+            // 
+            // metroDateTimeFechaNacimiento
+            // 
+            this.metroDateTimeFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.metroDateTimeFechaNacimiento.Location = new System.Drawing.Point(949, 22);
+            this.metroDateTimeFechaNacimiento.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTimeFechaNacimiento.Name = "metroDateTimeFechaNacimiento";
+            this.metroDateTimeFechaNacimiento.Size = new System.Drawing.Size(105, 29);
+            this.metroDateTimeFechaNacimiento.TabIndex = 135;
+            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
@@ -378,7 +396,7 @@
             // 
             this.metroDateTimeFechaBaja.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.metroDateTimeFechaBaja.Location = new System.Drawing.Point(6, 42);
-            this.metroDateTimeFechaBaja.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTimeFechaBaja.MinimumSize = new System.Drawing.Size(4, 29);
             this.metroDateTimeFechaBaja.Name = "metroDateTimeFechaBaja";
             this.metroDateTimeFechaBaja.Size = new System.Drawing.Size(104, 29);
             this.metroDateTimeFechaBaja.TabIndex = 141;
@@ -481,26 +499,6 @@
             this.metroLabel15.Size = new System.Drawing.Size(91, 19);
             this.metroLabel15.TabIndex = 129;
             this.metroLabel15.Text = "Código Postal";
-            // 
-            // maskedTextBoxFechaAlta
-            // 
-            this.maskedTextBoxFechaAlta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.maskedTextBoxFechaAlta.Location = new System.Drawing.Point(947, 73);
-            this.maskedTextBoxFechaAlta.Mask = "00/00/0000";
-            this.maskedTextBoxFechaAlta.Name = "maskedTextBoxFechaAlta";
-            this.maskedTextBoxFechaAlta.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBoxFechaAlta.TabIndex = 128;
-            this.maskedTextBoxFechaAlta.ValidatingType = typeof(System.DateTime);
-            // 
-            // maskedTextBoxFechaNacimiento
-            // 
-            this.maskedTextBoxFechaNacimiento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.maskedTextBoxFechaNacimiento.Location = new System.Drawing.Point(949, 26);
-            this.maskedTextBoxFechaNacimiento.Mask = "00/00/0000";
-            this.maskedTextBoxFechaNacimiento.Name = "maskedTextBoxFechaNacimiento";
-            this.maskedTextBoxFechaNacimiento.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBoxFechaNacimiento.TabIndex = 127;
-            this.maskedTextBoxFechaNacimiento.ValidatingType = typeof(System.DateTime);
             // 
             // metroLabel7
             // 
@@ -2734,8 +2732,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private MetroFramework.Controls.MetroLabel metroLabel7;
         private MetroFramework.Controls.MetroTextBox metroTextBoxCuentaFD;
-        private System.Windows.Forms.MaskedTextBox maskedTextBoxFechaNacimiento;
-        private System.Windows.Forms.MaskedTextBox maskedTextBoxFechaAlta;
         private MetroFramework.Controls.MetroGrid metroGridEmpleadosActivos;
         private MetroFramework.Controls.MetroTabPage metroTabPage5;
         private MetroFramework.Controls.MetroTabPage metroTabPage6;
@@ -2859,5 +2855,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Celular;
+        private MetroFramework.Controls.MetroDateTime metroDateTimeFechaALta;
+        private MetroFramework.Controls.MetroDateTime metroDateTimeFechaNacimiento;
     }
 }

@@ -12,9 +12,9 @@ namespace DL
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using Entidades;
     using System.Data.Entity.Core.Objects;
     using System.Linq;
-    using Entidades;
     
     public partial class Entities : DbContext
     {
@@ -105,6 +105,7 @@ namespace DL
         public virtual DbSet<View_ListaEmpleados> View_ListaEmpleados { get; set; }
         public virtual DbSet<View_Proveedores> View_Proveedores { get; set; }
         public virtual DbSet<PadronRgsRet> PadronRgsRet { get; set; }
+        public virtual DbSet<Retenciones> Retenciones { get; set; }
     
         public virtual ObjectResult<ComprobantesGastos_Compras_Result> ComprobantesGastos_Compras(Nullable<System.DateTime> fechainicio, Nullable<System.DateTime> fechafin)
         {

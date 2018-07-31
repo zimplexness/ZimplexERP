@@ -167,7 +167,7 @@ namespace BLayer
             }
 
         }
-        public int DevolverIDporNoFactura2(string facta, string factb)
+        public int DevolverIDporNoFactura2(string facta, string factb,int IDproveedor)
         {
             int result;
 
@@ -175,7 +175,7 @@ namespace BLayer
             {
 
                 var query = (from c in Context.Comprobantes
-                             where (c.Sucursal == facta && c.NoFactura == factb) 
+                             where (c.Sucursal == facta && c.NoFactura == factb&&c.IdProveedor==IDproveedor) 
                              select c.IdComprobante).FirstOrDefault();
                 result = int.Parse(query.ToString());
 
@@ -220,6 +220,9 @@ namespace BLayer
                 var query = (from a in Context.DetallesComprobanteArticulos
                              where a.IdComprobante == idcomprobante
                              select a.Importe).ToList();
+                var importeNeto=(from i in Context.DetallesComprobanteArticulos
+                                where i.IdComprobante==idcomprobante
+                                select i.Precio).ToList();
 
 
                 var query2 = (from c in Context.Comprobantes
@@ -232,8 +235,9 @@ namespace BLayer
                     Context.Comprobantes.Attach(item);
                     
                     Double IMPORTE= Math.Round( query.Sum().Value,2);
-
+                    Double ImporteNeto = Math.Round(importeNeto.Sum().Value,2);
                     item.Importe = IMPORTE;
+                    item.ImporteNeto = ImporteNeto;
                     Context.Entry(item).State = System.Data.Entity.EntityState.Modified;
                     Context.SaveChanges();
 

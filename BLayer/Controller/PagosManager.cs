@@ -16,7 +16,7 @@ namespace BLayer
 
 
 
-        public int InsertarPagos(DateTime Fecha,double importe,string concepto)
+        public int InsertarPagos(DateTime Fecha,double importe,string concepto,int IDret)
         {
            
             using (Context=new Entities())
@@ -26,6 +26,7 @@ namespace BLayer
                 pagos.Fecha = Fecha;
                 pagos.Importe = importe;
                 pagos.Concepto = concepto;
+                pagos.RetencionID = IDret;
                 
 
                 Context.Pagos.Add(pagos);

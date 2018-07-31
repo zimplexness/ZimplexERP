@@ -10,62 +10,109 @@ using System.Globalization;
 
 namespace BLayer.Controller
 {
-  public  class ImportarPadron
+    public class ImportarPadron
     {
         public Entities _context;
-        public string  StreamReader{ get; set; }
+        public string StreamReader { get; set; }
         public PadronRgsRet _padron;
 
         public ImportarPadron()
         {
-         
+
         }
 
-        public void ImportarPadronMethod() {
+        public void ImportarPadronMethod(string regimen, DateTime fecha,
+            DateTime fechadesde, DateTime fechahasta, string cuit, string tipo,
+            string marcaalta, string marcacambio, float alicuota, int grupo
 
-            // If the file is small, read it all at once
-            string[] lines = File.ReadAllLines(StreamReader.ToString());
+            ) {
             // TODO: if lines is empty, bail out
             _padron = new PadronRgsRet();
             using (_context = new Entities())
             {
 
 
-
-                // for each line (no ifs or whiles here)
-                foreach (var line in lines)
-                {
-                    string[] fields = line.Split(';');
-                    // TODO: verify fields contains what you want
-                    // SqlCommand implements IDisposable too
-
-                    _padron.Regimen = fields[0];
-                    _padron.FechaPublicacion = ConvertToDateTime(fields[1]);
-                    _padron.FechaDesde = ConvertToDateTime(fields[2]);
-                    _padron.FechaHasta = ConvertToDateTime(fields[3]);
-                    _padron.Cuit = fields[4];
-                    _padron.TipoContribuyenteInsc = fields[5];
-                    _padron.MarcaAltaBaja = fields[6];
-                    _padron.MarcaCambioAlicuota = fields[7];
-                    _padron.Alicuota = float.Parse(fields[8]);
-                    _padron.Grupo = int.Parse(fields[9]);
-                    _context.PadronRgsRet.Add(_padron);
-                    _context.SaveChangesAsync();
-                }
-
-
-
+                _padron.Regimen = regimen;
+                _padron.FechaPublicacion = fecha;
+                _padron.FechaDesde = fechadesde;
+                _padron.FechaHasta = fechahasta;
+                _padron.Cuit = cuit;
+                _padron.TipoContribuyenteInsc = tipo;
+                _padron.MarcaAltaBaja = marcaalta;
+                _padron.MarcaCambioAlicuota = marcacambio;
+                _padron.Alicuota = alicuota;
+                _padron.Grupo = grupo;
+                _context.PadronRgsRet.Add(_padron);
+                _context.SaveChanges();
             }
         }
+
+
 
         public DateTime ConvertToDateTime(string datetime) {
 
             DateTime date = new DateTime();
-            
-            date  = DateTime.ParseExact(datetime,
+
+            date = DateTime.ParseExact(datetime,
                                    "ddMMyyyy",
                                     CultureInfo.InvariantCulture);
-                return date;
+            return date;
+
+        }
+
+        public List<PadronRgsRet> GetAllPadron() {
+            using (_context = new Entities())
+            {
+                return _context.PadronRgsRet.ToList();
+
+            }
+
+
+
+        }
+
+        public Retenciones CalcularRetenciones(string NombreProveedor,float ImporteFacturas) {
+            Proveedores proveedores;
+            Retenciones retenciones=new Retenciones();
+            using (_context = new Entities())
+            {
+                proveedores = _context.Proveedores.Where(x => x.Nombre == NombreProveedor).FirstOrDefault();
+                retenciones = new Retenciones();
+
+
+                if (proveedores.Proveedores1.IDProvincia != 1 || proveedores.IDLocalidad == 8)
+                {
+                    retenciones = null;
+                }
+                else
+                {
+                    PadronRgsRet Padron = _context.PadronRgsRet.Where(x => x.Cuit == proveedores.Cuit).FirstOrDefault();
+                    retenciones.Importe = (ImporteFacturas * Padron.Alicuota) / 100;
+                    retenciones.Alicuota = Padron.Alicuota;
+                    retenciones.Fecha = DateTime.Now;
+                    retenciones.EmpresaID = 1;
+                    _context.Retenciones.Add(retenciones);
+                    _context.SaveChanges();
+
+
+                }
+                return retenciones;
+                
+            }
+           
+
+        }
+
+        public void DeleteRetencion(int id) {
+            using (_context=new Entities())
+            {
+                var Ret = _context.Retenciones.Where(x => x.IDRetencion == id).FirstOrDefault();
+
+                _context.Retenciones.Remove(Ret);
+                _context.SaveChanges();
+
+
+
 
             }
 
@@ -74,4 +121,7 @@ namespace BLayer.Controller
 
 
     }
+
+
+}
 

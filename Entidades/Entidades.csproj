@@ -270,6 +270,9 @@
     <Compile Include="ReportePagosProveedores_Result.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Retenciones.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="RubroProveedor.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>

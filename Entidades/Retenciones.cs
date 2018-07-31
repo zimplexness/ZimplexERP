@@ -12,25 +12,21 @@ namespace Entidades
     using System;
     using System.Collections.Generic;
     
-    public partial class Pagos
+    public partial class Retenciones
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Pagos()
+        public Retenciones()
         {
-            this.DetalleMediosPagos = new HashSet<DetalleMediosPagos>();
-            this.DetallesPago = new HashSet<DetallesPago>();
+            this.Pagos = new HashSet<Pagos>();
         }
     
-        public int Idpago { get; set; }
+        public int IDRetencion { get; set; }
         public Nullable<System.DateTime> Fecha { get; set; }
+        public Nullable<double> Alicuota { get; set; }
         public Nullable<double> Importe { get; set; }
-        public string Concepto { get; set; }
-        public Nullable<int> RetencionID { get; set; }
+        public int EmpresaID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DetalleMediosPagos> DetalleMediosPagos { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DetallesPago> DetallesPago { get; set; }
-        public virtual Retenciones Retenciones { get; set; }
+        public virtual ICollection<Pagos> Pagos { get; set; }
     }
 }

@@ -123,11 +123,26 @@ namespace ErpGestion
 
         private void metroGridFiltrarProveedores_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+
+            
+            //abrir formulario de comprobantes
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.GetType() == typeof(FrmEditProveedor))
+                {
+                    f.Activate();
+                    return;
+                }
+            }
             string cuit = metroGridFiltrarProveedores.CurrentRow.Cells["Cuit"].Value.ToString();
             FrmEditProveedor frmEditProveedor = new FrmEditProveedor();
             frmEditProveedor.cuit = cuit;
-            //frmEditProveedor.FormClosed += frmEditProveedor_FormClose;
+            
             frmEditProveedor.Show();
+
+           
+           
+            
 
         }
 

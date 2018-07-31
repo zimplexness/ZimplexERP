@@ -646,6 +646,8 @@
     <None Include="Resources\if_plus_48711.png" />
     <None Include="Resources\if_plus_48711 %282%29.png" />
     <None Include="Resources\if_plus_48711 %281%29.png" />
+    <None Include="Resources\if_calculator_532810.png" />
+    <None Include="Resources\if_calculator_532810 %281%29.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-2.2.4.intellisense.js" />

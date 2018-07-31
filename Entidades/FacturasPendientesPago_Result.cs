@@ -20,5 +20,6 @@ namespace Entidades
         public string NoFactura { get; set; }
         public Nullable<double> Total { get; set; }
         public Nullable<int> IdEstado { get; set; }
+        public Nullable<double> ImporteNeto { get; set; }
     }
 }
