@@ -64,6 +64,20 @@
             this.metroTextBoxTotalComprobantes = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
             this.metroGridTodosComprobantes = new MetroFramework.Controls.MetroGrid();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProveedorNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RazonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoComprobante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Iva = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IIBB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Retenciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OtrosGastos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estados = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroDateTimeFin2 = new MetroFramework.Controls.MetroDateTime();
@@ -79,6 +93,7 @@
             this.metroDateTimeFechaFinDeuda = new MetroFramework.Controls.MetroDateTime();
             this.metroDateTimeFechaInicioDeuda = new MetroFramework.Controls.MetroDateTime();
             this.metroGridDeudaProveedores = new MetroFramework.Controls.MetroGrid();
+            this.Select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipoFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PuntoV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,20 +101,7 @@
             this.CondicionCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProveedorNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RazonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoComprobante = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Iva = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IIBB = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Retenciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OtrosGastos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estados = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.metroButtonEliminar = new MetroFramework.Controls.MetroButton();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGridCompProveedores)).BeginInit();
@@ -117,13 +119,14 @@
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTabControl1.Location = new System.Drawing.Point(20, 60);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 1;
+            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(1021, 445);
             this.metroTabControl1.TabIndex = 1;
             this.metroTabControl1.UseSelectable = true;
             // 
             // metroTabPage1
             // 
+            this.metroTabPage1.Controls.Add(this.metroButtonEliminar);
             this.metroTabPage1.Controls.Add(this.metroTextBoxIva);
             this.metroTabPage1.Controls.Add(this.metroLabel7);
             this.metroTabPage1.Controls.Add(this.metroTextBoxTotal);
@@ -165,7 +168,7 @@
             this.metroTextBoxIva.CustomButton.UseSelectable = true;
             this.metroTextBoxIva.CustomButton.Visible = false;
             this.metroTextBoxIva.Lines = new string[0];
-            this.metroTextBoxIva.Location = new System.Drawing.Point(148, 356);
+            this.metroTextBoxIva.Location = new System.Drawing.Point(150, 374);
             this.metroTextBoxIva.MaxLength = 32767;
             this.metroTextBoxIva.Name = "metroTextBoxIva";
             this.metroTextBoxIva.PasswordChar = '\0';
@@ -184,7 +187,7 @@
             // 
             this.metroLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(148, 334);
+            this.metroLabel7.Location = new System.Drawing.Point(150, 352);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(56, 19);
             this.metroLabel7.TabIndex = 12;
@@ -206,7 +209,7 @@
             this.metroTextBoxTotal.CustomButton.UseSelectable = true;
             this.metroTextBoxTotal.CustomButton.Visible = false;
             this.metroTextBoxTotal.Lines = new string[0];
-            this.metroTextBoxTotal.Location = new System.Drawing.Point(14, 356);
+            this.metroTextBoxTotal.Location = new System.Drawing.Point(16, 374);
             this.metroTextBoxTotal.MaxLength = 32767;
             this.metroTextBoxTotal.Name = "metroTextBoxTotal";
             this.metroTextBoxTotal.PasswordChar = '\0';
@@ -225,7 +228,7 @@
             // 
             this.metroLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(14, 334);
+            this.metroLabel6.Location = new System.Drawing.Point(16, 352);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(128, 19);
             this.metroLabel6.TabIndex = 10;
@@ -234,7 +237,7 @@
             // metroGridCompProveedores
             // 
             this.metroGridCompProveedores.AllowUserToAddRows = false;
-            this.metroGridCompProveedores.AllowUserToResizeRows = false;
+            this.metroGridCompProveedores.AllowUserToOrderColumns = true;
             this.metroGridCompProveedores.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -252,6 +255,7 @@
             this.metroGridCompProveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.metroGridCompProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.metroGridCompProveedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Select,
             this.Fecha,
             this.TipoFactura,
             this.PuntoV,
@@ -272,7 +276,6 @@
             this.metroGridCompProveedores.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.metroGridCompProveedores.Location = new System.Drawing.Point(3, 57);
             this.metroGridCompProveedores.Name = "metroGridCompProveedores";
-            this.metroGridCompProveedores.ReadOnly = true;
             this.metroGridCompProveedores.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(119)))), ((int)(((byte)(53)))));
@@ -292,7 +295,7 @@
             // 
             this.metroButton1.BackgroundImage = global::ErpGestion.Properties.Resources._1498842292_Citycons_magnify;
             this.metroButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.metroButton1.Location = new System.Drawing.Point(543, 12);
+            this.metroButton1.Location = new System.Drawing.Point(526, 12);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(43, 39);
             this.metroButton1.TabIndex = 8;
@@ -643,6 +646,98 @@
             this.metroGridTodosComprobantes.TabIndex = 14;
             this.metroGridTodosComprobantes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.metroGridTodosComprobantes_CellContentClick);
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Fecha";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Fecha";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // ProveedorNombre
+            // 
+            this.ProveedorNombre.HeaderText = "Proveedor";
+            this.ProveedorNombre.Name = "ProveedorNombre";
+            this.ProveedorNombre.ReadOnly = true;
+            // 
+            // RazonSocial
+            // 
+            this.RazonSocial.HeaderText = "Razón S.";
+            this.RazonSocial.Name = "RazonSocial";
+            this.RazonSocial.ReadOnly = true;
+            // 
+            // TipoComprobante
+            // 
+            this.TipoComprobante.DataPropertyName = "TipoComprobante";
+            this.TipoComprobante.HeaderText = "Tipo C.";
+            this.TipoComprobante.Name = "TipoComprobante";
+            this.TipoComprobante.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "TipoFactura";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Tipo F.";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Sucursal";
+            this.dataGridViewTextBoxColumn5.HeaderText = "P. Venta";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "NoFactura";
+            this.dataGridViewTextBoxColumn6.HeaderText = "NoFactura";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Condiciondecompra";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Condicion de Compra";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // ColumnTotal
+            // 
+            this.ColumnTotal.DataPropertyName = "Total";
+            this.ColumnTotal.HeaderText = "Total";
+            this.ColumnTotal.Name = "ColumnTotal";
+            this.ColumnTotal.ReadOnly = true;
+            // 
+            // Iva
+            // 
+            this.Iva.HeaderText = "Iva";
+            this.Iva.Name = "Iva";
+            this.Iva.ReadOnly = true;
+            // 
+            // IIBB
+            // 
+            this.IIBB.HeaderText = "IIBB";
+            this.IIBB.Name = "IIBB";
+            this.IIBB.ReadOnly = true;
+            // 
+            // Retenciones
+            // 
+            this.Retenciones.HeaderText = "Retenciones";
+            this.Retenciones.Name = "Retenciones";
+            this.Retenciones.ReadOnly = true;
+            // 
+            // OtrosGastos
+            // 
+            this.OtrosGastos.HeaderText = "Otros Gastos";
+            this.OtrosGastos.Name = "OtrosGastos";
+            this.OtrosGastos.ReadOnly = true;
+            // 
+            // Estados
+            // 
+            this.Estados.DataPropertyName = "Estados";
+            this.Estados.HeaderText = "Estado";
+            this.Estados.Name = "Estados";
+            this.Estados.ReadOnly = true;
+            // 
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
@@ -665,7 +760,7 @@
             // 
             this.metroDateTimeFin2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.metroDateTimeFin2.Location = new System.Drawing.Point(152, 33);
-            this.metroDateTimeFin2.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTimeFin2.MinimumSize = new System.Drawing.Size(4, 29);
             this.metroDateTimeFin2.Name = "metroDateTimeFin2";
             this.metroDateTimeFin2.Size = new System.Drawing.Size(114, 29);
             this.metroDateTimeFin2.TabIndex = 10;
@@ -674,7 +769,7 @@
             // 
             this.metroDateTimeInicio1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.metroDateTimeInicio1.Location = new System.Drawing.Point(12, 33);
-            this.metroDateTimeInicio1.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTimeInicio1.MinimumSize = new System.Drawing.Size(4, 29);
             this.metroDateTimeInicio1.Name = "metroDateTimeInicio1";
             this.metroDateTimeInicio1.Size = new System.Drawing.Size(114, 29);
             this.metroDateTimeInicio1.TabIndex = 9;
@@ -795,7 +890,7 @@
             // 
             this.metroDateTimeFechaFinDeuda.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.metroDateTimeFechaFinDeuda.Location = new System.Drawing.Point(143, 27);
-            this.metroDateTimeFechaFinDeuda.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTimeFechaFinDeuda.MinimumSize = new System.Drawing.Size(4, 29);
             this.metroDateTimeFechaFinDeuda.Name = "metroDateTimeFechaFinDeuda";
             this.metroDateTimeFechaFinDeuda.Size = new System.Drawing.Size(114, 29);
             this.metroDateTimeFechaFinDeuda.TabIndex = 16;
@@ -804,7 +899,7 @@
             // 
             this.metroDateTimeFechaInicioDeuda.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.metroDateTimeFechaInicioDeuda.Location = new System.Drawing.Point(3, 27);
-            this.metroDateTimeFechaInicioDeuda.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTimeFechaInicioDeuda.MinimumSize = new System.Drawing.Size(4, 29);
             this.metroDateTimeFechaInicioDeuda.Name = "metroDateTimeFechaInicioDeuda";
             this.metroDateTimeFechaInicioDeuda.Size = new System.Drawing.Size(114, 29);
             this.metroDateTimeFechaInicioDeuda.TabIndex = 15;
@@ -859,139 +954,57 @@
             this.metroGridDeudaProveedores.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroGridDeudaProveedores.UseStyleColors = true;
             // 
+            // Select
+            // 
+            this.Select.HeaderText = "Seleccionar";
+            this.Select.Name = "Select";
+            this.Select.Width = 70;
+            // 
             // Fecha
             // 
             this.Fecha.HeaderText = "Fecha";
             this.Fecha.Name = "Fecha";
-            this.Fecha.ReadOnly = true;
             // 
             // TipoFactura
             // 
             this.TipoFactura.HeaderText = "Tipo";
             this.TipoFactura.Name = "TipoFactura";
-            this.TipoFactura.ReadOnly = true;
             // 
             // PuntoV
             // 
             this.PuntoV.HeaderText = "Punto de Venta";
             this.PuntoV.Name = "PuntoV";
-            this.PuntoV.ReadOnly = true;
             // 
             // NoFactura
             // 
             this.NoFactura.HeaderText = "NoFactura";
             this.NoFactura.Name = "NoFactura";
-            this.NoFactura.ReadOnly = true;
             // 
             // CondicionCompra
             // 
             this.CondicionCompra.HeaderText = "Condicion de Compra";
             this.CondicionCompra.Name = "CondicionCompra";
-            this.CondicionCompra.ReadOnly = true;
             // 
             // Total
             // 
             this.Total.HeaderText = "Total";
             this.Total.Name = "Total";
-            this.Total.ReadOnly = true;
             // 
             // Estado
             // 
             this.Estado.HeaderText = "Estado";
             this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn1
+            // metroButtonEliminar
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Fecha";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Fecha";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // ProveedorNombre
-            // 
-            this.ProveedorNombre.HeaderText = "Proveedor";
-            this.ProveedorNombre.Name = "ProveedorNombre";
-            this.ProveedorNombre.ReadOnly = true;
-            // 
-            // RazonSocial
-            // 
-            this.RazonSocial.HeaderText = "Razón S.";
-            this.RazonSocial.Name = "RazonSocial";
-            this.RazonSocial.ReadOnly = true;
-            // 
-            // TipoComprobante
-            // 
-            this.TipoComprobante.DataPropertyName = "TipoComprobante";
-            this.TipoComprobante.HeaderText = "Tipo C.";
-            this.TipoComprobante.Name = "TipoComprobante";
-            this.TipoComprobante.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "TipoFactura";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Tipo F.";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Sucursal";
-            this.dataGridViewTextBoxColumn5.HeaderText = "P. Venta";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "NoFactura";
-            this.dataGridViewTextBoxColumn6.HeaderText = "NoFactura";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Condiciondecompra";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Condicion de Compra";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // ColumnTotal
-            // 
-            this.ColumnTotal.DataPropertyName = "Total";
-            this.ColumnTotal.HeaderText = "Total";
-            this.ColumnTotal.Name = "ColumnTotal";
-            this.ColumnTotal.ReadOnly = true;
-            // 
-            // Iva
-            // 
-            this.Iva.HeaderText = "Iva";
-            this.Iva.Name = "Iva";
-            this.Iva.ReadOnly = true;
-            // 
-            // IIBB
-            // 
-            this.IIBB.HeaderText = "IIBB";
-            this.IIBB.Name = "IIBB";
-            this.IIBB.ReadOnly = true;
-            // 
-            // Retenciones
-            // 
-            this.Retenciones.HeaderText = "Retenciones";
-            this.Retenciones.Name = "Retenciones";
-            this.Retenciones.ReadOnly = true;
-            // 
-            // OtrosGastos
-            // 
-            this.OtrosGastos.HeaderText = "Otros Gastos";
-            this.OtrosGastos.Name = "OtrosGastos";
-            this.OtrosGastos.ReadOnly = true;
-            // 
-            // Estados
-            // 
-            this.Estados.DataPropertyName = "Estados";
-            this.Estados.HeaderText = "Estado";
-            this.Estados.Name = "Estados";
-            this.Estados.ReadOnly = true;
+            this.metroButtonEliminar.BackgroundImage = global::ErpGestion.Properties.Resources._1497285708_Cancel;
+            this.metroButtonEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.metroButtonEliminar.Location = new System.Drawing.Point(575, 12);
+            this.metroButtonEliminar.Name = "metroButtonEliminar";
+            this.metroButtonEliminar.Size = new System.Drawing.Size(43, 39);
+            this.metroButtonEliminar.TabIndex = 14;
+            this.metroButtonEliminar.UseSelectable = true;
+            this.metroButtonEliminar.Click += new System.EventHandler(this.metroButtonEliminar_Click);
             // 
             // ConsultasComprobantesFrm
             // 
@@ -1061,13 +1074,6 @@
         private MetroFramework.Controls.MetroComboBox metroComboBoxCentroCosto;
         private MetroFramework.Controls.MetroLabel metroLabel15;
         private MetroFramework.Controls.MetroComboBox metroComboBoxContable;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TipoFactura;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PuntoV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NoFactura;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CondicionCompra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProveedorNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn RazonSocial;
@@ -1082,5 +1088,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Retenciones;
         private System.Windows.Forms.DataGridViewTextBoxColumn OtrosGastos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estados;
+        private MetroFramework.Controls.MetroButton metroButtonEliminar;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Select;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoFactura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PuntoV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NoFactura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CondicionCompra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
     }
 }

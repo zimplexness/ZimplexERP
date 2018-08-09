@@ -365,5 +365,25 @@ namespace ErpGestion
             padronfrm.MdiParent = this;
             padronfrm.Show();
         }
+
+        private void ribbonButtonListar_CanvasChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void ribbonButtonListar_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.GetType() == typeof(AdminMantenimientoVehiculoForm))
+                {
+                    f.Activate();
+                    return;
+                }
+            }
+            Form padronfrm = new AdminMantenimientoVehiculoForm();
+            padronfrm.MdiParent = this;
+            padronfrm.Show();
+        }
     }
 }

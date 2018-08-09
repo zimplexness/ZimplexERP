@@ -405,7 +405,7 @@ namespace BLayer
 
         }
 
-        public int EliminarComprobante(string sucursal, string nofactura)
+        public int EliminarComprobante(int IdProveedor,string sucursal, string nofactura)
         {
             try
             {
@@ -413,7 +413,7 @@ namespace BLayer
                 {
 
                     var comprobante = (from c in Context.Comprobantes
-                                where c.Sucursal == sucursal && c.NoFactura==nofactura
+                                where c.Sucursal == sucursal && c.NoFactura==nofactura&&c.IdProveedor==IdProveedor
                                 select c).First();
 
                     Context.Comprobantes.Remove(comprobante);
@@ -448,7 +448,13 @@ namespace BLayer
         }
 
 
-        }
+
+
+
+
+
+
+   }
 
 
     

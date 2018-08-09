@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Entidades;
 using DL;
-using Repositories;
+using DL.Repositories;
+
 using System.Data.Entity;
 
 namespace BLayer
@@ -29,7 +30,7 @@ namespace BLayer
 
         public ProveedorManager()
         {
-            this.proveedorRepository = new ProveedorRepository();
+            //this.proveedorRepository = new ProveedorRepository();
 
         }
 
@@ -461,34 +462,32 @@ namespace BLayer
 
         }
 
-        public void InsertarorUpdateRubro(int id,string rubro) {
+        public void InsertarorUpdateRubro(RubroProveedor rubro) {
             
             using (Context=new Entities())
             {
-                var result = Context.RubroProveedor.Where(x => x.IDRubroProveedor == id).ToList();
-                if (result != null)
-                
-                    foreach (var item in result )
-                    {
-
-                        item.Descripcion = rubro;
-                        Context.RubroProveedor.Attach(item);
-                       
-                        Context.Entry(item).State =System.Data.Entity.EntityState.Modified;
-                        Context.SaveChanges();
-
-                    }
-
-                if (result == null)
-                    
-                    rubRubro.Descripcion = rubro;
-                    Context.RubroProveedor.Add(rubRubro);
-                    Context.SaveChanges();
-                
                
-                
 
-            }
+                if (Context.RubroProveedor.AnyAsync(r=>r.Descripcion==rubro.Descripcion)!=null)
+                {
+                    
+                    
+                    Context.RubroProveedor.Attach(rubro);
+
+                    Context.Entry(rubro).State = System.Data.Entity.EntityState.Modified;
+                    Context.SaveChanges();
+
+                }
+                else
+                {
+                   
+                    Context.RubroProveedor.Add(rubro);
+                    Context.SaveChanges();
+
+                }
+
+
+         }
 
         }
 

@@ -42,6 +42,31 @@ namespace BLayer
 
         }
 
+        public int InsertarPagossinRetencion(DateTime Fecha, double importe, string concepto)
+        {
+
+            using (Context = new Entities())
+            {
+                int result;
+                Pagos pagos = new Pagos();
+                pagos.Fecha = Fecha;
+                pagos.Importe = importe;
+                pagos.Concepto = concepto;
+                
+
+
+                Context.Pagos.Add(pagos);
+                Context.SaveChanges();
+                result = pagos.Idpago;
+
+
+                return result;
+
+            }
+
+
+
+        }
 
         public List<ReportePagosProveedores_Result> ReportePagos(DateTime fechainicio,DateTime fechafin) {
 
@@ -322,8 +347,26 @@ namespace BLayer
 
         }
 
+        public IEnumerable< MediosPago> GetMediosDePago() {
+            using (Context=new Entities())
+            {
+               return Context.MediosPago.ToList();
+               
+            }
             
+        }
 
-        
+        public IEnumerable<Bancos> GetDeBancos()
+        {
+            using (Context = new Entities())
+            {
+                return Context.Bancos.ToList();
+
+            }
+
+        }
+
+
+
     }
 }

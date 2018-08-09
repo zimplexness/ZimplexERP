@@ -43,5 +43,11 @@ namespace ErpGestion
 
             }
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ActividadMantenimientoForm mantenimientoForm = new ActividadMantenimientoForm();
+            mantenimientoForm.ShowDialog();
+        }
     }
 }

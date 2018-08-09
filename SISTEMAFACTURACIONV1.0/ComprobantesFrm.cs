@@ -226,7 +226,7 @@ namespace ErpGestion
 
 
                     ComprobantesManager c = new ComprobantesManager();
-                    if (c.EliminarComprobante(metroTextBoxPuntoV.Text, metroTextBoxNoFactura.Text) == 1)
+                    if (c.EliminarComprobante(new ProveedorManager().DevolverIdPRoveedorporNombre(metroTextBoxProveedor.Text),metroTextBoxPuntoV.Text, metroTextBoxNoFactura.Text) == 1)
                     {
                         MessageBox.Show("Se ha cancelado con exito el comprobante", "Sistema de Gestion de Compras", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

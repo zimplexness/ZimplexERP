@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 using Entidades;
 using DL;
 
+
+
 namespace BLayer
 {
   public class UserManager
     {
         private Entities Context=null;
 
-
+       
 
         public int ValidateUser(string username, string password)
         {

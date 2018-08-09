@@ -218,6 +218,12 @@
     <Compile Include="AdminCuentaCorrienteForm.Designer.cs">
       <DependentUpon>AdminCuentaCorrienteForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminMantenimientoVehiculoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminMantenimientoVehiculoForm.Designer.cs">
+      <DependentUpon>AdminMantenimientoVehiculoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminRubrosFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -271,12 +277,6 @@
     </Compile>
     <Compile Include="FindDetallesComprobantesArticulosFrm.Designer.cs">
       <DependentUpon>FindDetallesComprobantesArticulosFrm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FindProvinciasFrm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FindProvinciasFrm.Designer.cs">
-      <DependentUpon>FindProvinciasFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="IFindProvincia.cs" />
     <Compile Include="LocalidadesFrm.cs">
@@ -399,6 +399,9 @@
     <EmbeddedResource Include="AdminCuentaCorrienteForm.resx">
       <DependentUpon>AdminCuentaCorrienteForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminMantenimientoVehiculoForm.resx">
+      <DependentUpon>AdminMantenimientoVehiculoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminRubrosFrm.resx">
       <DependentUpon>AdminRubrosFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -425,9 +428,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FindDetallesComprobantesArticulosFrm.resx">
       <DependentUpon>FindDetallesComprobantesArticulosFrm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FindProvinciasFrm.resx">
-      <DependentUpon>FindProvinciasFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LocalidadesFrm.resx">
       <DependentUpon>LocalidadesFrm.cs</DependentUpon>
@@ -715,10 +715,6 @@
     <ProjectReference Include="..\Entidades\Entidades.csproj">
       <Project>{c947aa29-c91e-450d-ad73-757a440984b1}</Project>
       <Name>Entidades</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Repositories\Repositories.csproj">
-      <Project>{19504a38-d4cf-43cf-ab39-e1fd44c7b7d7}</Project>
-      <Name>Repositories</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -21,6 +21,7 @@ namespace ErpGestion
         public RubroForm()
         {
             InitializeComponent();
+            this.RubroProveedor = new RubroProveedor();
         }
 
         private void RubroForm_Load(object sender, EventArgs e)
@@ -47,8 +48,10 @@ namespace ErpGestion
             }
             else
             {
-
-                new ProveedorManager().InsertarorUpdateRubro(int.Parse(metroTextBoxID.Text), metroTextBoxDescripcion.Text);
+                
+                this.RubroProveedor.IDRubroProveedor = int.Parse(metroTextBoxID.Text);
+                this.RubroProveedor.Descripcion = metroTextBoxDescripcion.Text;
+                new ProveedorManager().InsertarorUpdateRubro(RubroProveedor);
                 MessageBox.Show("Insertado con Exito");
                 this.DialogResult = DialogResult.OK;
                 this.Close();

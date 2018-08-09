@@ -7,6 +7,7 @@ using DL;
 using Entidades;
 using System.IO;
 using System.Globalization;
+using System.Data.Entity;
 
 namespace BLayer.Controller
 {
@@ -15,10 +16,11 @@ namespace BLayer.Controller
         public Entities _context;
         public string StreamReader { get; set; }
         public PadronRgsRet _padron;
+        private readonly Retenciones _retenciones;
 
         public ImportarPadron()
         {
-
+            _retenciones = new Retenciones();
         }
 
         public void ImportarPadronMethod(string regimen, DateTime fecha,
@@ -87,14 +89,18 @@ namespace BLayer.Controller
                 else
                 {
                     PadronRgsRet Padron = _context.PadronRgsRet.Where(x => x.Cuit == proveedores.Cuit).FirstOrDefault();
-                    retenciones.Importe = (ImporteFacturas * Padron.Alicuota) / 100;
-                    retenciones.Alicuota = Padron.Alicuota;
-                    retenciones.Fecha = DateTime.Now;
-                    retenciones.EmpresaID = 1;
-                    _context.Retenciones.Add(retenciones);
-                    _context.SaveChanges();
+                    if (Padron!=null)
+                    {
+                        retenciones.Importe = (ImporteFacturas * Padron.Alicuota) / 100;
+                        retenciones.Alicuota = Padron.Alicuota;
+                        retenciones.Fecha = DateTime.Now;
+                        retenciones.EmpresaID = 1;
+                        _context.Retenciones.Add(retenciones);
+                        _context.SaveChanges();
 
-
+                    }
+                   
+                 
                 }
                 return retenciones;
                 
@@ -116,6 +122,24 @@ namespace BLayer.Controller
 
             }
 
+
+        }
+
+        public Retenciones AddorUpdateRetencion(Retenciones retenciones) {
+            using (_context=new Entities())
+            {
+                if (_context.Retenciones.AnyAsync(r=>r.IDRetencion==retenciones.IDRetencion)!=null)
+                {
+                    _context.Retenciones.Attach(retenciones);
+                    _context.Entry(retenciones).State = EntityState.Modified;
+                }
+                else
+                {
+                    _context.Retenciones.Add(retenciones);
+                }
+                _context.SaveChangesAsync();
+                return retenciones;
+            }
 
         }
 

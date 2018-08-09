@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLayer;
 using Entidades;
-using Repositories;
+
+
 
 
 
@@ -22,7 +23,7 @@ namespace ErpGestion
         ProveedorManager Pmanager = new ProveedorManager();
 
         
-        ProveedorRepository proveedorRepository=new ProveedorRepository();
+        //ProveedorRepository proveedorRepository=new ProveedorRepository();
         public string cuit { get; set; }
 
 
@@ -49,8 +50,8 @@ namespace ErpGestion
         private void FrmEditProveedor_Load(object sender, EventArgs e)
         {
             //Carga todos los Elementos del Proveedor
-            View_Proveedores prov = proveedorRepository.GetProveedoresByCuit(cuit);
-            _proveedores = prov;
+            //View_Proveedores prov = proveedorRepository.GetProveedoresByCuit(cuit);
+           // _proveedores = prov;
 
             metroComboBoxProvincia.DataSource = new Provincia_localidad().ListarProvincias();
             metroComboBoxProvincia.DisplayMember = "Provincias1";
@@ -61,7 +62,7 @@ namespace ErpGestion
             metroComboBoxLocalidades.DisplayMember = "Localidades1";
             metroComboBoxLocalidades.ValueMember = "IdLocalidad";
 
-            metroComboBoxRubros.DataSource = proveedorRepository.GetRubroProveedors();
+            metroComboBoxRubros.DataSource = null;//proveedorRepository.GetRubroProveedors();
             metroComboBoxRubros.DisplayMember = "Descripcion";
             metroComboBoxRubros.ValueMember = "IDRubroProveedor";
 

@@ -396,7 +396,7 @@
             // 
             this.metroDateTimeFechaBaja.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.metroDateTimeFechaBaja.Location = new System.Drawing.Point(6, 42);
-            this.metroDateTimeFechaBaja.MinimumSize = new System.Drawing.Size(4, 29);
+            this.metroDateTimeFechaBaja.MinimumSize = new System.Drawing.Size(0, 29);
             this.metroDateTimeFechaBaja.Name = "metroDateTimeFechaBaja";
             this.metroDateTimeFechaBaja.Size = new System.Drawing.Size(104, 29);
             this.metroDateTimeFechaBaja.TabIndex = 141;
@@ -1642,7 +1642,7 @@
             // 
             this.metroDateTimeFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.metroDateTimeFin.Location = new System.Drawing.Point(110, 22);
-            this.metroDateTimeFin.MinimumSize = new System.Drawing.Size(4, 29);
+            this.metroDateTimeFin.MinimumSize = new System.Drawing.Size(0, 29);
             this.metroDateTimeFin.Name = "metroDateTimeFin";
             this.metroDateTimeFin.Size = new System.Drawing.Size(101, 29);
             this.metroDateTimeFin.TabIndex = 76;
@@ -1651,7 +1651,7 @@
             // 
             this.metroDateTimeInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.metroDateTimeInicio.Location = new System.Drawing.Point(3, 22);
-            this.metroDateTimeInicio.MinimumSize = new System.Drawing.Size(4, 29);
+            this.metroDateTimeInicio.MinimumSize = new System.Drawing.Size(0, 29);
             this.metroDateTimeInicio.Name = "metroDateTimeInicio";
             this.metroDateTimeInicio.Size = new System.Drawing.Size(101, 29);
             this.metroDateTimeInicio.TabIndex = 75;
@@ -1856,7 +1856,7 @@
             // 
             this.metroDateTime3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.metroDateTime3.Location = new System.Drawing.Point(138, 23);
-            this.metroDateTime3.MinimumSize = new System.Drawing.Size(4, 29);
+            this.metroDateTime3.MinimumSize = new System.Drawing.Size(0, 29);
             this.metroDateTime3.Name = "metroDateTime3";
             this.metroDateTime3.Size = new System.Drawing.Size(104, 29);
             this.metroDateTime3.TabIndex = 87;
@@ -1865,7 +1865,7 @@
             // 
             this.metroDateTime4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.metroDateTime4.Location = new System.Drawing.Point(4, 23);
-            this.metroDateTime4.MinimumSize = new System.Drawing.Size(4, 29);
+            this.metroDateTime4.MinimumSize = new System.Drawing.Size(0, 29);
             this.metroDateTime4.Name = "metroDateTime4";
             this.metroDateTime4.Size = new System.Drawing.Size(112, 29);
             this.metroDateTime4.TabIndex = 86;
@@ -2403,7 +2403,7 @@
             // 
             this.metroDateTime1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.metroDateTime1.Location = new System.Drawing.Point(110, 22);
-            this.metroDateTime1.MinimumSize = new System.Drawing.Size(4, 29);
+            this.metroDateTime1.MinimumSize = new System.Drawing.Size(0, 29);
             this.metroDateTime1.Name = "metroDateTime1";
             this.metroDateTime1.Size = new System.Drawing.Size(101, 29);
             this.metroDateTime1.TabIndex = 83;
@@ -2412,7 +2412,7 @@
             // 
             this.metroDateTime2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.metroDateTime2.Location = new System.Drawing.Point(3, 22);
-            this.metroDateTime2.MinimumSize = new System.Drawing.Size(4, 29);
+            this.metroDateTime2.MinimumSize = new System.Drawing.Size(0, 29);
             this.metroDateTime2.Name = "metroDateTime2";
             this.metroDateTime2.Size = new System.Drawing.Size(101, 29);
             this.metroDateTime2.TabIndex = 82;

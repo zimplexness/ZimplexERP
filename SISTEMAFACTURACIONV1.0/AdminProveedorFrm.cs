@@ -7,9 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLayer.Controller;
 using BLayer;
 using Entidades;
-using Repositories;
+
 
 
 
@@ -17,21 +18,24 @@ namespace ErpGestion
 {
     public partial class AdminProveedorFrm : MetroFramework.Forms.MetroForm
     {
+        private ProveedorController ProveedorController;
 
-
+       
         public AdminProveedorFrm()
         {
             InitializeComponent();
+            ProveedorController = new ProveedorController();
         }
 
-        ProveedorRepository proveedorRepository = new ProveedorRepository();
+         
+        //ProveedorRepository proveedorRepository = new ProveedorRepository();
         private void ProveedoresForm_Load(object sender, EventArgs e)
         {
 
 
-            IEnumerable<View_Proveedores> proveedores = proveedorRepository.GetAll();
+            var proveedores =ProveedorController.GetProveedores();
 
-
+            bindingSourceProveedores.DataSource = proveedores;
             metroGridFiltrarProveedores.AutoGenerateColumns = false;
             metroGridFiltrarProveedores.DataSource = proveedores;
             metroGridFiltrarProveedores.AutoSize = false;
@@ -136,13 +140,16 @@ namespace ErpGestion
             }
             string cuit = metroGridFiltrarProveedores.CurrentRow.Cells["Cuit"].Value.ToString();
             FrmEditProveedor frmEditProveedor = new FrmEditProveedor();
+           
             frmEditProveedor.cuit = cuit;
+            
             
             frmEditProveedor.Show();
 
-           
-           
+
+          
             
+
 
         }
 
@@ -167,23 +174,55 @@ namespace ErpGestion
 
         private void metroTextBoxNombre_TextChanged(object sender, EventArgs e)
         {
-            metroGridFiltrarProveedores.DataSource = proveedorRepository.GetByNombre(metroTextBoxNombre.Text);
+            metroGridFiltrarProveedores.DataSource = ProveedorController.FilterByNombre(metroTextBoxNombre.Text);
         }
 
         private void metroTextBoxFilterRazon_TextChanged(object sender, EventArgs e)
         {
-            metroGridFiltrarProveedores.DataSource = proveedorRepository.GetByRazon(metroTextBoxFilterRazon.Text);
+            metroGridFiltrarProveedores.DataSource = ProveedorController.FilterByRazon(metroTextBoxFilterRazon.Text);
         }
 
         private void metroTextBoxFilterRubro_TextChanged(object sender, EventArgs e)
         {
 
-            metroGridFiltrarProveedores.DataSource = proveedorRepository.GetByRubro(metroTextBoxFilterRubro.Text);
+            metroGridFiltrarProveedores.DataSource = ProveedorController.FilterByRubro(metroTextBoxFilterRubro.Text);
         }
 
         private void metroTabPage2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void toolStripButton1_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult dialogResult = MessageBox.Show("Desea Eliminar el Proveedor", "Sistema de Gestion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                //Add comprobante a Selected Comprobante
+                foreach (DataGridViewRow row1 in metroGridFiltrarProveedores.Rows)
+                {
+                    DataGridViewCheckBoxCell ck = row1.Cells["Select"] as DataGridViewCheckBoxCell;
+                    if (Convert.ToBoolean(ck.Value) == true)
+                    {
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            new ProveedorManager().EliminarProveedor(metroGridFiltrarProveedores.CurrentRow.Cells["Cuit"].Value.ToString());
+                            MessageBox.Show("Proveedor Eliminado Satisfactoriamente", "Sistema de Gestion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
+
+        private void metroTextBoxCuit_TextChanged(object sender, EventArgs e)
+        {
+            metroGridFiltrarProveedores.DataSource = ProveedorController.FilterByCuit(metroTextBoxCuit.Text);
         }
     }
 }

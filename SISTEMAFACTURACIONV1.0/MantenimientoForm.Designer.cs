@@ -72,7 +72,7 @@
             this.metroPanel1.HorizontalScrollbarSize = 10;
             this.metroPanel1.Location = new System.Drawing.Point(20, 60);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(584, 237);
+            this.metroPanel1.Size = new System.Drawing.Size(614, 265);
             this.metroPanel1.TabIndex = 4;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
@@ -281,7 +281,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 317);
+            this.ClientSize = new System.Drawing.Size(654, 345);
             this.Controls.Add(this.metroPanel1);
             this.Name = "MantenimientoForm";
             this.Style = MetroFramework.MetroColorStyle.Orange;

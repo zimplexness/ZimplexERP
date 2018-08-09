@@ -25,8 +25,13 @@ namespace ErpGestion
             //declaracion de objeto comprobante
             ComprobantesManager comp = new ComprobantesManager();
             //llenar combobox
+            metroComboBoxMedioPago.DataSource = new PagosManager().GetMediosDePago();
+            metroComboBoxMedioPago.ValueMember = "MediosPago1";
+            metroComboBoxMedioPago.DisplayMember = "MediosPago1";
 
-
+            metroComboBoxBanco.DataSource = new PagosManager().GetDeBancos();
+            metroComboBoxBanco.ValueMember = "Nombre";
+            metroComboBoxBanco.DisplayMember = "Nombre";
             //autocomplete textbox con proveedores
 
             ProveedorManager p = new ProveedorManager();
@@ -51,31 +56,17 @@ namespace ErpGestion
                 }
                 else
                 {
-                    //dataGridViewMediosPago.AutoGenerateColumns = false;
-                    if (string.IsNullOrEmpty(metroComboBoxBanco.Text) == true)
-                    {
-                        string medio = metroComboBoxMedioPago.SelectedItem.ToString();
-                        string banco = "";
-                        string fechavencimiento = metroDateTimeVencimiento.Value.ToShortDateString();
-
-                        var listmedios = new String[] { medio, fechavencimiento, metroTextBoxChque.Text, banco, metroTextBoxiMPORTE.Text };
-                        metroGridMedioPAgo.Rows.Add(listmedios);
-
-                    }
-                    else
-                    {
-
-
-                        string medio = metroComboBoxMedioPago.SelectedItem.ToString();
-                        string banco = metroComboBoxBanco.SelectedItem.ToString();
+                    
+                        //Ingresar Medios de Pago 
+                        string medio = metroComboBoxMedioPago.SelectedValue.ToString();
+                        string banco = metroComboBoxBanco.SelectedValue.ToString();
                         string fechavencimiento = metroDateTimeVencimiento.Value.ToShortDateString();
                         var listmedios = new String[] { medio, fechavencimiento, metroTextBoxChque.Text, banco, metroTextBoxiMPORTE.Text };
                         metroGridMedioPAgo.Rows.Add(listmedios);
                         metroTextBoxChque.Clear();
                         metroTextBoxiMPORTE.Clear();
 
-                    }
-
+                    
                     metroGridMedioPAgo.AutoSize = false;
 
                 }
@@ -301,7 +292,17 @@ namespace ErpGestion
 
                             //INSERTAR EN LA TABLE PAGOS
                             //INSERTO EN LA TABLA PAGOS Y OBTENGO EL ULTIMO IDPAGO INSERTADO
-                            idpago = p.InsertarPagos(metroDateTimeFechaPago.Value, totalmediospago, metroTextBoxConcepto.Text, int.Parse(metroTextBoxIDRet.Text));
+                            if (string.IsNullOrEmpty(metroTextBoxIDRet.Text)==true)
+                            {
+                                idpago = p.InsertarPagossinRetencion(metroDateTimeFechaPago.Value, totalmediospago, metroTextBoxConcepto.Text);
+
+
+                            }
+                            else
+                            {
+                                idpago = p.InsertarPagos(metroDateTimeFechaPago.Value, totalmediospago, metroTextBoxConcepto.Text, int.Parse(metroTextBoxIDRet.Text));
+
+                            }
 
                             //APLICO LOS PAGOS A CADA COMPROBANTE
                             //INSERTO EN LA TABLA DETALLE DE PAGOS Y ACTUALIZO EL ESTADO DE LOS COMPROBANTES A 1
@@ -315,6 +316,9 @@ namespace ErpGestion
                                     if (Convert.ToBoolean(ck3.Value) == true)
                                     {
                                         int idProveedor = new ProveedorManager().DevolverIdPRoveedorporNombre(metroTextBoxNOMBRE.Text);
+
+
+
                                         p.InsertarDetallePago(idpago, c.DevolverIDporNoFactura2(row2.Cells["column3"].Value.ToString(), row2.Cells["column4"].Value.ToString(),idProveedor));
 
                                         //Actualizar EStado de Comprobante
@@ -366,7 +370,17 @@ namespace ErpGestion
                         {
                             //INSERTAR EN LA TABLE PAGOS
                             //INSERTO EN LA TABLA PAGOS Y OBTENGO EL ULTIMO IDPAGO INSERTADO
-                            idpago = p.InsertarPagos(metroDateTimeFechaPago.Value, totalmediospago, metroTextBoxConcepto.Text, int.Parse( metroTextBoxIDRet.Text));
+                            if (string.IsNullOrEmpty(metroTextBoxIDRet.Text))
+                            {
+                                idpago = p.InsertarPagossinRetencion(metroDateTimeFechaPago.Value, totalmediospago, metroTextBoxConcepto.Text);
+
+
+                            }
+                            else
+                            {
+                                idpago = p.InsertarPagos(metroDateTimeFechaPago.Value, totalmediospago, metroTextBoxConcepto.Text, int.Parse(metroTextBoxIDRet.Text));
+
+                            }
 
                             //APLICO LOS PAGOS A CADA COMPROBANTE
                             //INSERTO EN LA TABLA DETALLE DE PAGOS Y ACTUALIZO EL ESTADO DE LOS COMPROBANTES A 1
@@ -512,19 +526,30 @@ namespace ErpGestion
 
                 if (metroGridComprobantes.Rows.Count >= 1 && total > 2000)
                    retencion = new ImportarPadron().CalcularRetenciones(metroTextBoxNOMBRE.Text,float.Parse(total.ToString()));
-                double totalPAgar = total - Convert.ToDouble( retencion.Importe);
-                metroTextBoxIDRet.Text = retencion.IDRetencion.ToString();
-                metroTextBoxALi.Text =Math.Round((double) retencion.Alicuota,2).ToString();
-                metroTextBoxImporteRet.Text =Math.Round((double) retencion.Importe,2).ToString();
-                metroTextBoxTotalPagar.Text = Math.Round(totalPAgar,2).ToString();
-                metroTextBoxiMPORTE.Text = Math.Round(totalPAgar, 2).ToString();
-                metroTextBoxTotalFact.Text = total.ToString();
+                if (retencion!=null)
+                {
+                    double totalPAgar = total - Convert.ToDouble(retencion.Importe);
+                    metroTextBoxIDRet.Text = retencion.IDRetencion.ToString();
+                    metroTextBoxALi.Text = Math.Round((double)retencion.Alicuota, 2).ToString();
+                    metroTextBoxImporteRet.Text = Math.Round((double)retencion.Importe, 2).ToString();
+                    metroTextBoxTotalPagar.Text = Math.Round(totalPAgar, 2).ToString();
+                    metroTextBoxiMPORTE.Text = Math.Round(totalPAgar, 2).ToString();
+                    metroTextBoxTotalFact.Text = total.ToString();
+
+                }
+                else{
+                    if (retencion==null)
+                    
+                   
+                    metroTextBoxIDRet.Clear();
+                    metroTextBoxALi.Clear();
+                    metroTextBoxImporteRet.Clear();
+                    metroTextBoxTotalPagar.Clear();
+                    metroTextBoxiMPORTE.Clear();
+                    metroTextBoxTotalFact.Clear();
+                }
                 
-
-
-
-
-            }
+               }
             catch (Exception)
             {
 

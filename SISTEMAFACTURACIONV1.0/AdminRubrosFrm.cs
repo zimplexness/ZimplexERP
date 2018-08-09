@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLayer;
 using Entidades;
-using Repositories;
+
 
 namespace ErpGestion
 {

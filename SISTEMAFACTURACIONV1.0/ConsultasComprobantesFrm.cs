@@ -265,5 +265,32 @@ namespace ErpGestion
         {
 
         }
+
+        private void metroButtonEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult dialogResult = MessageBox.Show("Desea Eliminar el Comprobante","Sistema de Gestion",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+                //Add comprobante a Selected Comprobante
+                foreach (DataGridViewRow row1 in metroGridCompProveedores.Rows)
+                {
+                    DataGridViewCheckBoxCell ck = row1.Cells["Select"] as DataGridViewCheckBoxCell;
+                    if (Convert.ToBoolean(ck.Value) == true)
+                    {
+                        if (dialogResult==DialogResult.Yes)
+                        {
+                            new ComprobantesManager().EliminarComprobante(new ProveedorManager().DevolverIdPRoveedorporNombre(metroTextBoxFiltroProveedor.Text), metroGridCompProveedores.CurrentRow.Cells["PuntoV"].Value.ToString(), metroGridCompProveedores.CurrentRow.Cells["NoFactura"].Value.ToString());
+                            MessageBox.Show("Comprobante Eliminado Satisfactoriamente","Sistema de Gestion",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        }
+                       
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }
